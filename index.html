@@ -247,6 +247,44 @@ tr:nth-child(odd) td{background:var(--surface)}
 .save-toast{position:fixed;top:16px;left:50%;transform:translateX(-50%);background:var(--primary-dark);color:#fff;padding:8px 20px;border-radius:99px;font-size:12px;font-weight:600;z-index:999;opacity:0;transition:opacity .3s;pointer-events:none}
 .save-toast.show{opacity:1}
 
+/* ── PRINT / PDF ── */
+@media print {
+  * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+  body { background: #fff !important; padding: 0 !important; font-size: 11pt !important; color: #0F1C17 !important; }
+  /* Hide everything except print-area */
+  body > * { display: none !important; }
+  #print-area { display: block !important; padding: 0 !important; margin: 0 !important; }
+  .print-header { display: flex !important; }
+  /* Card and content styles for print */
+  .card { border: 1px solid #D6E8E0 !important; box-shadow: none !important; padding: 10pt 12pt !important; margin-bottom: 10pt !important; border-radius: 6pt !important; break-inside: avoid; }
+  .card-accent { border: 1px solid #A8E8CF !important; background: #EDFBF5 !important; padding: 8pt 12pt !important; margin-bottom: 8pt !important; break-inside: avoid; }
+  .pertanyaan { border-left: 3px solid #0BAF7A !important; background: #f5faf7 !important; padding: 7pt 10pt !important; margin-bottom: 6pt !important; break-inside: avoid; }
+  .step-box { background: #f5faf7 !important; padding: 7pt 10pt !important; margin-bottom: 5pt !important; break-inside: avoid; }
+  .alert-green { background: #EDFBF5 !important; border-left: 3px solid #0BAF7A !important; }
+  .alert-amber { background: #FEF3DC !important; border-left: 3px solid #F4A932 !important; }
+  .id-card { border: 1px solid #D6E8E0 !important; padding: 8pt !important; break-inside: avoid; }
+  .akt-no { background: #0BAF7A !important; color: #fff !important; padding: 2pt 8pt !important; border-radius: 4pt !important; }
+  .step-no-circle { background: #0BAF7A !important; color: #fff !important; }
+  .badge-green { background: #D6F5EB !important; color: #088A60 !important; }
+  .sec-lbl { color: #7A9186 !important; }
+  h2 { font-size: 13pt !important; margin-bottom: 6pt !important; }
+  h3 { font-size: 11pt !important; margin-bottom: 4pt !important; }
+  p { font-size: 10.5pt !important; }
+  table { border-collapse: collapse !important; width: 100% !important; font-size: 9pt !important; }
+  th { background: #0BAF7A !important; color: #fff !important; padding: 5pt 6pt !important; }
+  td { border: 1px solid #D6E8E0 !important; padding: 4pt 6pt !important; }
+  .formula-box { border: 1px solid #D6E8E0 !important; background: #fff !important; }
+  @page { margin: 1.5cm 1.5cm 2cm; size: A4; }
+}
+
+/* Print area hidden on screen */
+#print-area { display: none; }
+.print-header { display: none; align-items: center; gap: 14px; margin-bottom: 20px; padding-bottom: 12px; border-bottom: 2px solid #0BAF7A; }
+.print-header-logo { width: 44px; height: 44px; background: #0BAF7A; border-radius: 10px; display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 700; font-size: 13px; }
+.print-header-info { flex: 1; }
+.print-header-title { font-size: 16px; font-weight: 700; color: #0F1C17; }
+.print-header-sub { font-size: 11px; color: #7A9186; }
+
 /* ── DESKTOP SIDEBAR ── */
 .desktop-sidebar{display:none}
 .sidebar-btn{display:flex;align-items:center;gap:10px;width:100%;padding:.75rem 1.25rem;border:none;background:none;font-family:var(--font-body);font-size:13px;font-weight:500;color:var(--text-2);cursor:pointer;transition:all .15s;text-align:left;border-left:3px solid transparent}
@@ -770,11 +808,153 @@ function wrapRefleksi(idx, body, prevIdx, nPtm) {
     <div class="card"><div class="akt-header"><span class="akt-no">Refleksi</span><span class="akt-title">Refleksi Akhir Pertemuan</span></div>${body}
     <div class="sec-lbl" style="margin-top:1rem">Checklist</div>${chkList}
     <div class="chk-item"><input type="checkbox" onchange="saveCheck(${nPtm},${idx},this.checked)" ${getStore('chk_'+nPtm+'_'+idx,false)?'checked':''}><span>Refleksi selesai</span></div>
-    <div class="btn-row" style="margin-top:.75rem"><button class="btn btn-sm" onclick="ptmNav(${prevIdx})">← Kembali</button><button class="btn btn-primary" onclick="alert('Fitur unduh PDF akan tersedia di versi final.')">⬇ Unduh PDF</button></div></div></div>`;
+    <div class="btn-row" style="margin-top:.75rem"><button class="btn btn-sm" onclick="ptmNav(${prevIdx})">← Kembali</button><button class="btn btn-primary" onclick="savePDF(${nPtm})" style="background:#0BAF7A;border-color:#0BAF7A">🖨 Simpan PDF Pertemuan ${nPtm}</button></div></div></div>`;
 }
 function saveCheck(ptm, idx, val) { setStore('chk_'+ptm+'_'+idx, val); }
 function saveTA(key, val) { setStore(key, val); }
 function loadTA(key) { return getStore(key, ''); }
+
+// ── SAVE PDF ──
+function savePDF(nPtm) {
+  const ptmNames = {
+    1: 'Pertanyaan Mendasar',
+    2: 'Perencanaan & Penjadwalan',
+    3: 'Pengumpulan Data',
+    4: 'Pengolahan & Penyajian Data',
+    5: 'Presentasi, Refleksi & Evaluasi'
+  };
+  const id = getStore('identitas', null);
+  const kelompok = id ? id.kel : '—';
+  const sekolah  = id ? id.sek : '—';
+  const kelas    = id ? id.kls : '—';
+  const ta       = id ? id.ta  : '—';
+  const anggota  = id && id.anggota ? id.anggota.map(a => a.nm + ' (' + a.pos + ')').join(', ') : '—';
+  const tgl = new Date().toLocaleDateString('id-ID', {weekday:'long', year:'numeric', month:'long', day:'numeric'});
+
+  // Collect all textarea/input values from current ptm-content
+  const ptmContent = document.getElementById('ptm-content');
+  if (!ptmContent) return;
+
+  // Clone so we can show ALL aktivitas (not just the active one)
+  const clone = ptmContent.cloneNode(true);
+  // Show all aktivitas sections in the clone
+  clone.querySelectorAll('[id^="ptm-akt-"]').forEach(el => { el.style.display = 'block'; });
+  // Remove nav buttons from clone
+  clone.querySelectorAll('.btn-row, .prog-row, .prog-labels, .ptm-back').forEach(el => el.remove());
+  // Replace textarea elements with their current values from the original DOM
+  const originalTextareas = ptmContent.querySelectorAll('textarea');
+  const cloneTextareas    = clone.querySelectorAll('textarea');
+  originalTextareas.forEach((ta, i) => {
+    if (cloneTextareas[i]) {
+      const val = ta.value;
+      const div = document.createElement('div');
+      div.style.cssText = 'border:1px solid #ccc;border-radius:6px;padding:8px 10px;font-size:11pt;min-height:40px;white-space:pre-wrap;color:#0F1C17;background:#fff;line-height:1.7;margin-top:4px';
+      div.textContent = val || '(belum diisi)';
+      cloneTextareas[i].replaceWith(div);
+    }
+  });
+  // Replace text/number inputs
+  const originalInputs = ptmContent.querySelectorAll('input[type=text], input[type=number]');
+  const cloneInputs    = clone.querySelectorAll('input[type=text], input[type=number]');
+  originalInputs.forEach((inp, i) => {
+    if (cloneInputs[i]) {
+      const val = inp.value;
+      const span = document.createElement('span');
+      span.style.cssText = 'display:inline-block;border-bottom:1.5px solid #0BAF7A;padding:1px 6px;min-width:80px;color:#0F1C17;font-size:inherit';
+      span.textContent = val || '—';
+      cloneInputs[i].replaceWith(span);
+    }
+  });
+  // Replace selects
+  const originalSelects = ptmContent.querySelectorAll('select');
+  const cloneSelects    = clone.querySelectorAll('select');
+  originalSelects.forEach((sel, i) => {
+    if (cloneSelects[i]) {
+      const val = sel.options[sel.selectedIndex]?.text || '—';
+      const span = document.createElement('span');
+      span.style.cssText = 'display:inline-block;border:1px solid #ccc;border-radius:4px;padding:2px 8px;color:#0F1C17;font-size:inherit;background:#f5faf7';
+      span.textContent = val;
+      cloneSelects[i].replaceWith(span);
+    }
+  });
+  // Replace radio buttons — show selected
+  clone.querySelectorAll('.radio-group').forEach((rg, ri) => {
+    const origRg = ptmContent.querySelectorAll('.radio-group')[ri];
+    if (!origRg) return;
+    const checked = origRg.querySelector('input[type=radio]:checked');
+    const val = checked ? checked.closest('label')?.textContent?.trim() : '(belum dipilih)';
+    const div = document.createElement('div');
+    div.style.cssText = 'font-size:11pt;color:#0BAF7A;font-weight:600;margin:4px 0';
+    div.textContent = '✓ ' + val;
+    rg.replaceWith(div);
+  });
+  // Build P3 table for printing if P3
+  if (nPtm === 3) {
+    const p3Wrap = clone.querySelector('#p3-table-wrap');
+    if (p3Wrap) {
+      const p3Data = getStore('p3_data', []);
+      let rows = p3Data.map((d, i) => {
+        if (!d || (!d.kode && !d.durasi && !d.tujuan && !d.waktu)) return '';
+        return `<tr><td>${i+1}</td><td>${d.kode||'—'}</td><td>${d.durasi||'—'}</td><td>${d.tujuan||'—'}</td><td>${d.waktu||'—'}</td></tr>`;
+      }).filter(Boolean).join('');
+      if (!rows) rows = '<tr><td colspan="5" style="text-align:center;color:#aaa">Belum ada data</td></tr>';
+      p3Wrap.innerHTML = `<table style="width:100%;border-collapse:collapse;font-size:9pt">
+        <thead><tr style="background:#0BAF7A;color:#fff"><th>No</th><th>Kode</th><th>Durasi (jam)</th><th>Tujuan</th><th>Waktu</th></tr></thead>
+        <tbody>${rows}</tbody></table>`;
+    }
+  }
+  // Handle canvas charts (P4) — convert to image
+  const origCanvas = ptmContent.querySelectorAll('canvas');
+  const cloneCanvasWrap = clone.querySelectorAll('.chart-wrap');
+  origCanvas.forEach((canvas, i) => {
+    if (cloneCanvasWrap[i]) {
+      try {
+        const img = document.createElement('img');
+        img.src = canvas.toDataURL('image/png');
+        img.style.cssText = 'max-width:100%;border-radius:8px;margin-top:4px';
+        cloneCanvasWrap[i].innerHTML = '';
+        cloneCanvasWrap[i].appendChild(img);
+      } catch(e) {}
+    }
+  });
+
+  // Build isian-inline answer spans for kalkulator inline inputs
+  clone.querySelectorAll('.isian-inline').forEach((inp, i) => {
+    const origInp = ptmContent.querySelectorAll('.isian-inline')[i];
+    const val = origInp ? origInp.value : inp.value;
+    const span = document.createElement('span');
+    span.style.cssText = 'display:inline-block;border:1px solid #0BAF7A;border-radius:4px;padding:4px 10px;min-width:70px;text-align:center;font-weight:600;color:#0BAF7A';
+    span.textContent = val || '—';
+    inp.replaceWith(span);
+  });
+
+  // Build the print area content
+  const printArea = document.getElementById('print-area');
+  printArea.innerHTML = `
+    <div class="print-header" style="display:flex">
+      <div class="print-header-logo">DV</div>
+      <div class="print-header-info">
+        <div class="print-header-title">DataVista V2 — Pertemuan ${nPtm}: ${ptmNames[nPtm]}</div>
+        <div class="print-header-sub">Laporan Kerja Kelompok · Dicetak: ${tgl}</div>
+      </div>
+    </div>
+    <div style="background:#f5faf7;border:1px solid #A8E8CF;border-radius:8px;padding:10px 14px;margin-bottom:16px;font-size:10pt">
+      <table style="width:100%;border:none;font-size:10pt">
+        <tr><td style="border:none;padding:2px 12px 2px 0;color:#7A9186;font-weight:600">Kelompok</td><td style="border:none;padding:2px;color:#0F1C17;font-weight:700">${kelompok}</td>
+            <td style="border:none;padding:2px 12px 2px 0;color:#7A9186;font-weight:600">Sekolah</td><td style="border:none;padding:2px;color:#0F1C17">${sekolah}</td></tr>
+        <tr><td style="border:none;padding:2px 12px 2px 0;color:#7A9186;font-weight:600">Kelas</td><td style="border:none;padding:2px;color:#0F1C17">${kelas}</td>
+            <td style="border:none;padding:2px 12px 2px 0;color:#7A9186;font-weight:600">Tahun Ajaran</td><td style="border:none;padding:2px;color:#0F1C17">${ta}</td></tr>
+        <tr><td style="border:none;padding:2px 12px 2px 0;color:#7A9186;font-weight:600">Anggota</td><td colspan="3" style="border:none;padding:2px;color:#0F1C17">${anggota}</td></tr>
+      </table>
+    </div>
+    ${clone.innerHTML}
+    <div style="margin-top:32px;border-top:1px solid #D6E8E0;padding-top:12px;display:flex;justify-content:space-between;font-size:9pt;color:#7A9186">
+      <span>DataVista V2 · Wahyu Setiawan · UPI · 2025</span>
+      <span>Pertemuan ${nPtm} dari 5</span>
+    </div>`;
+
+  window.print();
+}
 
 function taField(key, placeholder, multiline, minH) {
   const val = loadTA(key).replace(/"/g,'&quot;');
@@ -1557,6 +1737,9 @@ function kRenderCalc(){
   setTimeout(checkLayout, 50);
 })();
 </script>
+
+<!-- PRINT AREA: hidden on screen, shown only when printing -->
+<div id="print-area"></div>
 
 <div id="pwa-install-bar" style="display:none;position:fixed;bottom:0;left:0;right:0;background:#0BAF7A;color:#fff;padding:12px 16px;z-index:9999;display:none;align-items:center;justify-content:space-between;gap:12px;font-family:'Plus Jakarta Sans',sans-serif;font-size:13px;box-shadow:0 -4px 20px rgba(0,0,0,0.2)">
   <div style="display:flex;align-items:center;gap:10px">
