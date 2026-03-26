@@ -24,14 +24,14 @@
 :root {
   --primary:#0BAF7A; --primary-dark:#088A60; --primary-light:#D6F5EB; --primary-xlight:#EDFBF5;
   --accent:#F4A932; --accent-light:#FEF3DC; --danger:#E8453C; --danger-light:#FDECEA;
-  --text-1:#0F1C17; --text-2:#3D5047; --text-3:#7A9186;
+  --text-1:#0F1C17; --text-2:#3D5047; --text-3:#4E6A60;
   --border:#D6E8E0; --surface:#FFFFFF; --surface-2:#F5FAF7; --surface-3:#EDF6F1;
   --font-display:'Sora',sans-serif; --font-body:'Plus Jakarta Sans',sans-serif;
   --radius:12px; --radius-sm:8px; --shadow:0 1px 4px rgba(11,175,122,0.08);
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{font-family:var(--font-body);background:var(--surface-2);color:var(--text-1);font-size:14px;line-height:1.6;min-height:100vh;padding-bottom:90px}
+body{font-family:var(--font-body);background:var(--surface-2);color:var(--text-1);font-size:16px;line-height:1.65;min-height:100vh;padding-bottom:90px}
 
 /* ── RESPONSIVE LAYOUT ── */
 .layout{display:flex;gap:0;min-height:100vh}
@@ -40,7 +40,7 @@ body{font-family:var(--font-body);background:var(--surface-2);color:var(--text-1
 
 /* Desktop ≥ 900px */
 @media(min-width:900px){
-  body{padding-bottom:0;font-size:15px}
+  body{padding-bottom:0;font-size:16px}
   .app{display:flex;flex-direction:column}
   .app-header{border-radius:0;margin-bottom:0;padding:1.75rem 2.5rem 1.75rem;text-align:center}
   .app-header-inner{display:flex;align-items:center;justify-content:center;gap:2rem;max-width:1100px;margin:0 auto;width:100%}
@@ -52,21 +52,21 @@ body{font-family:var(--font-body);background:var(--surface-2);color:var(--text-1
   .desktop-nav{display:flex !important}
   .main-wrap{display:flex;gap:0;max-width:1100px;margin:0 auto;width:100%;padding:0}
   .desktop-sidebar{display:flex !important;flex-direction:column;width:220px;flex-shrink:0;background:var(--surface);border-right:0.5px solid var(--border);min-height:calc(100vh - 120px);padding:1.25rem 0;position:sticky;top:0;height:calc(100vh - 120px);overflow-y:auto}
-  .page{padding:1.5rem 2rem 2rem;font-size:15px}
+  .page{padding:1.5rem 2rem 2rem;font-size:16px}
   .card{padding:1.5rem}
   .ptm-card{padding:1rem 1.25rem}
   .form-row{grid-template-columns:1fr 1fr 1fr}
   .app-header .header-title{font-size:32px}
-  .app-header .header-sub{font-size:13px}
+  .app-header .header-sub{font-size:14px}
   h2{font-size:18px}
   h3{font-size:15px}
   .tab-row{gap:8px}
-  .tab-btn{padding:8px 18px;font-size:13px}
+  .tab-btn{padding:8px 18px;font-size:14px}
 }
 
 /* Tablet 600–899px */
 @media(min-width:600px) and (max-width:899px){
-  body{font-size:14.5px}
+  body{font-size:15.5px}
   .app{max-width:100%}
   .app-header{padding:1.25rem 1.5rem}
   .page{padding:0 1.25rem}
@@ -92,7 +92,7 @@ body{font-family:var(--font-body);background:var(--surface-2);color:var(--text-1
 
 /* BOTTOM NAV */
 .bottom-nav{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:1100px;background:var(--surface);border-top:0.5px solid var(--border);display:flex;padding:6px 8px 10px;gap:2px;box-shadow:0 -4px 20px rgba(11,175,122,0.08);z-index:100}
-.bn-item{flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;padding:6px 2px;border-radius:10px;cursor:pointer;border:none;background:none;font-family:var(--font-body);font-size:9.5px;font-weight:500;color:var(--text-3);transition:all .2s}
+.bn-item{flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;padding:6px 2px;border-radius:10px;cursor:pointer;border:none;background:none;font-family:var(--font-body);font-size:11px;font-weight:500;color:var(--text-3);transition:all .2s}
 .bn-item svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
 .bn-item.active{background:var(--primary-light);color:var(--primary-dark)}
 .bn-item.active svg{stroke:var(--primary)}
@@ -110,9 +110,9 @@ body{font-family:var(--font-body);background:var(--surface-2);color:var(--text-1
 
 /* TYPOGRAPHY */
 .sec-lbl{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--text-3);margin-bottom:.6rem}
-h2{font-family:var(--font-display);font-size:16px;font-weight:700;color:var(--text-1);margin-bottom:.6rem}
-h3{font-size:14px;font-weight:600;color:var(--primary-dark);margin-bottom:.4rem}
-p{font-size:13px;color:var(--text-2);line-height:1.7;margin-bottom:.5rem}
+h2{font-family:var(--font-display);font-size:18px;font-weight:700;color:var(--text-1);margin-bottom:.6rem}
+h3{font-size:15px;font-weight:600;color:var(--primary-dark);margin-bottom:.4rem}
+p{font-size:15px;color:var(--text-2);line-height:1.75;margin-bottom:.5rem}
 p:last-child{margin-bottom:0}
 
 /* BADGE */
@@ -122,20 +122,20 @@ p:last-child{margin-bottom:0}
 .badge-optional{background:#FEF3DC;color:#9A6200;border:1px dashed #F4A932}
 
 /* FORM */
-label{font-size:12px;color:var(--text-2);font-weight:500;display:block;margin-bottom:3px}
-input[type=text],input[type=number],select,textarea{width:100%;border:1px solid var(--border);border-radius:var(--radius-sm);padding:8px 10px;font-size:13px;font-family:var(--font-body);background:var(--surface);color:var(--text-1);outline:none;transition:border-color .15s;resize:vertical}
+label{font-size:13px;color:var(--text-2);font-weight:500;display:block;margin-bottom:3px}
+input[type=text],input[type=number],select,textarea{width:100%;border:1px solid var(--border);border-radius:var(--radius-sm);padding:9px 11px;font-size:15px;font-family:var(--font-body);background:var(--surface);color:var(--text-1);outline:none;transition:border-color .15s;resize:vertical}
 input:focus,select:focus,textarea:focus{border-color:var(--primary);box-shadow:0 0 0 3px rgba(11,175,122,0.1)}
 textarea{min-height:60px}
 .form-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:.75rem}
 .form-field{margin-bottom:.75rem}
 
 /* BUTTON */
-.btn{display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:var(--radius-sm);border:1px solid var(--border);background:var(--surface);color:var(--text-1);font-size:13px;font-family:var(--font-body);font-weight:500;cursor:pointer;transition:all .15s}
+.btn{display:inline-flex;align-items:center;gap:6px;padding:9px 17px;border-radius:var(--radius-sm);border:1px solid var(--border);background:var(--surface);color:var(--text-1);font-size:14px;font-family:var(--font-body);font-weight:500;cursor:pointer;transition:all .15s}
 .btn:hover{background:var(--surface-3);border-color:var(--primary);color:var(--primary-dark)}
 .btn-primary{background:var(--primary);color:#fff;border-color:var(--primary)}
 .btn-primary:hover{background:var(--primary-dark)}
 .btn-danger{background:var(--danger);color:#fff;border-color:var(--danger)}
-.btn-sm{padding:5px 11px;font-size:12px}
+.btn-sm{padding:6px 12px;font-size:13px}
 .btn-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:.75rem;align-items:center}
 
 /* ID CARD */
@@ -144,7 +144,7 @@ textarea{min-height:60px}
 .del-btn{cursor:pointer;color:var(--text-3);font-size:18px;border:none;background:none;line-height:1}
 .del-btn:hover{color:var(--danger)}
 .id-card{background:var(--surface-3);border:0.5px solid var(--border);border-radius:var(--radius);padding:1rem;margin-bottom:1rem}
-.id-meta{font-size:12px;color:var(--text-2);margin-bottom:2px}
+.id-meta{font-size:13px;color:var(--text-2);margin-bottom:2px}
 .id-meta strong{color:var(--text-1)}
 .members-row{display:flex;flex-wrap:wrap;gap:5px;margin-top:6px}
 .m-pill{background:var(--primary-light);color:var(--primary-dark);border-radius:99px;padding:3px 10px;font-size:11px;font-weight:500}
@@ -159,60 +159,60 @@ textarea{min-height:60px}
 /* ACTIVITY */
 .akt-header{display:flex;align-items:center;gap:8px;margin-bottom:.85rem;flex-wrap:wrap}
 .akt-no{background:var(--primary);color:#fff;border-radius:8px;padding:3px 10px;font-size:11px;font-weight:700;font-family:var(--font-display);white-space:nowrap}
-.akt-title{font-size:14px;font-weight:600;color:var(--text-1)}
+.akt-title{font-size:15px;font-weight:600;color:var(--text-1)}
 .pertanyaan{background:var(--surface-3);border-left:3px solid var(--primary);border-radius:0 var(--radius-sm) var(--radius-sm) 0;padding:.85rem 1rem;margin-bottom:.65rem}
-.pertanyaan .pq{font-size:13px;font-weight:600;color:var(--text-1);margin-bottom:6px}
+.pertanyaan .pq{font-size:15px;font-weight:600;color:var(--text-1);margin-bottom:6px}
 
 /* ALERT */
-.alert{padding:.65rem .9rem;border-radius:var(--radius-sm);font-size:12px;line-height:1.6;margin-bottom:.75rem}
+.alert{padding:.7rem 1rem;border-radius:var(--radius-sm);font-size:13px;line-height:1.65;margin-bottom:.75rem}
 .alert-green{background:var(--primary-xlight);border-left:3px solid var(--primary);color:var(--primary-dark)}
 .alert-amber{background:var(--accent-light);border-left:3px solid var(--accent);color:#7A4F00}
 .alert-red{background:var(--danger-light);border-left:3px solid var(--danger);color:var(--danger)}
 
 /* STEP BOX */
 .step-box{background:var(--surface-3);border-radius:var(--radius-sm);padding:.9rem 1rem;margin-bottom:.65rem}
-.step-head{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:var(--primary-dark);margin-bottom:.45rem}
+.step-head{display:flex;align-items:center;gap:8px;font-size:14px;font-weight:600;color:var(--primary-dark);margin-bottom:.45rem}
 .step-no-circle{width:22px;height:22px;border-radius:50%;background:var(--primary);color:#fff;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 
 /* TUJUAN */
 .tp-item{display:flex;gap:10px;align-items:flex-start;padding:.7rem 0;border-bottom:0.5px solid var(--border)}
 .tp-item:last-child{border-bottom:none}
 .tp-no{width:24px;height:24px;border-radius:50%;background:var(--primary);color:#fff;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
-.tp-text{font-size:13px;line-height:1.65;color:var(--text-1)}
+.tp-text{font-size:15px;line-height:1.7;color:var(--text-1)}
 .tp-kk{display:inline-block;font-size:10px;padding:1px 7px;border-radius:99px;margin-left:4px;background:var(--primary-light);color:var(--primary-dark);font-weight:600}
 
 /* TAB ROW */
 .tab-row{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:1rem}
-.tab-btn{padding:7px 14px;border-radius:99px;border:1px solid var(--border);font-size:12px;font-weight:500;cursor:pointer;background:var(--surface);color:var(--text-2);transition:all .15s;font-family:var(--font-body)}
+.tab-btn{padding:8px 15px;border-radius:99px;border:1px solid var(--border);font-size:13px;font-weight:500;cursor:pointer;background:var(--surface);color:var(--text-2);transition:all .15s;font-family:var(--font-body)}
 .tab-btn.active{background:var(--primary);color:#fff;border-color:var(--primary)}
 
 /* TABLE */
-table{width:100%;border-collapse:collapse;font-size:12px}
-th{background:var(--primary);color:#fff;padding:8px 6px;text-align:center;font-weight:600;font-size:11px;border:0.5px solid var(--primary-dark)}
+table{width:100%;border-collapse:collapse;font-size:13px}
+th{background:var(--primary);color:#fff;padding:9px 7px;text-align:center;font-weight:600;font-size:12px;border:0.5px solid var(--primary-dark)}
 td{padding:6px 6px;text-align:center;border:0.5px solid var(--border)}
-td input,td select{border:none;background:transparent;width:100%;font-size:12px;font-family:var(--font-body);text-align:center;outline:none;color:var(--text-1);padding:2px 4px}
+td input,td select{border:none;background:transparent;width:100%;font-size:13px;font-family:var(--font-body);text-align:center;outline:none;color:var(--text-1);padding:2px 4px}
 td input:focus,td select:focus{background:var(--primary-xlight);border-radius:4px}
 tr:nth-child(even) td{background:var(--surface-2)}
 tr:nth-child(odd) td{background:var(--surface)}
 .table-scroll{overflow-x:auto;border-radius:var(--radius-sm);border:0.5px solid var(--border)}
 
 /* FORMULA */
-.formula-box{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-sm);padding:10px 14px;font-size:13px;text-align:center;margin-top:8px;color:var(--text-1)}
+.formula-box{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-sm);padding:12px 16px;font-size:15px;text-align:center;margin-top:8px;color:var(--text-1)}
 
 /* KALKULATOR ISIAN */
-.isian-inline{border:1px solid var(--border);border-radius:var(--radius-sm);padding:7px 10px;width:90px;font-size:13px;font-family:var(--font-body);background:var(--surface);color:var(--text-1);text-align:center;outline:none;transition:all .15s}
+.isian-inline{border:1px solid var(--border);border-radius:var(--radius-sm);padding:9px 12px;width:100px;font-size:15px;font-family:var(--font-body);background:var(--surface);color:var(--text-1);text-align:center;outline:none;transition:all .15s}
 .isian-inline:focus{border-color:var(--primary);box-shadow:0 0 0 3px rgba(11,175,122,.1)}
 .isian-inline.correct{border-color:var(--primary);background:var(--primary-xlight);color:var(--primary-dark)}
 .isian-inline.wrong{border-color:var(--danger);background:var(--danger-light);color:var(--danger)}
-.fb{font-size:11px;margin-top:3px;min-height:15px}
+.fb{font-size:12px;margin-top:4px;min-height:16px}
 .fb.ok{color:var(--primary)}
 .fb.err{color:var(--danger)}
 .hasil-box{background:var(--primary-xlight);border:1px solid #A8E8CF;border-radius:var(--radius-sm);padding:1rem;margin-top:.75rem;display:none}
 .hasil-val{font-size:20px;font-weight:700;color:var(--primary-dark);font-family:var(--font-display)}
 .q-block{margin-bottom:.85rem}
-.q-label{font-size:13px;font-weight:600;color:var(--text-1);margin-bottom:5px}
+.q-label{font-size:14px;font-weight:600;color:var(--text-1);margin-bottom:5px}
 .q-row{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
-.q-unit{font-size:12px;color:var(--text-3)}
+.q-unit{font-size:13px;color:var(--text-3)}
 .turus{font-family:monospace;color:var(--primary);letter-spacing:2px}
 
 /* PERTEMUAN */
@@ -220,32 +220,40 @@ tr:nth-child(odd) td{background:var(--surface)}
 .ptm-card:hover{border-color:var(--primary);transform:translateY(-2px);box-shadow:0 6px 16px rgba(11,175,122,.14)}
 .ptm-num{width:38px;height:38px;border-radius:10px;background:var(--primary-light);color:var(--primary-dark);font-family:var(--font-display);font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .ptm-info{flex:1}
-.ptm-title{font-size:13px;font-weight:600;color:var(--text-1);margin-bottom:2px}
-.ptm-desc{font-size:11px;color:var(--text-3);line-height:1.5}
+.ptm-title{font-size:14px;font-weight:600;color:var(--text-1);margin-bottom:2px}
+.ptm-desc{font-size:12px;color:var(--text-3);line-height:1.55}
 .ptm-meta{display:flex;gap:5px;flex-wrap:wrap;margin-top:5px}
 .ptm-chip{font-size:10px;padding:2px 7px;border-radius:99px;background:var(--surface-3);color:var(--text-3);border:0.5px solid var(--border)}
-.ptm-back{display:flex;align-items:center;gap:6px;color:var(--primary-dark);font-size:13px;font-weight:500;cursor:pointer;margin-bottom:1rem;background:none;border:none;font-family:var(--font-body);padding:0}
+.ptm-back{display:flex;align-items:center;gap:6px;color:var(--primary-dark);font-size:14px;font-weight:500;cursor:pointer;margin-bottom:1rem;background:none;border:none;font-family:var(--font-body);padding:0}
 
 /* CHECKLIST */
-.chk-item{display:flex;align-items:center;gap:8px;padding:.5rem 0;border-bottom:0.5px solid var(--border);font-size:13px;color:var(--text-2)}
+.chk-item{display:flex;align-items:center;gap:8px;padding:.55rem 0;border-bottom:0.5px solid var(--border);font-size:14px;color:var(--text-2)}
 .chk-item:last-child{border-bottom:none}
 .chk-item input[type=checkbox]{accent-color:var(--primary);width:15px;height:15px;flex-shrink:0}
 
 /* RADIO */
 .radio-group{display:flex;gap:10px;flex-wrap:wrap;margin:6px 0}
-.radio-opt{display:flex;align-items:center;gap:5px;font-size:12px;cursor:pointer;color:var(--text-2)}
+.radio-opt{display:flex;align-items:center;gap:5px;font-size:13px;cursor:pointer;color:var(--text-2)}
 .radio-opt input{accent-color:var(--primary)}
 
 /* PETUNJUK STEP */
 .petunjuk-step{display:flex;gap:12px;align-items:flex-start;padding:.65rem 0;border-bottom:0.5px solid var(--border)}
 .petunjuk-step:last-child{border-bottom:none}
 .petunjuk-ico{width:30px;height:30px;border-radius:50%;background:var(--primary-light);color:var(--primary-dark);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.petunjuk-title{font-size:13px;font-weight:600;color:var(--text-1);margin-bottom:2px}
-.petunjuk-desc{font-size:12px;color:var(--text-3);line-height:1.5}
+.petunjuk-title{font-size:14px;font-weight:600;color:var(--text-1);margin-bottom:2px}
+.petunjuk-desc{font-size:13px;color:var(--text-3);line-height:1.55}
 
 /* SAVE STATUS */
 .save-toast{position:fixed;top:16px;left:50%;transform:translateX(-50%);background:var(--primary-dark);color:#fff;padding:8px 20px;border-radius:99px;font-size:12px;font-weight:600;z-index:999;opacity:0;transition:opacity .3s;pointer-events:none}
 .save-toast.show{opacity:1}
+/* GURU NOTE */
+.guru-note-box{background:#FFFBF0;border:1.5px dashed #F4A932;border-radius:var(--radius);padding:.9rem 1rem;margin-top:.75rem}
+.guru-note-header{display:flex;align-items:center;gap:8px;margin-bottom:.5rem}
+.guru-note-badge{background:#F4A932;color:#fff;font-size:10px;font-weight:700;padding:2px 8px;border-radius:99px;letter-spacing:.05em}
+.guru-note-locked{font-size:12px;color:var(--text-3);font-style:italic;padding:.5rem .75rem;background:rgba(244,169,50,0.06);border-radius:var(--radius-sm);min-height:44px;line-height:1.65}
+.guru-note-input{width:100%;border:1px dashed #F4A932;border-radius:var(--radius-sm);padding:8px 10px;font-size:13px;font-family:var(--font-body);background:#fff;color:var(--text-1);resize:vertical;min-height:60px}
+.guru-note-input:focus{outline:none;border-color:#D4860F;box-shadow:0 0 0 2px rgba(244,169,50,0.15)}
+#guru-pwd-input:focus{border-color:#D4860F;box-shadow:0 0 0 2px rgba(244,169,50,0.18)}
 
 /* ── PRINT / PDF ── */
 @media print {
@@ -287,7 +295,7 @@ tr:nth-child(odd) td{background:var(--surface)}
 
 /* ── DESKTOP SIDEBAR ── */
 .desktop-sidebar{display:none}
-.sidebar-btn{display:flex;align-items:center;gap:10px;width:100%;padding:.75rem 1.25rem;border:none;background:none;font-family:var(--font-body);font-size:13px;font-weight:500;color:var(--text-2);cursor:pointer;transition:all .15s;text-align:left;border-left:3px solid transparent}
+.sidebar-btn{display:flex;align-items:center;gap:10px;width:100%;padding:.75rem 1.25rem;border:none;background:none;font-family:var(--font-body);font-size:14px;font-weight:500;color:var(--text-2);cursor:pointer;transition:all .15s;text-align:left;border-left:3px solid transparent}
 .sidebar-btn:hover{background:var(--surface-3);color:var(--primary-dark)}
 .sidebar-btn.active{background:var(--primary-xlight);color:var(--primary-dark);border-left-color:var(--primary)}
 .sidebar-btn svg{stroke:currentColor;flex-shrink:0}
@@ -300,7 +308,7 @@ tr:nth-child(odd) td{background:var(--surface)}
   .ptm-grid{display:grid;grid-template-columns:1fr 1fr;gap:.75rem}
   .ptm-card{margin-bottom:0}
   .tab-row{gap:8px}
-  table{font-size:13px}
+  table{font-size:14px}
   th,td{padding:9px 10px}
 }
 
@@ -308,6 +316,46 @@ tr:nth-child(odd) td{background:var(--surface)}
 
 .chart-wrap{background:var(--surface);border:0.5px solid var(--border);border-radius:var(--radius);padding:1rem;margin-bottom:1rem;position:relative}
 .chart-wrap canvas{max-height:280px}
+
+/* ── LATIHAN SOAL ── */
+.solo-badge{display:inline-block;font-size:11px;font-weight:700;padding:3px 10px;border-radius:99px;margin-bottom:.5rem}
+.solo-multistruktural{background:#FEF3DC;color:#8A5A00;border:1px solid #F4C96A}
+.solo-relasional{background:#D6F5EB;color:#055C3F;border:1px solid #A8E8CF}
+.soal-card{background:var(--surface);border:1.5px solid var(--border);border-radius:var(--radius);padding:1.25rem;margin-bottom:1rem;box-shadow:var(--shadow)}
+.soal-card.answered{border-color:var(--primary);background:var(--primary-xlight)}
+.pilihan-opt{display:flex;align-items:flex-start;gap:10px;padding:.6rem .85rem;border-radius:var(--radius-sm);border:1.5px solid var(--border);margin-bottom:.5rem;cursor:pointer;transition:all .15s;background:var(--surface)}
+.pilihan-opt:hover{border-color:var(--primary);background:var(--surface-3)}
+.pilihan-opt.selected{border-color:var(--primary);background:var(--primary-xlight)}
+.pilihan-opt.correct{border-color:#0BAF7A;background:#D6F5EB}
+.pilihan-opt.wrong{border-color:var(--danger);background:var(--danger-light)}
+.pilihan-key{width:26px;height:26px;border-radius:50%;border:1.5px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0;margin-top:1px}
+.pilihan-opt.selected .pilihan-key{background:var(--primary);color:#fff;border-color:var(--primary)}
+.pilihan-opt.correct .pilihan-key{background:#0BAF7A;color:#fff;border-color:#0BAF7A}
+.pilihan-opt.wrong .pilihan-key{background:var(--danger);color:#fff;border-color:var(--danger)}
+.pembahasan-box{background:var(--surface-3);border-left:3px solid var(--primary);border-radius:0 var(--radius-sm) var(--radius-sm) 0;padding:.85rem 1rem;margin-top:.75rem;display:none}
+.pembahasan-box.show{display:block}
+.skor-box{background:linear-gradient(135deg,#0BAF7A,#067A56);color:#fff;border-radius:var(--radius);padding:1.5rem;text-align:center;margin-bottom:1rem}
+.skor-angka{font-size:48px;font-weight:700;font-family:var(--font-display);line-height:1}
+
+.solo-unistruktural{background:#EDE9FE;color:#5B21B6;border:1px solid #C4B5FD}
+.solo-extended{background:#FEE2E2;color:#991B1B;border:1px solid #FCA5A5}
+.essay-card{background:var(--surface);border:1.5px solid var(--border);border-radius:var(--radius);padding:1.25rem;margin-bottom:1rem;box-shadow:var(--shadow)}
+.essay-card .essay-area{width:100%;border:1.5px solid var(--border);border-radius:var(--radius-sm);padding:10px 12px;font-size:14px;font-family:var(--font-body);background:var(--surface);color:var(--text-1);resize:vertical;min-height:110px;line-height:1.7;transition:border-color .15s}
+.essay-card .essay-area:focus{border-color:var(--primary);box-shadow:0 0 0 3px rgba(11,175,122,.1);outline:none}
+.rubrik-box{background:var(--surface-3);border-radius:var(--radius-sm);padding:.85rem 1rem;margin-top:.75rem;display:none}
+.rubrik-box.show{display:block}
+.rubrik-row{display:flex;justify-content:space-between;align-items:center;padding:.35rem 0;border-bottom:.5px solid var(--border);font-size:13px}
+.rubrik-row:last-child{border-bottom:none}
+input[type=radio]:checked + .rubrik-score-btn,
+input[type=radio]:checked ~ .rubrik-score-btn {background:var(--primary);color:#fff;border-color:var(--primary)}
+.soal-nomor-strip{display:flex;align-items:center;gap:8px;margin-bottom:.65rem}
+.nomor-circle{width:28px;height:28px;border-radius:50%;background:var(--primary);color:#fff;font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.progress-soal{display:flex;gap:4px;margin-bottom:1rem;flex-wrap:wrap}
+.prog-dot{width:22px;height:22px;border-radius:50%;border:2px solid var(--border);background:var(--surface);display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:var(--text-3);transition:all .2s;flex-shrink:0}
+.prog-dot.done{background:var(--primary);border-color:var(--primary);color:#fff}
+.prog-dot.wrong{background:var(--danger);border-color:var(--danger);color:#fff}
+.prog-dot.essay-dot{background:var(--accent-light);border-color:var(--accent);color:#8A5A00}
+.prog-dot.essay-done{background:var(--accent);border-color:var(--accent);color:#fff}
 </style>
 </head>
 <body>
@@ -315,7 +363,29 @@ tr:nth-child(odd) td{background:var(--surface)}
 <div class="app">
 
 <!-- HEADER -->
-<div class="app-header">
+<!-- MODAL PASSWORD GURU -->
+<div id="guru-modal" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.55);align-items:center;justify-content:center;padding:1rem">
+  <div style="background:var(--surface-1,#fff);border-radius:18px;padding:1.5rem 1.25rem;max-width:320px;width:100%;box-shadow:0 8px 40px rgba(0,0,0,0.28)">
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:1rem">
+      <div style="width:36px;height:36px;border-radius:10px;background:#FFFBF0;border:1.5px solid #F4A932;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0">🔐</div>
+      <div>
+        <div style="font-size:14px;font-weight:700;color:var(--text-1,#1a1a1a)">Mode Guru</div>
+        <div style="font-size:11px;color:var(--text-3,#888)">Masukkan kata sandi untuk mengakses catatan guru</div>
+      </div>
+    </div>
+    <input id="guru-pwd-input" type="password" placeholder="Kata sandi guru..." autocomplete="current-password"
+      style="width:100%;border:1.5px solid #F4A932;border-radius:10px;padding:10px 12px;font-size:14px;font-family:inherit;background:var(--surface-2,#fafafa);color:var(--text-1,#1a1a1a);box-sizing:border-box;outline:none;margin-bottom:.4rem"
+      onkeydown="if(event.key==='Enter')submitGuruPwd()">
+    <div id="guru-pwd-error" style="font-size:11px;color:#C0392B;min-height:16px;margin-bottom:.75rem"></div>
+    <div style="display:flex;gap:.5rem">
+      <button onclick="submitGuruPwd()" style="flex:1;padding:10px;border-radius:10px;border:none;background:#F4A932;color:#fff;font-size:13px;font-weight:700;cursor:pointer;font-family:inherit">Masuk</button>
+      <button onclick="hideGuruModal()" style="padding:10px 16px;border-radius:10px;border:1.5px solid var(--border,#ddd);background:transparent;color:var(--text-2,#555);font-size:13px;cursor:pointer;font-family:inherit">Batal</button>
+    </div>
+    <div style="margin-top:.75rem;font-size:10px;color:var(--text-3,#aaa);text-align:center">Fitur ini hanya untuk guru. Ketuk logo 5× untuk membuka.</div>
+  </div>
+</div>
+
+<div class="app-header" onclick="_onHeaderTap()">
   <div class="app-header-inner" style="text-align:center">
   <div class="header-left" style="text-align:center;width:100%">
   <div class="header-logos">
@@ -364,6 +434,10 @@ tr:nth-child(odd) td{background:var(--surface)}
     Kalkulator
   </button>
   <div style="height:1px;background:var(--border);margin:.5rem 1rem"></div>
+  <button class="sidebar-btn" id="sb-latihan" onclick="showPage('latihan',this)">
+    <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+    Latihan
+  </button>
   <button class="sidebar-btn" id="sb-tentang" onclick="showPage('tentang',this)">
     <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
     Tentang
@@ -538,10 +612,332 @@ tr:nth-child(odd) td{background:var(--surface)}
   <button class="bn-item" onclick="showPage('kalkulator',this)">
     <svg viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="10" y2="10"/><line x1="14" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="10" y2="14"/><line x1="14" y1="14" x2="16" y2="14"/><line x1="8" y1="18" x2="10" y2="18"/><line x1="14" y1="18" x2="16" y2="18"/></svg>Kalkulator
   </button>
+  <button class="bn-item" id="bn-latihan" onclick="showPage('latihan',this)">
+    <svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>Latihan
+  </button>
   <button class="bn-item" onclick="showPage('tentang',this)">
     <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>Tentang
   </button>
 </nav>
+
+<!-- PAGE: LATIHAN SOAL -->
+<div id="page-latihan" class="page">
+  <div style="padding:.75rem 0 .5rem">
+    <h2 style="margin-bottom:.25rem">Latihan Soal Literasi Statistik</h2>
+    <p style="margin-bottom:.65rem">12 soal (10 pilihan ganda + 2 essay) berbasis Taksonomi SOLO — dari level paling dasar hingga paling tinggi. Skor muncul setelah semua pilihan ganda dijawab.</p>
+    <div class="card-amber" style="padding:.7rem 1rem;margin-bottom:.85rem">
+      <strong style="font-size:13px">Tingkatan SOLO yang diuji:</strong>
+      <div style="margin-top:.4rem;display:flex;flex-wrap:wrap;gap:6px">
+        <span class="solo-badge solo-unistruktural" style="margin-bottom:0">Unistruktural (1 konsep)</span>
+        <span class="solo-badge solo-multistruktural" style="margin-bottom:0">Multistruktural (beberapa konsep)</span>
+        <span class="solo-badge solo-relasional" style="margin-bottom:0">Relasional (hubungan antar konsep)</span>
+        <span class="solo-badge solo-extended" style="margin-bottom:0">Extended Abstract (generalisasi)</span>
+      </div>
+    </div>
+    <div class="progress-soal" id="progress-dots"></div>
+  </div>
+
+  <!-- ═══ SOAL PILIHAN GANDA ═══ -->
+
+  <!-- Soal 1 — Unistruktural -->
+  <div class="soal-card" id="soal-card-1">
+    <div class="soal-nomor-strip"><span class="nomor-circle">1</span><span class="sec-lbl" style="margin-bottom:0">Pilihan Ganda &nbsp;·&nbsp; 10 soal</span></div>
+    <span class="solo-badge solo-unistruktural">SOLO: Unistruktural</span>
+    <p style="font-weight:600;color:var(--text-1);font-size:15px;margin:.6rem 0 .75rem">
+      Nilai ulangan 7 siswa adalah: <strong style="color:var(--primary-dark)">6, 7, 8, 7, 9, 7, 10</strong>.<br>
+      Berapakah <em>modus</em> dari data tersebut?
+    </p>
+    <div class="pilihan-opt" id="s1-a" onclick="pilihJawaban(1,'A')"><span class="pilihan-key">A</span><span>7</span></div>
+    <div class="pilihan-opt" id="s1-b" onclick="pilihJawaban(1,'B')"><span class="pilihan-key">B</span><span>8</span></div>
+    <div class="pilihan-opt" id="s1-c" onclick="pilihJawaban(1,'C')"><span class="pilihan-key">C</span><span>9</span></div>
+    <div class="pilihan-opt" id="s1-d" onclick="pilihJawaban(1,'D')"><span class="pilihan-key">D</span><span>10</span></div>
+    <div class="pembahasan-box" id="pembahasan-1">
+      <div class="step-head"><span class="step-no-circle">✓</span>Pembahasan</div>
+      <p>Modus adalah nilai yang paling sering muncul. Nilai 7 muncul <strong>3 kali</strong>, nilai lainnya hanya 1 kali.</p>
+      <p style="color:var(--primary-dark);font-weight:600">Jawaban benar: <strong>A — 7</strong></p>
+      <p style="font-size:13px;color:var(--text-3)"><em>Unistruktural:</em> hanya membutuhkan satu konsep (modus = nilai terbanyak) tanpa perhitungan lanjutan.</p>
+    </div>
+  </div>
+
+  <!-- Soal 2 — Unistruktural -->
+  <div class="soal-card" id="soal-card-2">
+    <div class="soal-nomor-strip"><span class="nomor-circle">2</span></div>
+    <span class="solo-badge solo-unistruktural">SOLO: Unistruktural</span>
+    <p style="font-weight:600;color:var(--text-1);font-size:15px;margin:.6rem 0 .75rem">
+      Data waktu belajar (jam/hari): <strong style="color:var(--primary-dark)">1, 2, 3, 4, 5, 6, 7</strong>.<br>
+      Berapakah <em>median</em> dari data tersebut?
+    </p>
+    <div class="pilihan-opt" id="s2-a" onclick="pilihJawaban(2,'A')"><span class="pilihan-key">A</span><span>3 jam</span></div>
+    <div class="pilihan-opt" id="s2-b" onclick="pilihJawaban(2,'B')"><span class="pilihan-key">B</span><span>4 jam</span></div>
+    <div class="pilihan-opt" id="s2-c" onclick="pilihJawaban(2,'C')"><span class="pilihan-key">C</span><span>5 jam</span></div>
+    <div class="pilihan-opt" id="s2-d" onclick="pilihJawaban(2,'D')"><span class="pilihan-key">D</span><span>3,5 jam</span></div>
+    <div class="pembahasan-box" id="pembahasan-2">
+      <div class="step-head"><span class="step-no-circle">✓</span>Pembahasan</div>
+      <p>Data sudah urut. n = 7 (ganjil) → Median = data ke-⌊7/2⌋+1 = data ke-<strong>4</strong> = <strong>4 jam</strong>.</p>
+      <p style="color:var(--primary-dark);font-weight:600">Jawaban benar: <strong>B — 4 jam</strong></p>
+      <p style="font-size:13px;color:var(--text-3)"><em>Unistruktural:</em> cukup menentukan posisi tengah data yang sudah terurut.</p>
+    </div>
+  </div>
+
+  <!-- Soal 3 — Multistruktural -->
+  <div class="soal-card" id="soal-card-3">
+    <div class="soal-nomor-strip"><span class="nomor-circle">3</span></div>
+    <span class="solo-badge solo-multistruktural">SOLO: Multistruktural</span>
+    <p style="font-weight:600;color:var(--text-1);font-size:15px;margin:.6rem 0 .75rem">
+      Durasi penggunaan HP (jam/hari) dari 8 siswa:<br>
+      <strong style="color:var(--primary-dark)">3, 5, 2, 4, 5, 6, 4, 5</strong><br>
+      Hitunglah <em>mean</em> dan <em>jangkauan</em> data tersebut!
+    </p>
+    <div class="pilihan-opt" id="s3-a" onclick="pilihJawaban(3,'A')"><span class="pilihan-key">A</span><span>Mean = 4,25 jam; Jangkauan = 4 jam</span></div>
+    <div class="pilihan-opt" id="s3-b" onclick="pilihJawaban(3,'B')"><span class="pilihan-key">B</span><span>Mean = 4,5 jam; Jangkauan = 3 jam</span></div>
+    <div class="pilihan-opt" id="s3-c" onclick="pilihJawaban(3,'C')"><span class="pilihan-key">C</span><span>Mean = 4 jam; Jangkauan = 4 jam</span></div>
+    <div class="pilihan-opt" id="s3-d" onclick="pilihJawaban(3,'D')"><span class="pilihan-key">D</span><span>Mean = 4,25 jam; Jangkauan = 3 jam</span></div>
+    <div class="pembahasan-box" id="pembahasan-3">
+      <div class="step-head"><span class="step-no-circle">✓</span>Pembahasan</div>
+      <p><strong>Mean</strong> = (3+5+2+4+5+6+4+5) ÷ 8 = 34 ÷ 8 = <strong>4,25 jam</strong></p>
+      <p><strong>Jangkauan</strong> = Nilai maks − Nilai min = 6 − 2 = <strong>4 jam</strong></p>
+      <p style="color:var(--primary-dark);font-weight:600">Jawaban benar: <strong>A — Mean = 4,25 jam; Jangkauan = 4 jam</strong></p>
+      <p style="font-size:13px;color:var(--text-3)"><em>Multistruktural:</em> dua konsep dihitung terpisah (mean dan jangkauan), belum dihubungkan maknanya.</p>
+    </div>
+  </div>
+
+  <!-- Soal 4 — Multistruktural -->
+  <div class="soal-card" id="soal-card-4">
+    <div class="soal-nomor-strip"><span class="nomor-circle">4</span></div>
+    <span class="solo-badge solo-multistruktural">SOLO: Multistruktural</span>
+    <p style="font-weight:600;color:var(--text-1);font-size:15px;margin:.6rem 0 .75rem">
+      Data nilai matematika 10 siswa (terurut):<br>
+      <strong style="color:var(--primary-dark)">50, 60, 65, 70, 70, 75, 75, 80, 85, 90</strong><br>
+      Berapakah nilai <em>Q1 (kuartil bawah)</em>?
+    </p>
+    <div class="pilihan-opt" id="s4-a" onclick="pilihJawaban(4,'A')"><span class="pilihan-key">A</span><span>62,5</span></div>
+    <div class="pilihan-opt" id="s4-b" onclick="pilihJawaban(4,'B')"><span class="pilihan-key">B</span><span>65</span></div>
+    <div class="pilihan-opt" id="s4-c" onclick="pilihJawaban(4,'C')"><span class="pilihan-key">C</span><span>70</span></div>
+    <div class="pilihan-opt" id="s4-d" onclick="pilihJawaban(4,'D')"><span class="pilihan-key">D</span><span>67,5</span></div>
+    <div class="pembahasan-box" id="pembahasan-4">
+      <div class="step-head"><span class="step-no-circle">✓</span>Pembahasan</div>
+      <p>n = 10. Q1 berada di posisi ¼(10+1) = 2,75 → interpolasi antara data ke-2 dan ke-3:</p>
+      <p>Q1 = 60 + 0,75 × (65−60) = 60 + 3,75 = <strong>63,75</strong></p>
+      <p>Cara lain yang umum di SMP: Q1 = median dari 5 data bawah {50,60,65,70,70} = data ke-3 = <strong>65</strong></p>
+      <p style="color:var(--primary-dark);font-weight:600">Jawaban benar: <strong>B — 65</strong> (metode median kelompok bawah)</p>
+      <p style="font-size:13px;color:var(--text-3)"><em>Multistruktural:</em> membutuhkan pemahaman posisi kuartil dan prosedur pembagian data.</p>
+    </div>
+  </div>
+
+  <!-- Soal 5 — Multistruktural -->
+  <div class="soal-card" id="soal-card-5">
+    <div class="soal-nomor-strip"><span class="nomor-circle">5</span></div>
+    <span class="solo-badge solo-multistruktural">SOLO: Multistruktural</span>
+    <p style="font-weight:600;color:var(--text-1);font-size:15px;margin:.6rem 0 .75rem">
+      Diagram batang menunjukkan jumlah siswa yang menggunakan HP untuk:<br>
+      <strong style="color:var(--primary-dark)">Games: 12 siswa &nbsp;|&nbsp; Belajar: 8 siswa &nbsp;|&nbsp; Media Sosial: 15 siswa &nbsp;|&nbsp; Hiburan: 5 siswa</strong><br>
+      Berapa <em>persentase</em> siswa yang menggunakan HP untuk Media Sosial?
+    </p>
+    <div class="pilihan-opt" id="s5-a" onclick="pilihJawaban(5,'A')"><span class="pilihan-key">A</span><span>30%</span></div>
+    <div class="pilihan-opt" id="s5-b" onclick="pilihJawaban(5,'B')"><span class="pilihan-key">B</span><span>37,5%</span></div>
+    <div class="pilihan-opt" id="s5-c" onclick="pilihJawaban(5,'C')"><span class="pilihan-key">C</span><span>40%</span></div>
+    <div class="pilihan-opt" id="s5-d" onclick="pilihJawaban(5,'D')"><span class="pilihan-key">D</span><span>45%</span></div>
+    <div class="pembahasan-box" id="pembahasan-5">
+      <div class="step-head"><span class="step-no-circle">✓</span>Pembahasan</div>
+      <p>Total siswa = 12 + 8 + 15 + 5 = <strong>40 siswa</strong></p>
+      <p>Persentase Media Sosial = (15 ÷ 40) × 100% = <strong>37,5%</strong></p>
+      <p style="color:var(--primary-dark);font-weight:600">Jawaban benar: <strong>B — 37,5%</strong></p>
+      <p style="font-size:13px;color:var(--text-3)"><em>Multistruktural:</em> membaca diagram, menjumlahkan, lalu menghitung persentase — tiga langkah terpisah.</p>
+    </div>
+  </div>
+
+  <!-- Soal 6 — Relasional -->
+  <div class="soal-card" id="soal-card-6">
+    <div class="soal-nomor-strip"><span class="nomor-circle">6</span></div>
+    <span class="solo-badge solo-relasional">SOLO: Relasional</span>
+    <p style="font-weight:600;color:var(--text-1);font-size:15px;margin:.6rem 0 .75rem">
+      Dua kelompok siswa disurvei tentang jam tidur per malam:<br>
+      <strong style="color:var(--primary-dark)">Kelompok P:</strong> Mean = 7 jam, Jangkauan = 2 jam<br>
+      <strong style="color:var(--primary-dark)">Kelompok Q:</strong> Mean = 7 jam, Jangkauan = 6 jam<br>
+      Kesimpulan yang <em>paling tepat</em> adalah…
+    </p>
+    <div class="pilihan-opt" id="s6-a" onclick="pilihJawaban(6,'A')"><span class="pilihan-key">A</span><span>Kelompok P dan Q memiliki pola tidur yang sama karena mean-nya sama.</span></div>
+    <div class="pilihan-opt" id="s6-b" onclick="pilihJawaban(6,'B')"><span class="pilihan-key">B</span><span>Kelompok Q lebih baik karena jangkauannya lebih besar sehingga lebih beragam.</span></div>
+    <div class="pilihan-opt" id="s6-c" onclick="pilihJawaban(6,'C')"><span class="pilihan-key">C</span><span>Kelompok P lebih konsisten karena jangkauannya lebih kecil, meski rata-rata sama.</span></div>
+    <div class="pilihan-opt" id="s6-d" onclick="pilihJawaban(6,'D')"><span class="pilihan-key">D</span><span>Tidak bisa dibandingkan karena jumlah anggotanya tidak diketahui.</span></div>
+    <div class="pembahasan-box" id="pembahasan-6">
+      <div class="step-head"><span class="step-no-circle">✓</span>Pembahasan</div>
+      <p>Kedua kelompok memiliki mean sama (7 jam), tetapi <strong>jangkauan berbeda</strong>. Jangkauan mengukur sebaran data — semakin kecil jangkauan, semakin konsisten/homogen data tersebut.</p>
+      <p>Kelompok P (jangkauan 2) → jam tidur sangat seragam. Kelompok Q (jangkauan 6) → ada yang tidur sangat sedikit atau sangat banyak.</p>
+      <p style="color:var(--primary-dark);font-weight:600">Jawaban benar: <strong>C — Kelompok P lebih konsisten</strong></p>
+      <p style="font-size:13px;color:var(--text-3)"><em>Relasional:</em> menghubungkan mean dan jangkauan untuk menyimpulkan karakteristik distribusi data.</p>
+    </div>
+  </div>
+
+  <!-- Soal 7 — Relasional -->
+  <div class="soal-card" id="soal-card-7">
+    <div class="soal-nomor-strip"><span class="nomor-circle">7</span></div>
+    <span class="solo-badge solo-relasional">SOLO: Relasional</span>
+    <p style="font-weight:600;color:var(--text-1);font-size:15px;margin:.6rem 0 .75rem">
+      Data durasi belajar 10 siswa (jam/minggu):<br>
+      <strong style="color:var(--primary-dark)">5, 8, 6, 10, 7, 8, 9, 6, 8, 3</strong><br>
+      Jika nilai <em>3</em> diganti menjadi <em>8</em>, bagaimana pengaruhnya terhadap mean dan modus?
+    </p>
+    <div class="pilihan-opt" id="s7-a" onclick="pilihJawaban(7,'A')"><span class="pilihan-key">A</span><span>Mean naik, modus tetap sama.</span></div>
+    <div class="pilihan-opt" id="s7-b" onclick="pilihJawaban(7,'B')"><span class="pilihan-key">B</span><span>Mean naik, modus berubah menjadi 8.</span></div>
+    <div class="pilihan-opt" id="s7-c" onclick="pilihJawaban(7,'C')"><span class="pilihan-key">C</span><span>Mean tetap, modus berubah menjadi 8.</span></div>
+    <div class="pilihan-opt" id="s7-d" onclick="pilihJawaban(7,'D')"><span class="pilihan-key">D</span><span>Mean turun, modus tetap sama.</span></div>
+    <div class="pembahasan-box" id="pembahasan-7">
+      <div class="step-head"><span class="step-no-circle">✓</span>Pembahasan</div>
+      <p><strong>Data asli:</strong> Mean = (5+8+6+10+7+8+9+6+8+3)÷10 = 70÷10 = 7. Modus = 8 (muncul 3 kali).</p>
+      <p><strong>Setelah 3 → 8:</strong> Mean = (70−3+8)÷10 = 75÷10 = 7,5. <strong>Mean naik.</strong></p>
+      <p>Modus: nilai 8 kini muncul 4 kali, nilai lain kurang → <strong>modus tetap 8</strong>.</p>
+      <p style="color:var(--primary-dark);font-weight:600">Jawaban benar: <strong>A — Mean naik, modus tetap sama</strong></p>
+      <p style="font-size:13px;color:var(--text-3)"><em>Relasional:</em> memahami hubungan sebab-akibat antara perubahan data dengan perubahan ukuran statistik.</p>
+    </div>
+  </div>
+
+  <!-- Soal 8 — Relasional -->
+  <div class="soal-card" id="soal-card-8">
+    <div class="soal-nomor-strip"><span class="nomor-circle">8</span></div>
+    <span class="solo-badge solo-relasional">SOLO: Relasional</span>
+    <p style="font-weight:600;color:var(--text-1);font-size:15px;margin:.6rem 0 .75rem">
+      Survei terhadap 40 siswa: <strong style="color:var(--primary-dark)">25 siswa</strong> menggunakan HP &gt;4 jam/hari, <strong style="color:var(--primary-dark)">15 siswa</strong> menggunakan ≤4 jam/hari. Jika disajikan dalam diagram lingkaran, besar sudut sektor untuk kelompok yang menggunakan <em>lebih dari 4 jam</em> adalah…
+    </p>
+    <div class="pilihan-opt" id="s8-a" onclick="pilihJawaban(8,'A')"><span class="pilihan-key">A</span><span>180°</span></div>
+    <div class="pilihan-opt" id="s8-b" onclick="pilihJawaban(8,'B')"><span class="pilihan-key">B</span><span>225°</span></div>
+    <div class="pilihan-opt" id="s8-c" onclick="pilihJawaban(8,'C')"><span class="pilihan-key">C</span><span>135°</span></div>
+    <div class="pilihan-opt" id="s8-d" onclick="pilihJawaban(8,'D')"><span class="pilihan-key">D</span><span>270°</span></div>
+    <div class="pembahasan-box" id="pembahasan-8">
+      <div class="step-head"><span class="step-no-circle">✓</span>Pembahasan</div>
+      <p>Besar sudut = (frekuensi ÷ total) × 360°</p>
+      <p>= (25 ÷ 40) × 360° = 0,625 × 360° = <strong>225°</strong></p>
+      <p style="color:var(--primary-dark);font-weight:600">Jawaban benar: <strong>B — 225°</strong></p>
+      <p style="font-size:13px;color:var(--text-3)"><em>Relasional:</em> menghubungkan konsep persentase dengan representasi visual (sudut pada diagram lingkaran).</p>
+    </div>
+  </div>
+
+  <!-- Soal 9 — Extended Abstract -->
+  <div class="soal-card" id="soal-card-9">
+    <div class="soal-nomor-strip"><span class="nomor-circle">9</span></div>
+    <span class="solo-badge solo-extended">SOLO: Extended Abstract</span>
+    <p style="font-weight:600;color:var(--text-1);font-size:15px;margin:.6rem 0 .75rem">
+      Rata-rata nilai ulangan kelas VIII-A (30 siswa) = <strong style="color:var(--primary-dark)">72</strong>, dan kelas VIII-B (20 siswa) = <strong style="color:var(--primary-dark)">78</strong>.<br>
+      Berapakah rata-rata gabungan nilai seluruh siswa kedua kelas tersebut?
+    </p>
+    <div class="pilihan-opt" id="s9-a" onclick="pilihJawaban(9,'A')"><span class="pilihan-key">A</span><span>75 (rata-rata biasa dari 72 dan 78)</span></div>
+    <div class="pilihan-opt" id="s9-b" onclick="pilihJawaban(9,'B')"><span class="pilihan-key">B</span><span>74,4</span></div>
+    <div class="pilihan-opt" id="s9-c" onclick="pilihJawaban(9,'C')"><span class="pilihan-key">C</span><span>73,8</span></div>
+    <div class="pilihan-opt" id="s9-d" onclick="pilihJawaban(9,'D')"><span class="pilihan-key">D</span><span>76,2</span></div>
+    <div class="pembahasan-box" id="pembahasan-9">
+      <div class="step-head"><span class="step-no-circle">✓</span>Pembahasan</div>
+      <p>Mean gabungan = (Σ semua nilai) ÷ (total siswa)</p>
+      <p>= (30 × 72 + 20 × 78) ÷ (30 + 20)</p>
+      <p>= (2160 + 1560) ÷ 50 = 3720 ÷ 50 = <strong>74,4</strong></p>
+      <p>Mengapa bukan 75? Karena kelas A memiliki <em>lebih banyak siswa</em>, sehingga nilainya lebih berpengaruh pada rata-rata gabungan (rata-rata tertimbang).</p>
+      <p style="color:var(--primary-dark);font-weight:600">Jawaban benar: <strong>B — 74,4</strong></p>
+      <p style="font-size:13px;color:var(--text-3)"><em>Extended Abstract:</em> memahami bahwa rata-rata gabungan tidak bisa dijumlah biasa — perlu mempertimbangkan bobot (jumlah siswa) masing-masing kelompok.</p>
+    </div>
+  </div>
+
+  <!-- Soal 10 — Extended Abstract -->
+  <div class="soal-card" id="soal-card-10">
+    <div class="soal-nomor-strip"><span class="nomor-circle">10</span></div>
+    <span class="solo-badge solo-extended">SOLO: Extended Abstract</span>
+    <p style="font-weight:600;color:var(--text-1);font-size:15px;margin:.6rem 0 .75rem">
+      Perhatikan dua pernyataan berikut:<br>
+      <strong style="color:var(--primary-dark)">(1)</strong> Data dengan mean = median berarti data tersebar simetris.<br>
+      <strong style="color:var(--primary-dark)">(2)</strong> Modus selalu merupakan ukuran pemusatan yang paling representatif.<br>
+      Pernyataan yang <em>benar</em> adalah…
+    </p>
+    <div class="pilihan-opt" id="s10-a" onclick="pilihJawaban(10,'A')"><span class="pilihan-key">A</span><span>Keduanya benar</span></div>
+    <div class="pilihan-opt" id="s10-b" onclick="pilihJawaban(10,'B')"><span class="pilihan-key">B</span><span>Hanya pernyataan (1) yang benar</span></div>
+    <div class="pilihan-opt" id="s10-c" onclick="pilihJawaban(10,'C')"><span class="pilihan-key">C</span><span>Hanya pernyataan (2) yang benar</span></div>
+    <div class="pilihan-opt" id="s10-d" onclick="pilihJawaban(10,'D')"><span class="pilihan-key">D</span><span>Keduanya salah</span></div>
+    <div class="pembahasan-box" id="pembahasan-10">
+      <div class="step-head"><span class="step-no-circle">✓</span>Pembahasan</div>
+      <p><strong>Pernyataan (1):</strong> Benar dalam banyak kasus — distribusi simetris memiliki mean = median = modus. Namun mean = median saja tidak selalu menjamin simetri sempurna. Untuk tingkat SMP, pernyataan ini <em>dianggap benar</em>.</p>
+      <p><strong>Pernyataan (2):</strong> <em>Salah.</em> Modus hanya cocok untuk data kategori atau data dengan nilai yang sangat dominan. Untuk data numerik yang tersebar merata, mean atau median lebih representatif.</p>
+      <p style="color:var(--primary-dark);font-weight:600">Jawaban benar: <strong>B — Hanya pernyataan (1) yang benar</strong></p>
+      <p style="font-size:13px;color:var(--text-3)"><em>Extended Abstract:</em> mengevaluasi kebenaran pernyataan konseptual dan menggeneralisasi kapan suatu ukuran statistik sesuai digunakan.</p>
+    </div>
+  </div>
+
+  <!-- SKOR PILIHAN GANDA -->
+  <div id="latihan-skor-wrap" style="display:none">
+    <div class="skor-box">
+      <div style="font-size:14px;margin-bottom:.5rem;opacity:.9">Skor Pilihan Ganda</div>
+      <div class="skor-angka" id="latihan-skor-angka">0</div>
+      <div style="font-size:13px;margin-top:.35rem;opacity:.9">dari 100</div>
+      <div id="latihan-skor-label" style="margin-top:.75rem;font-size:14px;font-weight:600"></div>
+    </div>
+  </div>
+
+  <!-- ═══ SOAL ESSAY ═══ -->
+  <div style="padding:.75rem 0 .5rem;margin-top:.5rem">
+    <h2 style="margin-bottom:.25rem">Soal Essay</h2>
+    <p style="margin-bottom:.85rem">Jawab dengan lengkap dan jelaskan cara berpikirmu. Kunci jawaban & rubrik penilaian tersedia setelah kamu mengisi jawaban.</p>
+  </div>
+
+  <!-- Essay 1 — Relasional -->
+  <div class="essay-card" id="soal-card-e1">
+    <div class="soal-nomor-strip"><span class="nomor-circle" style="background:var(--accent);color:#fff">E1</span><span class="sec-lbl" style="margin-bottom:0">Essay 1 dari 2</span></div>
+    <span class="solo-badge solo-relasional">SOLO: Relasional</span>
+    <p style="font-weight:600;color:var(--text-1);font-size:15px;margin:.6rem 0 .75rem">
+      Hasil survei penggunaan HP siswa kelas VIII menunjukkan data berikut (jam/hari):<br>
+      <strong style="color:var(--primary-dark)">1, 2, 2, 3, 3, 3, 4, 5, 5, 12</strong>
+    </p>
+    <div class="card-accent" style="margin-bottom:.85rem">
+      <p style="color:var(--text-1);font-weight:500">Hitunglah <strong>mean</strong>, <strong>median</strong>, dan <strong>modus</strong> dari data tersebut. Kemudian jelaskan: ukuran pemusatan manakah yang <em>paling tepat</em> digunakan untuk menggambarkan pola penggunaan HP siswa tersebut? Berikan alasanmu!</p>
+    </div>
+    <textarea class="essay-area" id="essay-e1" placeholder="Tuliskan jawabanmu di sini:&#10;&#10;Mean = ...&#10;Median = ...&#10;Modus = ...&#10;&#10;Ukuran yang paling tepat adalah ... karena ..." oninput="saveTA('latihan_essay1',this.value)">${loadTA('latihan_essay1')||''}</textarea>
+    <div class="btn-row" style="margin-top:.65rem">
+      <button class="btn btn-primary btn-sm" onclick="lihatRubrik('e1')">📋 Lihat Kunci & Rubrik</button>
+    </div>
+    <div class="rubrik-box" id="rubrik-e1">
+      <div class="step-head" style="margin-bottom:.5rem"><span class="step-no-circle">✓</span>Kunci Jawaban & Rubrik</div>
+      <p><strong>Mean</strong> = (1+2+2+3+3+3+4+5+5+12) ÷ 10 = 40 ÷ 10 = <strong>4 jam</strong></p>
+      <p><strong>Median</strong> (n=10, genap) = (data ke-5 + data ke-6) ÷ 2 = (3 + 3) ÷ 2 = <strong>3 jam</strong></p>
+      <p><strong>Modus</strong> = <strong>3 jam</strong> (muncul 3 kali)</p>
+      <p style="margin-top:.5rem">Nilai 12 adalah <em>outlier</em> yang menarik mean jauh di atas nilai tipikal. Sebagian besar siswa menggunakan HP hanya 2–3 jam. Karena itu, <strong>median atau modus (3 jam)</strong> lebih representatif daripada mean (4 jam) yang "tertipu" oleh satu nilai ekstrem.</p>
+      <div class="sec-lbl" style="margin-top:.75rem">Rubrik Penilaian (total 20 poin)</div>
+      <div class="rubrik-row"><span>Menghitung mean dengan benar</span><span style="font-weight:600;color:var(--primary-dark)">5 poin</span></div>
+      <div class="rubrik-row"><span>Menghitung median dengan benar</span><span style="font-weight:600;color:var(--primary-dark)">5 poin</span></div>
+      <div class="rubrik-row"><span>Menghitung modus dengan benar</span><span style="font-weight:600;color:var(--primary-dark)">3 poin</span></div>
+      <div class="rubrik-row"><span>Memilih ukuran yang tepat (median/modus)</span><span style="font-weight:600;color:var(--primary-dark)">3 poin</span></div>
+      <div class="rubrik-row"><span>Menjelaskan alasan dengan konsep outlier</span><span style="font-weight:600;color:var(--primary-dark)">4 poin</span></div>
+    </div>
+  </div>
+
+  <!-- Essay 2 — Extended Abstract -->
+  <div class="essay-card" id="soal-card-e2">
+    <div class="soal-nomor-strip"><span class="nomor-circle" style="background:var(--danger);color:#fff">E2</span><span class="sec-lbl" style="margin-bottom:0">Essay 2 dari 2</span></div>
+    <span class="solo-badge solo-extended">SOLO: Extended Abstract</span>
+    <p style="font-weight:600;color:var(--text-1);font-size:15px;margin:.6rem 0 .75rem">
+      Seorang siswa bernama Dani berkata:<br>
+      <em style="color:var(--primary-dark)">"Rata-rata penggunaan HP di kelasku 4 jam/hari, jadi sudah pasti separuh temanku menggunakan HP lebih dari 4 jam."</em>
+    </p>
+    <div class="card-accent" style="margin-bottom:.85rem">
+      <p style="color:var(--text-1);font-weight:500">Apakah pernyataan Dani <strong>benar</strong> atau <strong>salah</strong>? Jelaskan menggunakan konsep <em>mean</em>, <em>median</em>, dan <em>distribusi data</em>. Berikan sebuah contoh data (minimal 6 angka) yang mendukung jawabanmu!</p>
+    </div>
+    <textarea class="essay-area" id="essay-e2" placeholder="Tuliskan jawabanmu di sini:&#10;&#10;Pernyataan Dani adalah ... karena ...&#10;&#10;Penjelasan menggunakan konsep mean dan median:&#10;...&#10;&#10;Contoh data:&#10;..." oninput="saveTA('latihan_essay2',this.value)">${loadTA('latihan_essay2')||''}</textarea>
+    <div class="btn-row" style="margin-top:.65rem">
+      <button class="btn btn-primary btn-sm" onclick="lihatRubrik('e2')">📋 Lihat Kunci & Rubrik</button>
+    </div>
+    <div class="rubrik-box" id="rubrik-e2">
+      <div class="step-head" style="margin-bottom:.5rem"><span class="step-no-circle">✓</span>Kunci Jawaban & Rubrik</div>
+      <p><strong>Pernyataan Dani SALAH.</strong> Mean (rata-rata) tidak menggambarkan berapa banyak data yang berada di atas atau di bawahnya — itu adalah fungsi <em>median</em>.</p>
+      <p style="margin-top:.4rem">Contoh data yang membuktikan: <strong style="color:var(--primary-dark)">1, 1, 1, 1, 1, 15</strong></p>
+      <p>Mean = (1+1+1+1+1+15)÷6 = 20÷6 ≈ 3,33 jam. Namun hanya <strong>1 dari 6 siswa</strong> (17%) yang menggunakan HP di atas mean. Sisanya (5 siswa = 83%) justru di bawah mean.</p>
+      <p style="margin-top:.4rem">Median dari data ini = (1+1)÷2 = 1 jam. Separuh siswa berada di atas/bawah <em>median</em>, bukan mean.</p>
+      <div class="sec-lbl" style="margin-top:.75rem">Rubrik Penilaian (total 25 poin)</div>
+      <div class="rubrik-row"><span>Menyatakan pernyataan Dani salah dengan tepat</span><span style="font-weight:600;color:var(--primary-dark)">5 poin</span></div>
+      <div class="rubrik-row"><span>Menjelaskan perbedaan mean dan median</span><span style="font-weight:600;color:var(--primary-dark)">7 poin</span></div>
+      <div class="rubrik-row"><span>Memberikan contoh data yang valid (≥6 angka)</span><span style="font-weight:600;color:var(--primary-dark)">5 poin</span></div>
+      <div class="rubrik-row"><span>Menghitung mean & median dari contoh data</span><span style="font-weight:600;color:var(--primary-dark)">5 poin</span></div>
+      <div class="rubrik-row"><span>Menarik kesimpulan dengan bahasa yang jelas</span><span style="font-weight:600;color:var(--primary-dark)">3 poin</span></div>
+    </div>
+  </div>
+
+  <div class="btn-row" style="margin-top:.5rem;margin-bottom:1.5rem">
+    <button class="btn btn-primary" style="width:100%;justify-content:center" onclick="resetLatihan()">🔄 Ulangi Latihan</button>
+  </div>
+</div>
 <!-- PAGE: TENTANG -->
 <div id="page-tentang" class="page">
   <div style="max-width:560px;margin:0 auto;padding:1.5rem 0 2rem;text-align:center">
@@ -672,10 +1068,11 @@ function saveStore(data) {
   localStorage.setItem(STORE_KEY, JSON.stringify(data));
   showToast();
 }
-function showToast() {
+function showToast(msg) {
   const t = document.getElementById('save-toast');
+  if (msg) t.textContent = msg;
   t.classList.add('show');
-  setTimeout(() => t.classList.remove('show'), 2000);
+  setTimeout(() => { t.classList.remove('show'); if (msg) t.textContent = '✓ Tersimpan'; }, 2200);
 }
 function getStore(key, def) { return loadStore()[key] ?? def; }
 function setStore(key, val) { const s = loadStore(); s[key] = val; saveStore(s); }
@@ -691,10 +1088,11 @@ function showPage(id, el) {
   const sb = document.getElementById('sb-' + id);
   if (sb) sb.classList.add('active');
   // Also activate corresponding bottom nav
-  const bnMap = {beranda:0, proyek:1, materi:2, kalkulator:3, tentang:4};
+  const bnMap = {beranda:0, proyek:1, materi:2, kalkulator:3, latihan:4, tentang:5};
   const bns = document.querySelectorAll('.bn-item');
-  if (bns[bnMap[id]]) bns[bnMap[id]].classList.add('active');
+  if (bnMap[id] !== undefined && bns[bnMap[id]]) bns[bnMap[id]].classList.add('active');
   window.scrollTo(0, 0);
+  if (id === 'latihan') initProgressDots();
 }
 
 // Show sidebar on desktop
@@ -765,7 +1163,9 @@ function buildIdCard() {
   const d = getStore('identitas', null);
   if (!d) return '<div class="alert alert-amber">Isi identitas kelompok di menu Beranda terlebih dahulu.</div>';
   const pills = (d.anggota||[]).map(a=>`<span class="m-pill">${a.nm} <span style="opacity:.65;font-size:10px">${a.pos}</span></span>`).join('');
-  return `<div class="id-card" style="margin-bottom:.75rem"><div style="font-family:var(--font-display);font-size:14px;font-weight:700;margin-bottom:2px">${d.kel}</div><div class="id-meta"><span>${d.sek}</span> &nbsp;·&nbsp; Kelas <span>${d.kls}</span></div><div class="members-row">${pills||'—'}</div></div>`;
+  const dq = getStore('p1_driving_question','');
+  const dqBlock = dq ? `<div style="margin-top:.6rem;padding:.5rem .75rem;background:rgba(11,175,122,0.08);border-left:3px solid var(--primary);border-radius:0 var(--radius-sm) var(--radius-sm) 0"><div style="font-size:10px;font-weight:700;color:var(--primary-dark);letter-spacing:.06em;text-transform:uppercase;margin-bottom:2px">🎯 Pertanyaan Pengarah</div><div style="font-size:12px;color:var(--text-1);line-height:1.6;font-style:italic">${dq}</div></div>` : '';
+  return `<div class="id-card" style="margin-bottom:.75rem"><div style="font-family:var(--font-display);font-size:14px;font-weight:700;margin-bottom:2px">${d.kel}</div><div class="id-meta"><span>${d.sek}</span> &nbsp;·&nbsp; Kelas <span>${d.kls}</span></div><div class="members-row">${pills||'—'}</div>${dqBlock}</div>`;
 }
 
 // ── PERTEMUAN ROUTING ──
@@ -804,13 +1204,121 @@ function wrapAkt(no, title, body, prev, next, nxtLabel) {
 }
 function wrapRefleksi(idx, body, prevIdx, nPtm) {
   const chkList = Array.from({length:idx}, (_,i) => `<div class="chk-item"><input type="checkbox" onchange="saveCheck(${nPtm},${i},this.checked)" ${getStore('chk_'+nPtm+'_'+i,false)?'checked':''}><span>Aktivitas ${i+1} selesai</span></div>`).join('');
+  const guruNote = buildGuruNote(nPtm);
   return `<div id="ptm-akt-${idx}" style="display:none">
     <div class="card"><div class="akt-header"><span class="akt-no">Refleksi</span><span class="akt-title">Refleksi Akhir Pertemuan</span></div>${body}
     <div class="sec-lbl" style="margin-top:1rem">Checklist</div>${chkList}
     <div class="chk-item"><input type="checkbox" onchange="saveCheck(${nPtm},${idx},this.checked)" ${getStore('chk_'+nPtm+'_'+idx,false)?'checked':''}><span>Refleksi selesai</span></div>
-    <div class="btn-row" style="margin-top:.75rem"><button class="btn btn-sm" onclick="ptmNav(${prevIdx})">← Kembali</button><button class="btn btn-primary" onclick="savePDF(${nPtm})" style="background:#0BAF7A;border-color:#0BAF7A">🖨 Simpan PDF Pertemuan ${nPtm}</button></div></div></div>`;
+    <div class="btn-row" style="margin-top:.75rem"><button class="btn btn-sm" onclick="ptmNav(${prevIdx})">← Kembali</button><button class="btn btn-primary" onclick="savePDF(${nPtm})" style="background:#0BAF7A;border-color:#0BAF7A">🖨 Simpan PDF Pertemuan ${nPtm}</button></div></div>
+    ${guruNote}</div>`;
 }
 function saveCheck(ptm, idx, val) { setStore('chk_'+ptm+'_'+idx, val); }
+
+function saveDrivingQuestion() {
+  // Find textarea for driving question by looking for the one with key 'p1_driving_question'
+  const allTA = document.querySelectorAll('#ptm-content textarea');
+  let dqVal = '';
+  allTA.forEach(ta => {
+    if (ta.getAttribute('oninput') && ta.getAttribute('oninput').includes('p1_driving_question')) {
+      dqVal = ta.value;
+    }
+  });
+  if (!dqVal && allTA.length) dqVal = loadTA('p1_driving_question');
+  setStore('p1_driving_question', dqVal || loadTA('p1_driving_question'));
+  showToast();
+  const btn = document.querySelector('button[onclick="saveDrivingQuestion()"]');
+  if (btn) { const orig = btn.textContent; btn.textContent = '✓ Tersimpan!'; btn.style.background='var(--primary-dark)'; setTimeout(()=>{btn.textContent=orig;btn.style.background='';},2000); }
+}
+
+function buildGuruNote(nPtm) {
+  const key = 'guru_note_p' + nPtm;
+  const saved = getStore(key, '');
+  const isGuruMode = getStore('guru_mode', false);
+  if (isGuruMode) {
+    return `<div class="guru-note-box">
+      <div class="guru-note-header">
+        <span class="guru-note-badge">✏️ MODE GURU</span>
+        <span style="font-size:12px;color:#7A4F00;font-weight:500">Catatan Guru — Pertemuan ${nPtm}</span>
+        <button onclick="exitGuruMode(${nPtm})" style="margin-left:auto;font-size:10px;padding:2px 8px;border-radius:99px;border:1px solid #F4A932;background:transparent;color:#7A4F00;cursor:pointer;font-family:inherit">🔒 Keluar</button>
+      </div>
+      <p style="font-size:11px;color:var(--text-3);margin-bottom:.4rem">Tulis catatan/umpan balik untuk kelompok ini. Siswa hanya bisa membaca, tidak bisa mengubah.</p>
+      <textarea class="guru-note-input" id="gnta_p${nPtm}" placeholder="Contoh: Analisis data sudah baik, namun kesimpulan perlu diperkuat dengan angka yang spesifik..." oninput="setStore('${key}',this.value)">${saved}</textarea>
+      <div class="btn-row" style="margin-top:.5rem">
+        <button class="btn btn-sm btn-primary" onclick="setStore('guru_note_p${nPtm}',document.getElementById('gnta_p${nPtm}').value);showToast()" style="font-size:12px">💾 Simpan Catatan</button>
+        <button class="btn btn-sm" onclick="showGantiPwd()" style="font-size:12px">🔑 Ganti Password</button>
+      </div>
+    </div>`;
+  } else {
+    return `<div class="guru-note-box">
+      <div class="guru-note-header">
+        <span class="guru-note-badge">📋 CATATAN GURU</span>
+        <span style="font-size:12px;color:#7A4F00;font-weight:500">Umpan Balik — Pertemuan ${nPtm}</span>
+      </div>
+      <div class="guru-note-locked">${saved || '<span style="opacity:.5">Belum ada catatan dari guru.</span>'}</div>
+    </div>`;
+  }
+}
+
+/* ── GURU MODE: tap logo 5× untuk buka modal ── */
+let _guruTap = 0, _guruTapTimer = null, _pendingPtm = null;
+function _onHeaderTap() {
+  _guruTap++;
+  clearTimeout(_guruTapTimer);
+  _guruTapTimer = setTimeout(() => { _guruTap = 0; }, 1800);
+  if (_guruTap >= 5) {
+    _guruTap = 0;
+    // cari pertemuan yang sedang aktif
+    const activePage = document.querySelector('.page.active');
+    const ptmMatch = activePage ? activePage.id.match(/ptm-(\d)/) : null;
+    _pendingPtm = ptmMatch ? parseInt(ptmMatch[1]) : null;
+    showGuruModal();
+  }
+}
+
+function showGuruModal() {
+  document.getElementById('guru-modal').style.display = 'flex';
+  document.getElementById('guru-pwd-input').value = '';
+  document.getElementById('guru-pwd-error').textContent = '';
+  document.getElementById('guru-pwd-input').focus();
+}
+function hideGuruModal() {
+  document.getElementById('guru-modal').style.display = 'none';
+}
+function submitGuruPwd() {
+  const input = document.getElementById('guru-pwd-input').value;
+  const savedPwd = getStore('guru_password', 'DataVista2026');
+  if (input === savedPwd) {
+    setStore('guru_mode', true);
+    hideGuruModal();
+    if (_pendingPtm !== null) {
+      showPtm(_pendingPtm);
+    } else {
+      // refresh halaman proyek jika ada
+      const el = document.getElementById('ptm-detail-wrap');
+      if (el && el.style.display !== 'none') location.reload();
+    }
+    showToast('Mode Guru aktif ✓');
+  } else {
+    document.getElementById('guru-pwd-error').textContent = 'Kata sandi salah. Coba lagi.';
+    document.getElementById('guru-pwd-input').value = '';
+    document.getElementById('guru-pwd-input').focus();
+  }
+}
+
+function showGantiPwd() {
+  const np = prompt('Masukkan password baru untuk guru:');
+  if (!np || np.trim() === '') return;
+  const np2 = prompt('Konfirmasi password baru:');
+  if (np !== np2) { alert('Password tidak cocok. Silakan coba lagi.'); return; }
+  setStore('guru_password', np.trim());
+  alert('Password guru berhasil diubah!');
+}
+
+function exitGuruMode(nPtm) {
+  setStore('guru_mode', false);
+  if (nPtm !== undefined) showPtm(nPtm);
+  showToast('Keluar dari Mode Guru');
+}
 function saveTA(key, val) { setStore(key, val); }
 function loadTA(key) { return getStore(key, ''); }
 
@@ -971,10 +1479,19 @@ function buildP1() {
     <div class="pertanyaan"><div class="pq">2. Apakah sesuai pengalamanmu? Jelaskan!</div>
     <div class="radio-group"><label class="radio-opt"><input type="radio" name="p1r1"> Ya, sangat sesuai</label><label class="radio-opt"><input type="radio" name="p1r1"> Cukup sesuai</label><label class="radio-opt"><input type="radio" name="p1r1"> Kurang sesuai</label></div>
     ${taField('p1a0q2','Alasan kelompokmu...',true,50)}</div>`,null,1,'Lanjut ke Aktivitas 2 →');
-  const a1 = wrapAkt(1,'Memahami Pertanyaan Mendasar',`
-    <div class="alert alert-green"><strong>Pertanyaan Mendasar:</strong> "Bagaimana pola penggunaan HP siswa kelas VIII jika dianalisis menggunakan rata-rata, nilai tengah, dan nilai yang paling sering muncul?"</div>
+  const a1 = wrapAkt(1,'Memahami & Merumuskan Pertanyaan Pengarah',`
+    <div class="alert alert-green"><strong>Pertanyaan Mendasar (dari guru):</strong> "Bagaimana pola penggunaan HP siswa kelas VIII jika dianalisis menggunakan rata-rata, nilai tengah, dan nilai yang paling sering muncul?"</div>
     <div class="pertanyaan"><div class="pq">1. Apa yang dimaksud "pola penggunaan HP"? Beri contoh nyata!</div>${taField('p1a1q1','Diskusikan bersama kelompok...',true,55)}</div>
-    <div class="pertanyaan"><div class="pq">2. Mengapa perlu data, bukan sekadar pendapat pribadi?</div>${taField('p1a1q2','Tuliskan hasil diskusi...',true,55)}</div>`,0,2,'Lanjut ke Aktivitas 3 →');
+    <div class="pertanyaan"><div class="pq">2. Mengapa perlu data, bukan sekadar pendapat pribadi?</div>${taField('p1a1q2','Tuliskan hasil diskusi...',true,55)}</div>
+    <div style="background:linear-gradient(135deg,var(--primary-xlight),#fff);border:2px solid var(--primary);border-radius:var(--radius);padding:1rem;margin-top:.75rem">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:.6rem">
+        <span style="font-size:18px">🎯</span>
+        <div style="font-family:var(--font-display);font-size:14px;font-weight:700;color:var(--primary-dark)">Pertanyaan Pengarah Kelompok Kami</div>
+      </div>
+      <p style="font-size:12px;color:var(--text-3);margin-bottom:.5rem">Tulis satu pertanyaan spesifik yang disepakati bersama sebagai fokus proyek kalian. Pertanyaan ini akan tampil di setiap pertemuan sebagai pengingat arah proyek.</p>
+      ${taField('p1_driving_question','Contoh: "Apakah siswa laki-laki lebih banyak menggunakan HP untuk games dibanding perempuan di kelas VIII-A?"',true,60)}
+      <div class="btn-row" style="margin-top:.5rem"><button class="btn btn-primary btn-sm" onclick="saveDrivingQuestion()">💾 Simpan Pertanyaan Pengarah</button></div>
+    </div>`,0,2,'Lanjut ke Aktivitas 3 →');
   const a2 = wrapAkt(2,'Identifikasi Data & Prediksi Awal',`
     <h3 style="margin-bottom:.5rem">A. Data yang Perlu Dikumpulkan</h3>
     <div class="pertanyaan"><div class="pq">Tuliskan minimal 2 jenis data + alasan pentingnya.</div>${taField('p1a2q1','Jenis data 1: ..., karena...\\nJenis data 2: ..., karena...',true,70)}</div>
@@ -994,7 +1511,21 @@ function buildP2() {
   const a0 = wrapAkt(0,'Merancang Instrumen Pengumpulan Data',`
     <p>Instrumen = daftar pertanyaan untuk teman-teman (angket/wawancara).</p>
     <div class="pertanyaan"><div class="pq">1. Tuliskan 3–4 pertanyaan untuk mengumpulkan data penggunaan HP!</div>${taField('p2a0q1','1. Berapa jam kamu menggunakan HP per hari?\\n2. ...\\n3. ...',true,80)}</div>
-    <div class="pertanyaan"><div class="pq">2. Bagaimana memastikan responden menjawab jujur?</div>${taField('p2a0q2','Rencana: ...',true,50)}</div>`,null,1,'Lanjut →');
+    <div class="pertanyaan"><div class="pq">2. Bagaimana memastikan responden menjawab jujur?</div>${taField('p2a0q2','Rencana: ...',true,50)}</div>
+    <div style="border:1.5px solid var(--primary);border-radius:var(--radius);padding:1rem;margin-top:.75rem;background:var(--primary-xlight)">
+      <div style="font-family:var(--font-display);font-size:13px;font-weight:700;color:var(--primary-dark);margin-bottom:.65rem">📋 Form Instrumen Survei — Susun Butir Pertanyaan</div>
+      <p style="font-size:12px;color:var(--text-2);margin-bottom:.75rem">Lengkapi form di bawah untuk setiap variabel yang akan diukur dalam survei. Ini akan menjadi panduan saat pengumpulan data di P3.</p>
+      ${[1,2,3,4].map(i=>`
+      <div style="background:var(--surface);border:0.5px solid var(--border);border-radius:var(--radius-sm);padding:.85rem;margin-bottom:.65rem">
+        <div style="font-size:12px;font-weight:700;color:var(--primary-dark);margin-bottom:.5rem">Variabel ${i}</div>
+        <div class="form-row" style="margin-bottom:.5rem">
+          <div class="form-field"><label>Variabel yang diukur</label><input type="text" placeholder="contoh: Durasi penggunaan HP" oninput="saveTA('p2_var${i}_nama',this.value)" value="${'${loadTA(\'p2_var'+i+'_nama\')||\'\'}'}" style="font-size:13px"></div>
+          <div class="form-field"><label>Tipe jawaban</label><select oninput="saveTA('p2_var${i}_tipe',this.value)"><option value="">-- Pilih tipe --</option><option>Angka (numerik)</option><option>Pilihan ganda</option><option>Ya / Tidak</option><option>Teks bebas</option></select></div>
+        </div>
+        <div class="form-field"><label>Pertanyaan surveinya</label><input type="text" placeholder="contoh: Berapa jam kamu menggunakan HP per hari?" oninput="saveTA('p2_var${i}_pertanyaan',this.value)" value="${'${loadTA(\'p2_var'+i+'_pertanyaan\')||\'\'}'}" style="font-size:13px"></div>
+        <div class="form-field"><label>Pilihan jawaban (jika ada pilihan ganda)</label><input type="text" placeholder="contoh: 0–1 jam, 2–3 jam, 4–5 jam, >5 jam" oninput="saveTA('p2_var${i}_opsi',this.value)" value="${'${loadTA(\'p2_var'+i+'_opsi\')||\'\'}'}" style="font-size:13px"></div>
+      </div>`).join('')}
+    </div>`,null,1,'Lanjut →');
   const a1 = wrapAkt(1,'Menentukan Responden & Teknik',`
     <div class="pertanyaan"><div class="pq">1. Siapa saja responden? Berapa orang? Mengapa?</div>${taField('p2a1q1','Responden: ...\\nJumlah: ... orang, karena...',true,60)}</div>
     <div class="pertanyaan"><div class="pq">2. Cara mengumpulkan data?</div>${taField('p2a1q2','Cara: ...\\nAlasan: ...',true,50)}</div>`,0,2,'Lanjut →');
@@ -1034,15 +1565,19 @@ function initP3() {
   let rows = [];
   for (let i = 0; i < 40; i++) {
     const d = saved[i] || { kode:'', durasi:'', tujuan:'', waktu:'' };
-    rows.push(`<tr>
+    const dur = parseFloat(d.durasi);
+    const isSuspect = !isNaN(dur) && dur >= 10;
+    rows.push(`<tr${isSuspect ? ' style="background:#FFFBEA;"' : ''}>
       <td style="color:var(--text-3);font-size:11px">${i+1}</td>
       <td><input type="text" value="${d.kode}" placeholder="A${String(i+1).padStart(2,'0')}" onchange="saveP3Row(${i},'kode',this.value)"></td>
-      <td><input type="number" value="${d.durasi}" placeholder="0" min="0" max="24" step="0.5" onchange="saveP3Row(${i},'durasi',this.value)" style="width:60px"></td>
+      <td><input type="number" value="${d.durasi}" placeholder="0" min="0" max="24" step="0.5" onchange="saveP3Row(${i},'durasi',this.value);highlightP3Row(${i},this.value)" style="width:60px">${isSuspect?'<span title="Perlu diperiksa!" style="color:#F4A932;font-size:14px;cursor:help"> ⚠️</span>':''}</td>
       <td><select onchange="saveP3Row(${i},'tujuan',this.value)">${tujuanOpts.map(o=>`<option${d.tujuan===o?' selected':''}>${o}</option>`).join('')}</select></td>
       <td><select onchange="saveP3Row(${i},'waktu',this.value)">${waktuOpts.map(o=>`<option${d.waktu===o?' selected':''}>${o}</option>`).join('')}</select></td>
     </tr>`);
   }
-  wrap.innerHTML = `<div class="table-scroll"><table>
+  wrap.innerHTML = `<div class="table-scroll">
+    <div class="alert alert-amber" style="margin-bottom:.5rem;font-size:12px">⚠️ Baris <span style="background:#FEF3DC;border:1px solid #F4A932;border-radius:4px;padding:1px 6px;font-weight:600">berwarna kuning</span> menandakan durasi ≥ 10 jam/hari — perlu diperiksa keabsahannya!</div>
+    <table>
     <thead><tr><th>No</th><th>Kode Siswa</th><th>Durasi (jam)</th><th>Tujuan Penggunaan</th><th>Waktu Penggunaan</th></tr></thead>
     <tbody>${rows.join('')}</tbody></table></div>`;
 }
@@ -1051,6 +1586,30 @@ function saveP3Row(i, field, val) {
   if (!data[i]) data[i] = { kode:'', durasi:'', tujuan:'', waktu:'' };
   data[i][field] = val;
   setStore('p3_data', data);
+}
+
+function highlightP3Row(rowIdx, val) {
+  const dur = parseFloat(val);
+  const isSuspect = !isNaN(dur) && dur >= 10;
+  // find the row in the table (rowIdx+1 because of thead)
+  const table = document.querySelector('#p3-table-wrap table');
+  if (!table) return;
+  const tr = table.querySelectorAll('tbody tr')[rowIdx];
+  if (!tr) return;
+  tr.style.background = isSuspect ? '#FFFBEA' : '';
+  const durCell = tr.cells[2];
+  if (!durCell) return;
+  const warn = durCell.querySelector('.p3-warn');
+  if (isSuspect && !warn) {
+    const sp = document.createElement('span');
+    sp.className = 'p3-warn';
+    sp.title = 'Perlu diperiksa!';
+    sp.style.cssText = 'color:#F4A932;font-size:14px;cursor:help';
+    sp.textContent = ' ⚠️';
+    durCell.appendChild(sp);
+  } else if (!isSuspect && warn) {
+    warn.remove();
+  }
 }
 
 // ── PERTEMUAN 4 ──
@@ -1343,6 +1902,7 @@ function renderP4Calc() {
     const mean=sumFx/n;
     const fxRows=vals.map(v=>`<tr><td>${v}</td><td>${freq[v]}</td><td>${(v*freq[v]).toFixed(1)}</td></tr>`).join('');
     area.innerHTML=`
+      <div style="margin-bottom:.5rem">${materiLink('mean','Mean (Rata-rata)')}</div>
       <div class="step-box"><div class="step-head"><span class="step-no-circle">1</span>Tabel f × x</div>
         <div class="table-scroll"><table><thead><tr><th>x</th><th>f</th><th>f × x</th></tr></thead><tbody>${fxRows}</tbody>
         <tfoot><tr style="background:var(--primary-xlight)"><td colspan="2" style="font-weight:600;font-size:11px">Σ(f × x)</td><td style="font-weight:600;color:var(--primary-dark)">${sumFx.toFixed(1)}</td></tr></tfoot></table></div></div>
@@ -1352,26 +1912,38 @@ function renderP4Calc() {
         <div class="formula-box">Mean = Σ(f × x) ÷ n = ... ÷ ... = ?</div></div>
       <div class="step-box"><div class="step-head"><span class="step-no-circle">3</span>Nilai rata-rata?</div>
         <div class="q-row"><span class="q-unit">Rata-rata =</span><input class="isian-inline" type="number" step="0.01" placeholder="..." oninput="p4CekHasil(this,${mean},'mean')"><span class="q-unit">jam/hari</span><div class="fb"></div></div></div>
-      <div class="hasil-box" id="hasil-box-p4mean"><p style="font-size:13px;color:var(--primary-dark);margin-bottom:4px">Rata-rata =</p><div class="hasil-val" id="hval-p4mean">—</div><span style="font-size:13px;color:var(--primary-dark)"> jam/hari</span></div>`;
+      <div class="hasil-box" id="hasil-box-p4mean"><p style="font-size:13px;color:var(--primary-dark);margin-bottom:4px">Rata-rata =</p><div class="hasil-val" id="hval-p4mean">—</div><span style="font-size:13px;color:var(--primary-dark)"> jam/hari</span>
+      <div style="margin-top:.65rem;padding:.65rem .85rem;background:rgba(11,175,122,0.08);border-radius:var(--radius-sm);border-top:1px solid #A8E8CF">
+        <div style="font-size:12px;font-weight:600;color:var(--primary-dark);margin-bottom:4px">💬 Maknai angka ini!</div>
+        <div style="font-size:12px;color:var(--text-2);margin-bottom:.4rem">Apa makna nilai rata-rata ini untuk kelompok kalian sebagai siswa SMP?</div>
+        ${taField('p4interp_mean','Nilai rata-rata ... jam/hari bermakna bahwa siswa di kelompok kami rata-rata menghabiskan ... HP setiap hari. Ini tergolong ... karena...',true,55)}
+      </div></div>`;
 
   } else if (p4ActiveCalc==='modus') {
     const maxF=Math.max(...Object.values(freq));
     const mods=Object.keys(freq).filter(k=>freq[k]===maxF).map(Number).sort((a,b)=>a-b);
     const fRows=vals.map(v=>`<tr${freq[v]===maxF?' style="background:var(--primary-xlight)"':''}><td>${v}</td><td>${freq[v]}${freq[v]===maxF?' ←':''}</td></tr>`).join('');
     area.innerHTML=`
+      <div style="margin-bottom:.5rem">${materiLink('modus','Modus')}</div>
       <div class="step-box"><div class="step-head"><span class="step-no-circle">1</span>Frekuensi setiap nilai</div>
         <div class="table-scroll"><table><thead><tr><th>Durasi (jam)</th><th>Frekuensi</th></tr></thead><tbody>${fRows}</tbody></table></div></div>
       <div class="step-box"><div class="step-head"><span class="step-no-circle">2</span>Frekuensi terbanyak?</div>
         <div class="q-row"><span class="q-unit">Frekuensi terbanyak =</span><input class="isian-inline" type="number" placeholder="..." oninput="p4Check(this,${maxF},'mod_frek')"><span class="q-unit">kali</span><div class="fb"></div></div></div>
       <div class="step-box"><div class="step-head"><span class="step-no-circle">3</span>Nilai modus?</div>
         <div class="q-row"><span class="q-unit">Modus =</span><input class="isian-inline" type="number" step="0.5" placeholder="..." oninput="p4CekHasil(this,${mods[0]},'modus')"><span class="q-unit">jam/hari</span><div class="fb"></div></div></div>
-      <div class="hasil-box" id="hasil-box-p4modus"><p style="font-size:13px;color:var(--primary-dark);margin-bottom:4px">Modus =</p><div class="hasil-val" id="hval-p4modus">—</div><span style="font-size:13px;color:var(--primary-dark)"> jam/hari</span></div>`;
+      <div class="hasil-box" id="hasil-box-p4modus"><p style="font-size:13px;color:var(--primary-dark);margin-bottom:4px">Modus =</p><div class="hasil-val" id="hval-p4modus">—</div><span style="font-size:13px;color:var(--primary-dark)"> jam/hari</span>
+      <div style="margin-top:.65rem;padding:.65rem .85rem;background:rgba(11,175,122,0.08);border-radius:var(--radius-sm);border-top:1px solid #A8E8CF">
+        <div style="font-size:12px;font-weight:600;color:var(--primary-dark);margin-bottom:4px">💬 Maknai angka ini!</div>
+        <div style="font-size:12px;color:var(--text-2);margin-bottom:.4rem">Apa artinya nilai modus ini? Mengapa durasi ini paling banyak dipilih oleh teman-teman?</div>
+        ${taField('p4interp_modus','Modus ... jam/hari berarti durasi yang paling banyak terjadi di kelompok kami adalah... Kemungkinan alasannya adalah...',true,55)}
+      </div></div>`;
 
   } else if (p4ActiveCalc==='median') {
     const mid=n%2===1?sorted[Math.floor(n/2)]:(sorted[n/2-1]+sorted[n/2])/2;
     const posB=n%2===1?Math.floor(n/2)+1:0;
     const dStr=sorted.map((v,i)=>{const isM=n%2===1?i===Math.floor(n/2):(i===n/2-1||i===n/2);return isM?`<strong style="color:var(--primary-dark)">[${v}]</strong>`:v;}).join(', ');
     area.innerHTML=`
+      <div style="margin-bottom:.5rem">${materiLink('median','Median (Nilai Tengah)')}</div>
       <div class="step-box"><div class="step-head"><span class="step-no-circle">1</span>Data terurut</div><div style="font-size:12px;line-height:1.9;padding:.5rem;background:var(--surface);border-radius:var(--radius-sm)">${dStr}</div></div>
       <div class="step-box"><div class="step-head"><span class="step-no-circle">2</span>Banyaknya data (n)?</div>
         <div class="q-row"><span class="q-unit">n =</span><input class="isian-inline" type="number" placeholder="..." oninput="p4Check(this,${n},'med_n')"><div class="fb"></div></div>
@@ -1379,11 +1951,17 @@ function renderP4Calc() {
         :`<div class="alert alert-green" style="margin-top:.5rem">n genap → median = (data ke-${n/2} + data ke-${n/2+1}) ÷ 2 = (${sorted[n/2-1]} + ${sorted[n/2]}) ÷ 2</div>`}</div>
       <div class="step-box"><div class="step-head"><span class="step-no-circle">3</span>Nilai median?</div>
         <div class="q-row"><span class="q-unit">Median =</span><input class="isian-inline" type="number" step="0.5" placeholder="..." oninput="p4CekHasil(this,${mid},'median')"><span class="q-unit">jam/hari</span><div class="fb"></div></div></div>
-      <div class="hasil-box" id="hasil-box-p4median"><p style="font-size:13px;color:var(--primary-dark);margin-bottom:4px">Median =</p><div class="hasil-val" id="hval-p4median">—</div><span style="font-size:13px;color:var(--primary-dark)"> jam/hari</span></div>`;
+      <div class="hasil-box" id="hasil-box-p4median"><p style="font-size:13px;color:var(--primary-dark);margin-bottom:4px">Median =</p><div class="hasil-val" id="hval-p4median">—</div><span style="font-size:13px;color:var(--primary-dark)"> jam/hari</span>
+      <div style="margin-top:.65rem;padding:.65rem .85rem;background:rgba(11,175,122,0.08);border-radius:var(--radius-sm);border-top:1px solid #A8E8CF">
+        <div style="font-size:12px;font-weight:600;color:var(--primary-dark);margin-bottom:4px">💬 Maknai angka ini!</div>
+        <div style="font-size:12px;color:var(--text-2);margin-bottom:.4rem">Apa arti nilai tengah ini? Apakah lebih rendah atau lebih tinggi dari rata-rata? Apa maknanya?</div>
+        ${taField('p4interp_median','Median ... jam/hari berarti setengah dari responden menggunakan HP kurang dari ... jam dan setengahnya lagi lebih dari... Perbandingan dengan mean menunjukkan bahwa...',true,55)}
+      </div></div>`;
 
   } else if (p4ActiveCalc==='jangkauan') {
     const xmin=Math.min(...rawData),xmax=Math.max(...rawData),range=xmax-xmin;
     area.innerHTML=`
+      <div style="margin-bottom:.5rem">${materiLink('jangkauan','Jangkauan (Range)')}</div>
       <div class="step-box"><div class="step-head"><span class="step-no-circle">1</span>Data terurut</div><div style="font-size:12px;line-height:1.9;padding:.5rem;background:var(--surface);border-radius:var(--radius-sm)">${sorted.join(', ')}</div></div>
       <div class="step-box"><div class="step-head"><span class="step-no-circle">2</span>Isi pertanyaan</div>
         <div class="q-block"><div class="q-label">Data terbesar (X<sub>maks</sub>)?</div><div class="q-row"><span class="q-unit">X<sub>maks</sub> =</span><input class="isian-inline" type="number" step="0.5" placeholder="..." oninput="p4Check(this,${xmax},'jk_max')"><span class="q-unit">jam</span><div class="fb"></div></div></div>
@@ -1391,7 +1969,12 @@ function renderP4Calc() {
         <div class="formula-box">Jangkauan = X<sub>maks</sub> − X<sub>min</sub> = ... − ... = ?</div></div>
       <div class="step-box"><div class="step-head"><span class="step-no-circle">3</span>Nilai jangkauan?</div>
         <div class="q-row"><span class="q-unit">Jangkauan =</span><input class="isian-inline" type="number" step="0.5" placeholder="..." oninput="p4CekHasil(this,${range},'jangkauan')"><span class="q-unit">jam</span><div class="fb"></div></div></div>
-      <div class="hasil-box" id="hasil-box-p4jangkauan"><p style="font-size:13px;color:var(--primary-dark);margin-bottom:4px">Jangkauan =</p><div class="hasil-val" id="hval-p4jangkauan">—</div><span style="font-size:13px;color:var(--primary-dark)"> jam</span></div>`;
+      <div class="hasil-box" id="hasil-box-p4jangkauan"><p style="font-size:13px;color:var(--primary-dark);margin-bottom:4px">Jangkauan =</p><div class="hasil-val" id="hval-p4jangkauan">—</div><span style="font-size:13px;color:var(--primary-dark)"> jam</span>
+      <div style="margin-top:.65rem;padding:.65rem .85rem;background:rgba(11,175,122,0.08);border-radius:var(--radius-sm);border-top:1px solid #A8E8CF">
+        <div style="font-size:12px;font-weight:600;color:var(--primary-dark);margin-bottom:4px">💬 Maknai angka ini!</div>
+        <div style="font-size:12px;color:var(--text-2);margin-bottom:.4rem">Jangkauan yang besar atau kecil — apa artinya untuk variasi penggunaan HP di kelompok kalian?</div>
+        ${taField('p4interp_jangkauan','Jangkauan ... jam berarti ada perbedaan yang ... antara siswa yang paling sedikit dan paling banyak menggunakan HP. Hal ini menunjukkan bahwa...',true,55)}
+      </div></div>`;
 
   } else if (p4ActiveCalc==='kattujuan') {
     renderP4KatDiCalc('tujuan');
@@ -1410,6 +1993,7 @@ function renderP4Calc() {
     const q1=getQ(sorted,q1pos), q2=getQ(sorted,q2pos), q3=getQ(sorted,q3pos);
     const qr=q3-q1;
     area.innerHTML=`
+      <div style="margin-bottom:.5rem">${materiLink('kuartil','Kuartil')}</div>
       <div class="step-box"><div class="step-head"><span class="step-no-circle">1</span>Data terurut (n = ${n})</div><div style="font-size:12px;line-height:1.9;padding:.5rem;background:var(--surface);border-radius:var(--radius-sm)">${sorted.join(', ')}</div></div>
       <div class="step-box"><div class="step-head"><span class="step-no-circle">2</span>Hitung posisi kuartil</div>
         <div class="formula-box" style="text-align:left;line-height:2">
@@ -1588,21 +2172,280 @@ function renderP4Chart() {
   });
 }
 
-// ── PERTEMUAN 5 ──
+function openMateri(topic) {
+  // Switch to materi page and show the right tab
+  const bn = document.querySelectorAll('.bn-item')[2];
+  showPage('materi', bn);
+  const tabMap = {mean:'mean', median:'median', modus:'modus', jangkauan:'jangkauan', kuartil:'kuartil', penyajian:'penyajian'};
+  const t = tabMap[topic] || 'mean';
+  const btn = document.querySelector(`#page-materi .tab-btn[onclick*="${t}"]`);
+  if (btn) { showMateri(t, btn); }
+  window.scrollTo(0,0);
+}
+
+function materiLink(topic, label) {
+  return `<a onclick="openMateri('${topic}')" style="display:inline-flex;align-items:center;gap:4px;font-size:12px;color:var(--primary-dark);cursor:pointer;text-decoration:none;background:var(--primary-xlight);border:0.5px solid #A8E8CF;border-radius:99px;padding:3px 10px;margin-bottom:.5rem;font-weight:500"><span>ℹ️</span> Pelajari konsep: <strong>${label}</strong></a>`;
+}
+function buildP5StatHTML() {
+  // Prioritas: p4_rows (input manual P4) → fallback durasi dari p3_data
+  const p4rows = getStore('p4_rows', []);
+  const p3data = getStore('p3_data', []);
+
+  // Kumpulkan data durasi: utamakan p4_rows, fallback ke kolom durasi p3_data
+  let dataSet = p4rows.slice();
+  if (dataSet.length === 0) {
+    dataSet = p3data
+      .filter(r => r && r.durasi !== '' && r.durasi !== null && r.durasi !== undefined)
+      .map(r => parseFloat(r.durasi))
+      .filter(v => !isNaN(v) && v >= 0);
+  }
+
+  const n3valid = p3data.filter(r => r && r.kode).length;
+  const n = dataSet.length;
+  const nResp = n3valid > 0 ? n3valid : n;
+  const sumber = p4rows.length > 0 ? 'Pertemuan 4 (input manual)' : (dataSet.length > 0 ? 'Pertemuan 3 (kolom durasi)' : null);
+
+  if (n === 0) {
+    return `<div class="alert alert-amber" style="margin-bottom:.75rem">
+      <strong>Data belum tersedia.</strong> Pastikan kalian sudah mengisi:
+      <ul style="margin:.4rem 0 0 1.2rem;font-size:13px">
+        <li>Tabel 40 responden di <strong>Pertemuan 3</strong> (kolom Durasi wajib diisi), atau</li>
+        <li>Input data durasi di <strong>Pertemuan 4 → Aktivitas 1</strong></li>
+      </ul>
+      Kembali ke P3/P4, isi datanya, lalu tekan tombol <em>Muat Ulang Data</em> di bawah.
+    </div>
+    <div class="pertanyaan">
+      <div class="pq">Atau isi manual ringkasan data kelompok kalian:</div>
+      ${taField('p5a0manual','Responden: ... siswa\nMean: ... jam/hari\nMedian: ... jam/hari\nModus: ... jam/hari\nJangkauan: ... jam/hari\n\nKesimpulan: ...',true,110)}
+    </div>`;
+  }
+
+  const sorted = [...dataSet].sort((a,b) => a-b);
+  const mean   = dataSet.reduce((s,v) => s+v, 0) / n;
+  const median = n%2===1 ? sorted[Math.floor(n/2)] : (sorted[n/2-1]+sorted[n/2])/2;
+  const freq   = {}; dataSet.forEach(v => { freq[v] = (freq[v]||0)+1; });
+  const maxF   = Math.max(...Object.values(freq));
+  const modus  = Object.keys(freq).filter(k => freq[k]===maxF).map(Number).sort((a,b)=>a-b).join(' & ');
+  const jangk  = Math.max(...dataSet) - Math.min(...dataSet);
+
+  return `
+    <div class="alert alert-green" style="margin-bottom:.85rem">
+      ✅ Data berhasil dibaca dari <strong>${sumber}</strong> — ${n} nilai durasi, ${nResp} responden.
+    </div>
+    <div class="sec-lbl">Ringkasan Data Kelompok</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:.65rem;margin-bottom:.85rem">
+      <div class="card-accent" style="margin-bottom:0;text-align:center;padding:.85rem">
+        <div style="font-size:12px;color:var(--text-3);margin-bottom:4px">Banyak Responden</div>
+        <div style="font-size:28px;font-weight:700;color:var(--primary-dark);font-family:var(--font-display)">${nResp}</div>
+        <div style="font-size:11px;color:var(--text-3)">siswa</div>
+      </div>
+      <div class="card-accent" style="margin-bottom:0;text-align:center;padding:.85rem">
+        <div style="font-size:12px;color:var(--text-3);margin-bottom:4px">Mean (Rata-rata)</div>
+        <div style="font-size:28px;font-weight:700;color:var(--primary-dark);font-family:var(--font-display)">${mean.toFixed(2)}</div>
+        <div style="font-size:11px;color:var(--text-3)">jam/hari</div>
+      </div>
+      <div class="card-accent" style="margin-bottom:0;text-align:center;padding:.85rem">
+        <div style="font-size:12px;color:var(--text-3);margin-bottom:4px">Median</div>
+        <div style="font-size:28px;font-weight:700;color:var(--primary-dark);font-family:var(--font-display)">${median}</div>
+        <div style="font-size:11px;color:var(--text-3)">jam/hari</div>
+      </div>
+      <div class="card-accent" style="margin-bottom:0;text-align:center;padding:.85rem">
+        <div style="font-size:12px;color:var(--text-3);margin-bottom:4px">Modus</div>
+        <div style="font-size:22px;font-weight:700;color:var(--primary-dark);font-family:var(--font-display)">${modus}</div>
+        <div style="font-size:11px;color:var(--text-3)">jam/hari</div>
+      </div>
+      <div class="card-accent" style="margin-bottom:0;text-align:center;padding:.85rem;grid-column:1/-1">
+        <div style="font-size:12px;color:var(--text-3);margin-bottom:4px">Jangkauan (Range)</div>
+        <div style="font-size:28px;font-weight:700;color:var(--primary-dark);font-family:var(--font-display)">${jangk}</div>
+        <div style="font-size:11px;color:var(--text-3)">jam/hari</div>
+      </div>
+    </div>
+    <div class="sec-lbl">Kesimpulan dari Data</div>
+    <div class="pertanyaan">
+      <div class="pq">Berdasarkan data di atas, tuliskan kesimpulan tentang pola penggunaan HP siswa kelas VIII kelompok kalian:</div>
+      ${taField('p5a0kesimpulan',
+        'Dari ' + nResp + ' responden, rata-rata penggunaan HP adalah ' + mean.toFixed(2) + ' jam/hari. Nilai median ' + median + ' jam/hari menunjukkan bahwa...',
+        true, 90)}
+    </div>`;
+}
+
 function buildP5() {
-  const prog = makeProg(['Aktivitas 1','Aktivitas 2','Refleksi Akhir']);
-  const a0 = wrapAkt(0,'Menyiapkan Presentasi',`
-    <p>Presentasikan hasil proyek secara singkat dan jelas menggunakan data yang sudah diolah.</p>
-    <div class="pertanyaan"><div class="pq">Susun poin-poin utama presentasi (minimal 4 poin):</div>${taField('p5a0q1','1. Latar belakang: ...\\n2. Data: ... responden, cara: ...\\n3. Hasil: mean=..., median=..., modus=..., jangkauan=...\\n4. Kesimpulan: ...\\n5. Saran: ...',true,120)}</div>`,null,1,'Lanjut →');
-  const a1 = wrapAkt(1,'Kesimpulan & Rekomendasi',`
-    <div class="pertanyaan"><div class="pq">1. Kesimpulan utama tentang pola penggunaan HP siswa kelas VIII?</div>${taField('p5a1q1','Kesimpulan kami: ...',true,65)}</div>
-    <div class="pertanyaan"><div class="pq">2. Berikan 1–2 rekomendasi untuk siswa, guru, atau orang tua!</div>${taField('p5a1q2','Rekomendasi 1: ...\\nRekomendasi 2: ...',true,65)}</div>`,0,2,'Lanjut ke Refleksi →');
-  const ref = wrapRefleksi(2,`
-    <div class="alert alert-green" style="margin-bottom:.75rem"><strong>Refleksi Akhir Proyek</strong></div>
-    <div class="pertanyaan"><div class="pq">1. Hal terpenting yang kalian pelajari dari proyek ini?</div>${taField('p5ref1','Hal terpenting: ...',true,55)}</div>
-    <div class="pertanyaan"><div class="pq">2. Bagaimana pengalaman menganalisis data nyata mengubah cara pandang kalian?</div>${taField('p5ref2','Sekarang kami menyadari bahwa...',true,55)}</div>
-    <div class="pertanyaan"><div class="pq">3. Jika diulang, apa yang akan kalian lakukan berbeda?</div>${taField('p5ref3','Kami akan...',true,55)}</div>`,1,5);
-  return `<div style="font-family:var(--font-display);font-size:15px;font-weight:700;margin-bottom:.75rem">Pertemuan 5 — Presentasi, Refleksi & Evaluasi</div>${buildIdCard()}${prog}${a0}${a1}${ref}`;
+  const prog = makeProg(['Aktivitas 1','Aktivitas 2','Aktivitas 3','Refleksi Akhir']);
+
+  // ── Aktivitas 1: Ringkasan Data dari P3/P4 ──
+  const a0 = wrapAkt(0,'Ringkasan & Kesimpulan Data',
+    `<div id="p5-stat-area">${buildP5StatHTML()}</div>
+     <div class="btn-row" style="margin-top:.5rem">
+       <button class="btn btn-sm" onclick="document.getElementById('p5-stat-area').innerHTML=buildP5StatHTML();showToast('✓ Data berhasil dimuat ulang')">
+         🔄 Muat Ulang Data dari P3/P4
+       </button>
+     </div>`,
+    null, 1, 'Lanjut ke Presentasi →');
+
+  // ── Aktivitas 2: Upload Infografis & Penilaian Teman ──
+  const rubrikHTML = buildP5RubrikHTML();
+  const a1 = wrapAkt(1,'Presentasi Infografis & Penilaian Kelompok',`
+    <div class="alert alert-green" style="margin-bottom:.85rem">Unggah infografis yang telah dibuat, lalu minta 4 kelompok lain untuk memberikan penilaian dan saran.</div>
+
+    <div class="sec-lbl">Upload Infografis Kelompok</div>
+    <div class="card" style="border:2px dashed var(--primary);background:var(--primary-xlight);margin-bottom:1rem;text-align:center;padding:1.5rem">
+      <div style="font-size:32px;margin-bottom:.5rem">🖼️</div>
+      <p style="margin-bottom:.75rem;color:var(--text-2)">Unggah foto atau tangkapan layar infografis yang sudah dibuat</p>
+      <input type="file" id="p5-infografis-input" accept="image/*" style="display:none" onchange="p5PreviewInfografis(this)">
+      <button class="btn btn-primary" onclick="document.getElementById('p5-infografis-input').click()">📎 Pilih File Gambar</button>
+      <div id="p5-infografis-preview" style="margin-top:.85rem"></div>
+    </div>
+
+    <div class="sec-lbl">Penilaian dari Kelompok Lain</div>
+    <p style="color:var(--text-2);margin-bottom:.85rem">Minta 4 kelompok lain mengisi rubrik penilaian berikut setelah melihat presentasi kalian:</p>
+    <div class="alert alert-amber" style="margin-bottom:.85rem;font-size:12px"><strong>Panduan Skala:</strong> 1 = Kurang &nbsp;|&nbsp; 2 = Cukup &nbsp;|&nbsp; 3 = Baik &nbsp;|&nbsp; 4 = Sangat Baik</div>
+    ${rubrikHTML}
+    <div class="card-accent" style="text-align:center;padding:1rem">
+      <div style="font-size:13px;color:var(--text-3);margin-bottom:4px">Rata-rata Skor Rubrik (dari 4 Kelompok)</div>
+      <div id="p5-rata-nilai" style="font-size:28px;font-weight:700;color:var(--primary-dark);font-family:var(--font-display)">—</div>
+      <div style="font-size:11px;color:var(--text-3);margin-top:2px">dari 16 poin maksimal</div>
+    </div>`,
+  0, 2, 'Lanjut ke Refleksi →');
+
+  // ── Aktivitas 3: Refleksi Akhir Pertemuan (bukan wrapRefleksi) ──
+  const a2 = wrapAkt(2,'Refleksi Akhir Pertemuan',`
+    <div class="alert alert-green" style="margin-bottom:.85rem"><strong>Refleksi Akhir Proyek DataVista</strong> — Ungkapkan perasaan dan pemikiran kalian setelah menyelesaikan seluruh proyek.</div>
+
+    <div class="sec-lbl">Refleksi Individual</div>
+    <div class="pertanyaan"><div class="pq">1. Hal terpenting yang kalian pelajari dari proyek statistika ini?</div>${taField('p5ref1','Hal terpenting yang kami pelajari adalah...',true,65)}</div>
+    <div class="pertanyaan"><div class="pq">2. Bagaimana pengalaman menganalisis data nyata mengubah cara pandang kalian tentang penggunaan HP?</div>${taField('p5ref2','Sekarang kami menyadari bahwa...',true,65)}</div>
+    <div class="pertanyaan"><div class="pq">3. Jika proyek ini diulang, apa yang akan kalian lakukan berbeda?</div>${taField('p5ref3','Kami akan melakukan...',true,55)}</div>
+
+    <div class="sec-lbl" style="margin-top:.5rem">Refleksi Proses Kerja Kelompok</div>
+    <div class="pertanyaan"><div class="pq">4. Bagaimana pembagian tugas dalam kelompok berjalan? Apakah semua anggota aktif berkontribusi?</div>${taField('p5ref4','Pembagian tugas berjalan...',true,55)}</div>
+    <div class="pertanyaan"><div class="pq">5. Apa tantangan terbesar yang dihadapi kelompok dan bagaimana cara mengatasinya?</div>${taField('p5ref5','Tantangan terbesar kami adalah... dan cara mengatasinya...',true,65)}</div>
+
+    <div class="sec-lbl" style="margin-top:.5rem">Evaluasi Diri</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:.65rem;margin-bottom:.75rem">
+      ${['Memahami konsep mean, median, modus','Memahami jangkauan & kuartil','Membaca & menyajikan grafik','Mengumpulkan data lapangan','Kerja sama tim','Kemampuan presentasi'].map((asp,i)=>`
+      <div class="card" style="padding:.85rem;margin-bottom:0">
+        <div style="font-size:13px;color:var(--text-1);font-weight:500;margin-bottom:.5rem">${asp}</div>
+        <div style="display:flex;gap:5px">
+          ${['😟','😐','🙂','😊','🤩'].map((em,j)=>`
+          <label style="flex:1;text-align:center;cursor:pointer">
+            <input type="radio" name="p5eval_${i}" value="${j+1}" style="display:none" onchange="saveTA('p5eval_${i}',this.value)" ${loadTA('p5eval_${i}')===(j+1).toString()?'checked':''}>
+            <span style="font-size:20px;display:block;padding:3px;border-radius:6px;transition:background .15s" class="eval-em">${em}</span>
+          </label>`).join('')}
+        </div>
+      </div>`).join('')}
+    </div>
+    <div class="pertanyaan"><div class="pq">6. Pesan atau kesan kalian untuk teman sekelompok:</div>${taField('p5ref6','Kepada teman-teman sekelompokku...',true,55)}</div>
+
+    <div class="btn-row" style="margin-top:.75rem">
+      <button class="btn" onclick="ptmNav(1)">← Kembali</button>
+      <button class="btn btn-primary" onclick="savePDF(5)" style="background:#0BAF7A;border-color:#0BAF7A">🖨 Simpan PDF Pertemuan 5</button>
+    </div>`,
+  1, 3);
+
+  return `<div style="font-family:var(--font-display);font-size:15px;font-weight:700;margin-bottom:.75rem">Pertemuan 5 — Presentasi, Refleksi & Evaluasi</div>${buildIdCard()}${prog}${a0}${a1}${a2}${buildGuruNote(5)}`;
+}
+
+// ── P5 Helper Functions ──
+function buildP5RubrikHTML() {
+  const rubrikAspek = [
+    {key:'data',        label:'Kelengkapan Data',       desc:'Apakah semua data (mean, median, modus, jangkauan) disajikan dengan lengkap?'},
+    {key:'visual',      label:'Kejelasan Visualisasi',  desc:'Apakah grafik/diagram mudah dibaca dan dipahami?'},
+    {key:'kesimpulan',  label:'Ketepatan Kesimpulan',   desc:'Apakah kesimpulan sesuai dengan data yang disajikan?'},
+    {key:'kreativitas', label:'Kreativitas Tampilan',   desc:'Apakah infografis menarik, rapi, dan orisinal?'}
+  ];
+  return [1,2,3,4].map(k => {
+    const namaSaved = loadTA('p5_penilai'+k+'_nama') || '';
+    const saranSaved = loadTA('p5_penilai'+k+'_saran') || '';
+    const aspekHTML = rubrikAspek.map(a => {
+      const savedScore = loadTA('p5_k'+k+'_'+a.key) || '';
+      const scoresHTML = [1,2,3,4].map(sc => {
+        const isSelected = savedScore === String(sc);
+        const btnStyle = isSelected
+          ? 'display:flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:6px;border:1.5px solid var(--primary);font-size:12px;font-weight:700;background:var(--primary);color:#fff;cursor:pointer'
+          : 'display:flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:6px;border:1.5px solid var(--border);font-size:12px;font-weight:700;color:var(--text-3);cursor:pointer';
+        return `<label style="cursor:pointer;text-align:center">
+          <input type="radio" name="p5_k${k}_${a.key}" value="${sc}" style="display:none" onchange="saveTA('p5_k${k}_${a.key}',this.value);p5CalcRubrik(${k})" ${isSelected?'checked':''}>
+          <span style="${btnStyle}">${sc}</span>
+        </label>`;
+      }).join('');
+      return `<div style="padding:.6rem 0;border-bottom:.5px solid var(--border)">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px;flex-wrap:wrap">
+          <div style="flex:1">
+            <div style="font-size:13px;font-weight:600;color:var(--text-1)">${a.label}</div>
+            <div style="font-size:11px;color:var(--text-3);margin-top:1px">${a.desc}</div>
+          </div>
+          <div style="display:flex;gap:5px;flex-shrink:0">${scoresHTML}</div>
+        </div>
+      </div>`;
+    }).join('');
+    const scores = rubrikAspek.map(a=>parseInt(loadTA('p5_k'+k+'_'+a.key)||'0')).filter(v=>v>0);
+    const total = scores.length === rubrikAspek.length ? scores.reduce((a,b)=>a+b,0)+' / 16' : '—';
+    return `<div class="card" style="margin-bottom:.85rem;border-left:3px solid var(--primary)">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:.75rem">
+        <div style="width:30px;height:30px;border-radius:50%;background:var(--primary);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;flex-shrink:0">${k}</div>
+        <div style="font-weight:600;font-size:14px;color:var(--text-1)">Penilaian Kelompok ${k}</div>
+      </div>
+      <div class="form-field"><label>Nama Kelompok Penilai</label>
+        <input type="text" placeholder="Nama kelompok..." oninput="saveTA('p5_penilai${k}_nama',this.value)" value="${namaSaved.replace(/"/g,'&quot;')}">
+      </div>
+      <div style="font-size:12px;font-weight:600;color:var(--text-3);text-transform:uppercase;letter-spacing:.06em;margin:.5rem 0 .25rem">Rubrik Penilaian</div>
+      ${aspekHTML}
+      <div class="form-field" style="margin-top:.65rem"><label>Komentar / Saran Tambahan</label>
+        <textarea placeholder="Saran untuk kelompok penyaji..." style="min-height:50px" oninput="saveTA('p5_penilai${k}_saran',this.value)">${saranSaved}</textarea>
+      </div>
+      <div style="display:flex;align-items:center;justify-content:space-between;padding:.65rem .85rem;background:var(--primary-xlight);border-radius:var(--radius-sm);margin-top:.5rem">
+        <div style="font-size:13px;font-weight:600;color:var(--primary-dark)">Skor Kelompok ${k}:</div>
+        <div id="p5-skor-k${k}" style="font-size:20px;font-weight:700;color:var(--primary-dark);font-family:var(--font-display)">${total}</div>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function p5PreviewInfografis(input) {
+  const prev = document.getElementById('p5-infografis-preview');
+  if (!prev) return;
+  if (input.files && input.files[0]) {
+    const reader = new FileReader();
+    reader.onload = e => {
+      prev.innerHTML = `<img src="${e.target.result}" style="max-width:100%;max-height:280px;border-radius:var(--radius-sm);border:1px solid var(--border);margin-top:.5rem" alt="Infografis kelompok">
+        <p style="font-size:12px;color:var(--primary-dark);margin-top:.35rem">✓ Infografis berhasil diunggah</p>`;
+    };
+    reader.readAsDataURL(input.files[0]);
+  }
+}
+
+function p5CalcRubrik(k) {
+  const aspek = ['data','visual','kesimpulan','kreativitas'];
+  const scores = aspek.map(a => parseInt(loadTA('p5_k'+k+'_'+a)||'0')).filter(v=>v>0);
+  const total = scores.reduce((a,b)=>a+b,0);
+  const el = document.getElementById('p5-skor-k'+k);
+  if (el) el.textContent = scores.length === aspek.length ? total + ' / 16' : '—';
+  // Highlight selected radio buttons visually
+  aspek.forEach(a => {
+    const saved = loadTA('p5_k'+k+'_'+a);
+    if (saved) {
+      const radios = document.querySelectorAll(`input[name="p5_k${k}_${a}"]`);
+      radios.forEach(r => {
+        const btn = r.nextElementSibling;
+        if (btn) btn.style.cssText = r.value === saved
+          ? 'display:flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:6px;border:1.5px solid var(--primary);font-size:12px;font-weight:700;background:var(--primary);color:#fff;cursor:pointer'
+          : 'display:flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:6px;border:1.5px solid var(--border);font-size:12px;font-weight:700;color:var(--text-3);cursor:pointer';
+      });
+    }
+  });
+  p5UpdateRataRata();
+}
+
+function p5UpdateRataRata() {
+  const aspek = ['data','visual','kesimpulan','kreativitas'];
+  let totalAll = 0, countGroups = 0;
+  [1,2,3,4].forEach(k => {
+    const scores = aspek.map(a => parseInt(loadTA('p5_k'+k+'_'+a)||'0')).filter(v=>v>0);
+    if (scores.length === aspek.length) { totalAll += scores.reduce((a,b)=>a+b,0); countGroups++; }
+  });
+  const el = document.getElementById('p5-rata-nilai');
+  if (!el) return;
+  el.textContent = countGroups > 0 ? (totalAll / countGroups).toFixed(1) : '—';
 }
 
 // ── KALKULATOR (STANDALONE) ──
@@ -1756,6 +2599,107 @@ function kRenderCalc(){
 </div>
 
 <script>
+
+// ── LATIHAN SOAL ──
+const soalJawaban = { 1:'A', 2:'B', 3:'A', 4:'B', 5:'B', 6:'C', 7:'A', 8:'B', 9:'B', 10:'B' };
+let soalStatus = {};
+
+function initProgressDots() {
+  const wrap = document.getElementById('progress-dots');
+  if (!wrap) return;
+  let html = '';
+  for (let i=1; i<=10; i++) html += `<div class="prog-dot" id="dot-${i}" title="Soal ${i}">${i}</div>`;
+  html += `<div class="prog-dot essay-dot" id="dot-e1" title="Essay 1">E1</div>`;
+  html += `<div class="prog-dot essay-dot" id="dot-e2" title="Essay 2">E2</div>`;
+  wrap.innerHTML = html;
+}
+
+function updateDot(no, benar) {
+  const dot = document.getElementById('dot-'+no);
+  if (!dot) return;
+  dot.classList.remove('done','wrong');
+  dot.classList.add(benar ? 'done' : 'wrong');
+}
+
+function pilihJawaban(no, huruf) {
+  if (soalStatus[no] !== undefined) return; // sudah dijawab, kunci
+  ['A','B','C','D'].forEach(h => {
+    const el = document.getElementById('s'+no+'-'+h.toLowerCase());
+    if (el) el.className = 'pilihan-opt';
+  });
+  const benar = soalJawaban[no];
+  const dipilih = document.getElementById('s'+no+'-'+huruf.toLowerCase());
+  const correct = document.getElementById('s'+no+'-'+benar.toLowerCase());
+  const isBenar = (huruf === benar);
+  if (dipilih) dipilih.className = 'pilihan-opt ' + (isBenar ? 'correct' : 'wrong');
+  if (!isBenar && correct) correct.className = 'pilihan-opt correct';
+  soalStatus[no] = isBenar;
+  updateDot(no, isBenar);
+  const pb = document.getElementById('pembahasan-'+no);
+  if (pb) pb.className = 'pembahasan-box show';
+  const card = document.getElementById('soal-card-'+no);
+  if (card) card.classList.add('answered');
+  if (Object.keys(soalStatus).length === Object.keys(soalJawaban).length) {
+    setTimeout(tampilkanSkor, 400);
+  }
+}
+
+function tampilkanSkor() {
+  const benarCount = Object.values(soalStatus).filter(Boolean).length;
+  const total = Object.keys(soalJawaban).length;
+  const skor = Math.round((benarCount / total) * 100);
+  const wrap = document.getElementById('latihan-skor-wrap');
+  const angka = document.getElementById('latihan-skor-angka');
+  const label = document.getElementById('latihan-skor-label');
+  if (!wrap || !angka || !label) return;
+  angka.textContent = skor;
+  const labels = skor === 100 ? '🏆 Sempurna! Semua jawaban benar!' :
+                 skor >= 80  ? '🌟 Sangat baik! Literasi statistikmu kuat.' :
+                 skor >= 60  ? '👍 Bagus! Pelajari pembahasan soal yang salah.' :
+                 skor >= 40  ? '📖 Perlu lebih banyak latihan. Baca kembali materinya!' :
+                               '💡 Jangan menyerah! Pelajari materi dari awal ya.';
+  label.textContent = `${benarCount} dari ${total} benar — ${labels}`;
+  wrap.style.display = 'block';
+  setTimeout(() => wrap.scrollIntoView({behavior:'smooth', block:'center'}), 200);
+}
+
+function lihatRubrik(id) {
+  const el = document.getElementById('rubrik-'+id);
+  if (!el) return;
+  const isShow = el.classList.contains('show');
+  el.className = isShow ? 'rubrik-box' : 'rubrik-box show';
+  // tandai dot essay
+  const dotId = id === 'e1' ? 'dot-e1' : 'dot-e2';
+  const dot = document.getElementById(dotId);
+  if (dot) { dot.classList.remove('essay-dot'); dot.classList.add('essay-done'); }
+}
+
+function resetLatihan() {
+  soalStatus = {};
+  for (let i=1; i<=10; i++) {
+    ['a','b','c','d'].forEach(h => {
+      const el = document.getElementById('s'+i+'-'+h);
+      if (el) el.className = 'pilihan-opt';
+    });
+    const pb = document.getElementById('pembahasan-'+i);
+    if (pb) pb.className = 'pembahasan-box';
+    const card = document.getElementById('soal-card-'+i);
+    if (card) card.classList.remove('answered');
+    const dot = document.getElementById('dot-'+i);
+    if (dot) { dot.classList.remove('done','wrong'); }
+  }
+  ['e1','e2'].forEach(id => {
+    const rb = document.getElementById('rubrik-'+id);
+    if (rb) rb.className = 'rubrik-box';
+    const dot = document.getElementById('dot-'+id);
+    if (dot) { dot.classList.remove('essay-done'); dot.classList.add('essay-dot'); }
+  });
+  const wrap = document.getElementById('latihan-skor-wrap');
+  if (wrap) wrap.style.display = 'none';
+  window.scrollTo({top:0, behavior:'smooth'});
+  initProgressDots();
+}
+
 /* ── PWA SERVICE WORKER REGISTRATION ── */
 let deferredPrompt = null;
 
