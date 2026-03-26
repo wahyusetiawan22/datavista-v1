@@ -1,198 +1,73 @@
-# DataVista V2
+# DataVista V2 — Media Pembelajaran Statistika Kelas VIII
 
-**Media Pembelajaran Interaktif Statistika — SMP Kelas VIII**
-
-> Pengembangan Bahan Ajar *Project-Based Learning* Berbantuan Media Digital DataVista untuk Penguatan Literasi Statistik serta Resiliensi Siswa SMP
+> Media pembelajaran interaktif berbasis **Project-Based Learning (PjBL)** untuk topik statistika SMP Kelas VIII, dikembangkan dalam kerangka penelitian disertasi S3 di Universitas Pendidikan Indonesia (UPI).
 
 ---
 
-## Tentang Proyek
+## Deskripsi
 
-DataVista V2 adalah aplikasi web interaktif berbasis PWA (*Progressive Web App*) yang dirancang sebagai media pembelajaran statistika untuk siswa SMP kelas VIII. Aplikasi ini mendukung model pembelajaran **Project-Based Learning (PjBL)** dengan konteks nyata berupa analisis pola penggunaan HP siswa.
+**DataVista V2** adalah aplikasi web satu halaman (*single-page application*) yang dirancang sebagai bahan ajar digital berbantuan media untuk memperkuat **literasi statistik** dan **resiliensi matematis** siswa SMP. Aplikasi ini mendukung pembelajaran berbasis proyek dengan konteks nyata: survei penggunaan HP di kalangan siswa.
 
-| Info | Detail |
-|------|--------|
-| Versi | 2.0 |
-| Tahun | 2025 |
-| Jenjang | SMP Kelas VIII |
-| Model Pembelajaran | Project-Based Learning (PjBL) |
-| Institusi | Universitas Pendidikan Indonesia |
-| Pengembang | Wahyu Setiawan (NIM. 2211397) |
-| Pembimbing I | Prof. Dr. H. Nanang Priatna, M.Pd |
-| Pembimbing II | Prof. Drs. Suhendra, M.Ed., Ph.D |
-| Pembimbing III | Dr. Bambang Avip Priatna, M.Si |
+Aplikasi ini dapat diinstall sebagai **Progressive Web App (PWA)** sehingga dapat digunakan secara *offline* dan diakses seperti aplikasi native di perangkat mobile maupun desktop.
 
 ---
 
 ## Fitur Utama
 
-### 5 Halaman Navigasi
+### 1. Identitas Kelompok
+- Formulir isian nama kelompok, sekolah, kelas, dan tahun ajaran
+- Manajemen anggota kelompok dengan posisi (Ketua, Wakil Ketua, Sekretaris, Anggota)
+- Data tersimpan otomatis via `localStorage` — persisten selama sesi proyek berlangsung
 
-| Halaman | Deskripsi |
-|---------|-----------|
-| **Beranda** | Pengisian identitas kelompok dan tampilan tujuan pembelajaran |
-| **Proyek** | Alur kerja PjBL dalam 5 pertemuan terstruktur |
-| **Materi** | Referensi 6 topik statistika lengkap dengan rumus dan contoh |
-| **Kalkulator** | Latihan isian interaktif dengan feedback benar/salah real-time |
-| **Tentang** | Informasi pengembang dan media |
+### 2. Modul Proyek (5 Pertemuan)
+Setiap pertemuan mengikuti sintaks Project-Based Learning:
 
-### Alur Proyek PjBL (5 Pertemuan)
+| Pertemuan | Judul | Isi |
+|-----------|-------|-----|
+| P1 | Pertanyaan Mendasar | Mengamati fenomena, merumuskan pertanyaan proyek, prediksi awal |
+| P2 | Perencanaan & Penjadwalan | Rancang instrumen survei, pembagian tugas, penjadwalan |
+| P3 | Pengumpulan Data | Survei 40 responden, tabulasi & validasi data |
+| P4 | Pengolahan & Penyajian Data | Turus, hitung statistik, visualisasi diagram interaktif |
+| P5 | Presentasi, Refleksi & Evaluasi | Presentasi hasil proyek, simpulan, evaluasi akhir |
 
-```
-P1: Pertanyaan Mendasar
-    └── Mengamati fenomena, merumuskan pertanyaan, prediksi awal
+### 3. Materi Statistika
+Materi tersusun dalam tab-tab terpisah:
+- **Mean** — rumus, langkah menghitung, contoh
+- **Median** — data ganjil dan genap
+- **Modus** — menghitung frekuensi
+- **Jangkauan (Range)** — selisih nilai maksimum dan minimum
+- **Kuartil** *(materi pengayaan opsional)* — Q1, Q2, Q3, simpangan kuartil
+- **Penyajian Data** — diagram batang, garis, lingkaran, tabel distribusi frekuensi
 
-P2: Perencanaan & Penjadwalan
-    └── Merancang instrumen, pembagian tugas, jadwal survei
+### 4. Kalkulator Statistik Terpandu
+- Input data mentah (dipisahkan koma)
+- Pengisian langkah-langkah secara mandiri oleh siswa
+- Validasi jawaban dengan umpan balik langsung (*correct / wrong*)
+- Hasil perhitungan hanya muncul setelah jawaban benar
+- Visualisasi grafik interaktif menggunakan **Chart.js**
 
-P3: Pengumpulan Data
-    └── Tabulasi 40 responden, validasi kelengkapan data
+### 5. Latihan Soal (SOLO Taxonomy)
+Soal tersusun berdasarkan taksonomi **SOLO** (*Structure of Observed Learning Outcomes*):
 
-P4: Pengolahan & Penyajian Data
-    └── Hitung statistik, distribusi frekuensi, grafik interaktif
+**Pilihan Ganda (10 soal):**
+- Prastruktural → Unistruktural → Multistruktural → Relasional → Extended Abstract
+- Umpan balik jawaban langsung dengan pembahasan
+- Skor otomatis dengan label penilaian
 
-P5: Presentasi, Refleksi & Evaluasi
-    └── Presentasi hasil, kesimpulan, evaluasi akhir proyek
-```
+**Essay (2 soal):**
+- E1: SOLO Relasional — analisis mean, median, modus pada data nyata dengan outlier
+- E2: SOLO Extended Abstract — pengambilan keputusan berbasis statistik
+- Rubrik penilaian tersedia (toggle) setelah siswa mengisi jawaban
 
-### Topik Materi Statistika
-
-- **Mean** — Rata-rata (Σf·x ÷ n)
-- **Median** — Nilai tengah data terurut
-- **Modus** — Nilai paling sering muncul
-- **Jangkauan** — Selisih nilai max dan min
-- **Kuartil** — Q1, Q2, Q3, dan simpangan kuartil *(opsional)*
-- **Penyajian Data** — Diagram batang, garis, dan lingkaran
-
-### Fitur Teknis
-
-- **Penyimpanan otomatis** — semua jawaban tersimpan di `localStorage` browser
-- **Grafik interaktif** — Chart.js untuk diagram batang, garis, dan lingkaran berbasis data siswa
-- **Kalkulator isian** — feedback benar/salah langsung saat siswa mengetik jawaban
-- **Identitas kelompok** — diisi sekali, tampil otomatis di seluruh pertemuan
-- **Simpan PDF** — ekspor laporan tiap pertemuan langsung dari browser
-- **PWA** — bisa diinstall ke HP dan digunakan secara offline
-
----
-
-## Struktur File
-
-```
-datavista-v2/
-├── index.html          # Seluruh aplikasi (HTML + CSS + JS dalam 1 file)
-├── manifest.json       # Konfigurasi PWA (nama, warna, ikon)
-├── sw.js               # Service Worker untuk dukungan offline
-├── icons/
-│   ├── icon-72.png
-│   ├── icon-144.png
-│   ├── icon-152.png
-│   ├── icon-192.png
-│   └── icon-512.png
-└── README.md
-```
-
-> Seluruh logika aplikasi — CSS, HTML, dan JavaScript (~1800 baris) — terdapat dalam satu file `index.html` untuk kemudahan distribusi dan deployment.
-
----
-
-## Cara Penggunaan
-
-### Untuk Siswa
-
-1. Buka aplikasi di browser (Chrome/Edge direkomendasikan)
-2. Di halaman **Beranda**, isi identitas kelompok sekali di awal
-3. Buka halaman **Proyek**, pilih pertemuan yang sedang berlangsung
-4. Kerjakan setiap aktivitas secara berurutan bersama kelompok
-5. Tulis jawaban di kolom yang tersedia — data tersimpan otomatis
-6. Setelah menyelesaikan Refleksi, klik **🖨 Simpan PDF Pertemuan N** untuk mengarsipkan hasil kerja
-7. Di halaman **Materi**, baca referensi rumus dan langkah-langkah setiap topik
-8. Gunakan **Kalkulator** untuk latihan menghitung mandiri
-
-### Untuk Guru
-
-1. Pastikan siswa mengisi identitas kelompok di awal sesi
-2. Arahkan siswa membuka pertemuan yang sesuai dengan jadwal pembelajaran
-3. Minta siswa mengekspor PDF di akhir setiap pertemuan sebagai bukti kerja
-4. Gunakan halaman Materi sebagai bahan bacaan pendamping
-
-### Install Aplikasi (Offline)
-
-1. Buka di Chrome/Edge di HP atau laptop
-2. Tunggu hingga muncul banner *"Install DataVista"* (±3 detik)
-3. Klik **Install Sekarang**
-4. Aplikasi tersimpan di layar utama dan dapat digunakan tanpa internet
-
----
-
-## Fitur Simpan PDF
-
-Setiap pertemuan dilengkapi tombol **🖨 Simpan PDF** yang muncul setelah bagian Refleksi. Tombol ini akan:
-
-1. Mengumpulkan semua jawaban dari seluruh aktivitas dalam pertemuan tersebut
-2. Memuat data identitas kelompok dari penyimpanan lokal
-3. Mengkonversi grafik (Chart.js) menjadi gambar statis
-4. Menampilkan dialog cetak browser — pilih *"Save as PDF"* untuk menyimpan file
-
-PDF yang dihasilkan mencakup:
-- Header formal (nama kelompok, sekolah, kelas, tanggal cetak)
-- Semua aktivitas dan jawaban dalam format A4
-- Tabel data responden (Pertemuan 3)
-- Grafik hasil analisis (Pertemuan 4)
-- Footer berisi informasi pertemuan dan atribusi
-
-> **Penting:** Data disimpan di `localStorage` browser. Ekspor PDF secara rutin setelah setiap pertemuan untuk mencegah kehilangan data jika cache browser dibersihkan.
-
----
-
-## Stack Teknologi
-
-| Teknologi | Versi | Fungsi |
-|-----------|-------|--------|
-| HTML5 / CSS3 / JS | — | Kerangka utama aplikasi |
-| [Chart.js](https://www.chartjs.org/) | 4.4.1 | Grafik interaktif (batang, garis, lingkaran) |
-| [Google Fonts](https://fonts.google.com/) | — | Sora (display) + Plus Jakarta Sans (body) |
-| Web Storage API | — | `localStorage` untuk persistensi data |
-| Service Worker API | — | Dukungan offline dan caching |
-| Web App Manifest | — | Instalasi PWA ke perangkat |
-| CSS `@media print` | — | Ekspor laporan ke PDF via browser |
-
-Tidak ada framework JavaScript, tidak ada backend — aplikasi berjalan sepenuhnya di sisi klien.
-
----
-
-## Deployment ke GitHub Pages
-
-1. Fork atau upload repository ke GitHub
-2. Buka **Settings → Pages**
-3. Pilih branch `main` dan folder `/ (root)`
-4. Klik **Save** — aplikasi akan tersedia di `https://[username].github.io/[repo-name]/`
-
-> Pastikan semua file (`index.html`, `manifest.json`, `sw.js`, folder `icons/`) ada di root repository.
-
----
-
-## Penyimpanan Data
-
-Semua data disimpan secara lokal di browser menggunakan `localStorage` dengan key `datavista_v2`.
-
-| Key | Isi |
-|-----|-----|
-| `identitas` | Nama kelompok, sekolah, kelas, tahun ajaran, anggota |
-| `anggota` | Daftar nama dan posisi anggota kelompok |
-| `p1a0q1` … `p5ref2` | Jawaban teks per aktivitas per pertemuan |
-| `p3_data` | Array 40 baris data survei responden |
-| `chk_N_M` | Status checklist pertemuan N aktivitas M |
-
-**Catatan penting:**
-- Data akan hilang jika browser di-*clear cache* atau mode incognito digunakan
-- Disarankan mengekspor PDF setelah setiap pertemuan
-- Jangan berganti browser/perangkat di tengah proyek tanpa backup PDF
+### 6. Tentang / Info Aplikasi
+- Informasi pengembang dan konteks penelitian
+- Catatan penggunaan dan disclaimer
 
 ---
 
 ## Tujuan Pembelajaran
 
-Setelah menggunakan DataVista V2, siswa diharapkan mampu:
+Setelah menggunakan DataVista, siswa diharapkan dapat:
 
 1. **Membaca** data yang disajikan dalam tabel dan grafik dengan benar
 2. **Menghitung** nilai mean, median, modus, jangkauan, dan kuartil
@@ -202,9 +77,83 @@ Setelah menggunakan DataVista V2, siswa diharapkan mampu:
 
 ---
 
+## Teknologi
+
+| Komponen | Keterangan |
+|----------|------------|
+| HTML5 + CSS3 | Struktur dan tampilan antarmuka |
+| Vanilla JavaScript | Logika aplikasi, navigasi, kalkulasi |
+| [Chart.js v4.4.1](https://www.chartjs.org/) | Visualisasi grafik interaktif |
+| Google Fonts | Tipografi: *Sora* (display) + *Plus Jakarta Sans* (body) |
+| localStorage | Penyimpanan data pengguna di browser |
+| Service Worker | Dukungan PWA & mode offline |
+| Web App Manifest | Konfigurasi instalasi PWA |
+
+---
+
+## Struktur File
+
+```
+/
+├── index_revisi_SMP_v4.html   # Aplikasi utama (single-file)
+├── manifest.json              # Konfigurasi PWA
+├── sw.js                      # Service Worker
+└── icons/
+    ├── icon-144.png
+    ├── icon-152.png
+    ├── icon-192.png
+    └── icon-512.png
+```
+
+> **Catatan:** Seluruh logika aplikasi (HTML, CSS, JavaScript) terdapat dalam satu file `index_revisi_SMP_v4.html`.
+
+---
+
+## Cara Penggunaan
+
+### Bagi Siswa
+1. Buka file `index_revisi_SMP_v4.html` di browser (Chrome/Firefox/Safari)
+2. Isi **identitas kelompok** satu kali di halaman Beranda
+3. Pilih pertemuan yang sedang berlangsung di halaman **Proyek**
+4. Baca **Materi** sesuai topik pertemuan
+5. Gunakan **Kalkulator** untuk latihan menghitung secara terpandu
+6. Kerjakan soal di halaman **Latihan** untuk evaluasi mandiri
+7. **Jangan hapus data browser / clear cache** selama proyek berlangsung
+
+### Bagi Guru
+- Catatan guru (*guru note*) tersedia di setiap pertemuan untuk panduan fasilitasi
+- Rubrik penilaian essay dapat digunakan sebagai acuan koreksi
+- Skor pilihan ganda dihitung otomatis; essay dinilai secara manual
+
+### Instalasi sebagai PWA
+1. Buka aplikasi di browser yang mendukung PWA (Chrome/Edge/Safari)
+2. Klik notifikasi **"Install DataVista"** yang muncul setelah beberapa detik
+3. Aplikasi dapat digunakan *offline* setelah instalasi
+
+---
+
+## Konteks Penelitian
+
+Aplikasi ini dikembangkan sebagai bagian dari penelitian disertasi:
+
+> **"Pengembangan Bahan Ajar Berbantuan Media Digital DataVista untuk Penguatan Literasi Statistik serta Resiliensi Matematis Siswa SMP"**
+>
+> Program Doktor (S3) Pendidikan Matematika — Universitas Pendidikan Indonesia (UPI)
+
+Model pengembangan yang digunakan: **Educational Design Research (EDR) — Plomp (2013)** dengan evaluasi formatif mengacu pada **Tessmer (1993)**.
+
+---
+
+## Catatan Teknis
+
+- Data pengguna tersimpan di `localStorage` browser. Data akan **hilang** jika cache browser dihapus.
+- Aplikasi dioptimalkan untuk layar mobile (≥360px), tablet (600–899px), dan desktop (≥900px).
+- Navigasi menggunakan **bottom navigation** di mobile dan **sidebar** di desktop.
+- Versi ini adalah revisi keempat (`v4`) dari iterasi pengembangan.
+
+---
+
 ## Lisensi
 
-© 2025 DataVista · Wahyu Setiawan · Universitas Pendidikan Indonesia
-
-Hak cipta dilindungi. Penggunaan untuk keperluan pembelajaran diperbolehkan dengan menyertakan atribusi kepada pengembang.
+Dikembangkan untuk keperluan penelitian akademik. Seluruh hak cipta materi pembelajaran berada pada pengembang. Penggunaan di luar konteks penelitian memerlukan izin tertulis.
 
