@@ -15,11 +15,12 @@
 <link rel="apple-touch-icon" sizes="512x512" href="icons/icon-512.png">
 <meta name="msapplication-TileImage" content="icons/icon-144.png">
 <meta name="msapplication-TileColor" content="#0BAF7A">
-<title>DataVista V2 — Media Pembelajaran Statistika Kelas VIII</title>
+<title>DataVista V2.1 — Media Pembelajaran Statistika Kelas VIII</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Sora:wght@400;600;700&display=swap" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 <style>
 :root {
   --primary:#0BAF7A; --primary-dark:#088A60; --primary-light:#D6F5EB; --primary-xlight:#EDFBF5;
@@ -282,6 +283,10 @@ tr:nth-child(odd) td{background:var(--surface)}
   th { background: #0BAF7A !important; color: #fff !important; padding: 5pt 6pt !important; }
   td { border: 1px solid #D6E8E0 !important; padding: 4pt 6pt !important; }
   .formula-box { border: 1px solid #D6E8E0 !important; background: #fff !important; }
+  .print-qr-section { display: flex !important; }
+  .print-rubrik-guru { display: block !important; }
+  .print-solo-summary { display: block !important; }
+  .pdf-page-break { page-break-before: always !important; }
   @page { margin: 1.5cm 1.5cm 2cm; size: A4; }
 }
 
@@ -398,10 +403,10 @@ input[type=radio]:checked ~ .rubrik-score-btn {background:var(--primary);color:#
     </div>
   </div><!-- /header-logos -->
   <div style="margin-bottom:8px;position:relative;z-index:1">
-    <span class="header-badge">Media Pembelajaran Interaktif</span>
+    <span class="header-badge">Media Pembelajaran Interaktif · v2.1</span>
   </div>
   <div class="header-title">DataVista</div>
-  <div class="header-sub">Statistika Kelas VIII &nbsp;·&nbsp; Project-Based Learning &nbsp;·&nbsp; UPI</div>
+  <div class="header-sub">Statistika Kelas VIII &nbsp;·&nbsp; Project-Based Learning &nbsp;·&nbsp; Universitas Pendidikan Indonesia</div>
   <div class="header-pills">
     <span class="header-pill">Mean · Median · Modus</span>
     <span class="header-pill">Jangkauan · Kuartil</span>
@@ -964,8 +969,8 @@ input[type=radio]:checked ~ .rubrik-score-btn {background:var(--primary);color:#
     <div class="card" style="text-align:center">
       <div class="sec-lbl" style="text-align:center;margin-bottom:1rem">Pengembang</div>
 
-      <div style="width:64px;height:64px;border-radius:50%;background:var(--primary-light);display:flex;align-items:center;justify-content:center;margin:0 auto .85rem;border:2px solid var(--primary)">
-        <span style="font-family:var(--font-display);font-size:22px;font-weight:700;color:var(--primary-dark)">WS</span>
+      <div style="width:64px;height:64px;border-radius:50%;margin:0 auto .85rem;border:2px solid var(--primary);overflow:hidden">
+        <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxITEhISEhIVFhUVFRcVFRUVFRUVFxUVFRcXFxUVFRUYHSggGBolHRUXITEhJSkrLi4uFx8zODMtNygtLisBCgoKDg0OFxAQFS0dHR0tLS0tKy0tLS0tLS0tLS0tLS0tLS0tLS0tLSstLS0tLS0tLS0rLS0tLS0tLSstLS0tLf/AABEIARMAtwMBEQACEQEDEQH/xAAcAAABBQEBAQAAAAAAAAAAAAAAAQIDBAUGBwj/xAA7EAACAQICBwUGBAYCAwAAAAAAAQIDEQQhBRIxQVFhcQYigZGhBxMyscHRFEJS8CMzYnKC4ZKyJKLx/8QAGwEBAQADAQEBAAAAAAAAAAAAAAECBAUDBgf/xAAuEQEAAgIBAwMCBgICAwAAAAAAAQIDEQQFITESE0EyUSIzYXGBkSNCocFSU7H/2gAMAwEAAhEDEQA/AOYPtnyAAAAAAAAAAAABrkSZ0sRsqkImJJiYKVAAAAAAAAAAAAAAAAAAAAAAAACXJs0paQ0jGmtue7mafJ5dMcee7d4/Etk8x2c7V07J6y4ppHHtz7zt1K8KkaRR03USsvM8452SI1tnPDxzO9LVDtJJWvFWNinU7x5h436dSfEtvA6Wp1NkknwZ1MHOx5fnu5ubh5Mfx2X0zciWpMFKgAAAAAAAAAAAAAAAAAAAkkOc01pBtuMGubT2eJweby5m3prLu8TixFd2YFVyecmzlTMz5dGI14R6tyB3ugEdJoBYZWadnxLE67wTG3SaJ0u33ZtJnZ4nOmfw3lyuTwo1Nqw34s7MTEx2ce0akpkgAAAAAAAAAAAAAAAAIMXTekXH+HHK6zfDocjqHMmP8dHX4PE/3sw2nwt12+pxJddFKDvyIJqWHW15hTpU1wJIZWhdW/fECq429f8ATAWfGN8vAqOh7P6Scv4c3drY8lkdvp3Km34LS5HP40RHrq3jsuQAAAAAAAAAAAAAAAAgxldQg5PcePIyxixzaXtgxTkvFXIyquUnN7drb9LHyl7za02l9PWsViIhYwmAq13/AAqcpc0ns6nnMvStJnxDVXZbFKN3Tl5/QeqGfs2Qx0RVWWpLy+dtg2ntz9jsNoapKSUYyb6X8yTKxjlrz7JVNX4c8vB9Cepn7UsbSegKkM5QefIbY2xTDGjhWnnfozKHjMCLdKcZK+TV+a3o9cV/ReLQ88lIvWay7OhUUoprern1mO/rrE/d8vkp6bTCQ9GAAAAAAAAAAAAAAAM/TUb07czm9U/Kj93S6b+bP7OepUNaaXpx6nzzux3ezdm8FClShGMUsley2s17S6OONQ3aUDDb10dPAxe2K8kXbHUIo6Jp3vqLwVibPTCWeFWxK3T6E2sQp4zAxkrNXLEkw897aaBUYOpBbHn0e/zPWlmrmx9tuDrruq56tN0mgXelG3NW4WPpenTvDD5/qHbLMNI32iAAAAAAAAAAAAAADO04v4fRnM6pH+KP3dLpk/5J/ZlaNj345b0lzPnpl3qx3ev6Iuox6GraXTpHZvYaOZGbQsgxJZBSSSBCnVgFc32mwzlRqpL8rMqz3eeSO0vEsUrZcDZcyXT6Bivcx53+dj6XpsawRL57qM7zTH2aJvtEAAAAAAAAAAAAAAFPSqvT8Uc7qcf4f5dDpv538H9nNFa04t7Fm/L/AGfM3nUPp8NNy9Gw1lY1m+2KDuBZzKJYoaQk4MaNq1TIis3FxUrp7GrFhLQ8b7V6L91WktzzXibNZ7Odlrqy5oBv3Mb8X8z6bpv5Efy+Z6j+dP7Q0ToNEAAAAAAAAAAAAAAEWJp3i1xWRqcuIvhvET3ht8TdMtJmNRLd7MwtSvbNvPotn1PkMnl9nh+lsQrNeBhFXrMr+G7QU6TUZpt8lcz9LCbtzB6Sp1Emsr7mYyziV+LRFV8VpCnTXefgsyxDGWPidMQqO1NPq19jL0sYspuq3tVjCas9uN7cU03B8n6HtiavIhm4OjqQjHgvV5s+v4uP28VavjeVk9zLayY2HgAAAAAAAAAAAAAEYHbYPRtOpTtNJ3zT2Wvs9LHxM5L48lpidTuX6D7ePJirE1iY1CjoTDasZQe2M2jyt37pSNRpq4hakbxinJuyvsu+Jjt6RDNq6Sxv4qOHSUoydPVSoXjKMtXXlr661VHvbn8PM9opEw1rZLRbWm9HCNXerqyjKztsfBrlkeFuzZr4aSk9S5N9lZ1TDNyilDWlJ5X2JcW+BlXuxt2jfli4XtFiXWnQ/DwvT1/eK04ampa3eeTcru2z1PW2PUeXhXJNp1pqUpKpFT1bX3Hlt7zDCx+ifxGIpwbslFyfg8vU9aXmmph45MUZPwyXTWjaNLUpRhdyU25t5rVhKV14pG5i5+e2aszb58fDWy9N41cFoivxPf5/tzB9Y+LAAAAAAAAAAAAAAB2XZvFa1B8YWj5bH5W8j5PqeD288zHi3d9p0nke9x4ifNex1JatWa4tP0RoT4bvy3fcKULcTzekLFDCySydjOJknX2MqxUU0ks7XaSV7bL2MLSRCVfBYnwqP3albJXWx2V1mWAtTCyd7tu+274GUzLGIiPCOdBRjs/aMVljU21OpOKu1FeV22ZzHZK+VLtPiEo33yhqR6S+N+WX+SOh0vBOTNFvivdz+r8j2uPNfm3ZyJ9Y+LAAAAAAAAAAAAAABs9mK9pypt/zFl1X+r+Rx+sYfVji8f6/9u50LkRTLOOf9v8A7DanSlGpHWaba2rK9m0vSx85Hh9Nby6jR9rIwZwvyVkBl42dmRT6F2hCyfhs5PkEaMYqxWLM0rNKLsWIJnswMLGThKy+JvWlfYlwW/eZWkx/dzHaLE69XVWyCUfHf9vA+o6Vg9vD6p827vkus8j3eR6Y8V7fz8ss6bkAAAAAAAAAAAAAAAlwtZwnGa/K0/8AR5ZccZKWpPy9cGWcWSt4+JdUtLU604aifdV3fm1kfL8jg5MFd28PrsHUMfItqnnW3RYOtaxz5dCrTjUuiM2XiaicnKV7JKySbe3ggL1DEwVP9/IsEq+GrJyi43z2ppxfkwaarnZERz2ma+T8jKsMLMXC6doxpO770XJKO95u1jox0zNN4jXaflz56tx4x2tvvG+zkG75s+qiNRp8dadzMz8kKgAAAAAAAAAAAAAAAC1oyrq1Ivjk/H/djT5+L3MFo+3du9Py+3yKz9+zuKNTI+Pl9pC9HEZGD12SFpbV6Fg2vRqRXC9uGZltNSr5RzSIu0k8T3SJLme0eJ1abe/YurN7g4fdzVr8eXP6hn9nBa3z4hxh9e+KBQAAAAAAAAAAAAAAAAABCJ06vRWP14JvaspdVvPkefx/ZyzHxPeH2fT+TGfDE/MdpbMM4uzs+Nr2NB0o7slVa+u4OV88l8CfltZXtSsNNquk17qb6Nfcy09IrE/KtSr13LVTSV81K87fLPxJp5ZKw0KtSysYvGe0OS7T4i8ox3K78dn3PoujY49Nr/w+a65ln1Up/LEO44AAAAAAAAAAAAAAAAAAAADX7Pu+ut+T+aPnuta9VH0fQt+m8OgwlVpnCfQwv+5Us7EZxOj1Qlxl6l2y9cpFRUVsSG3nM7Z2IefMMXJacles1wSXpf6n1nSo1x4/WZfIdYtvkz+kQoHScsAAAAAAAAAAAAAAAAAACSlZNvcYXvFKzafhlSs2mIj5dZ2bwsfwVCuorWnVrxnK2b1ZRUE3wSTt1Z8dy8k5Lzafl9j0+kUp6Y+GhOnZ63n9zVdBo4aS3EWJW/eILtXxdZJBJlnKGV3tf7sVHnnaCs6WOqKeUakYTXLuqKl4uL9Ds9N5XtT6bT2n/h8/1Tj+7MzXzCSLvmj6SJiY3D52YmJ1JSoAAAAAAAAAAAAAABJNLN5dTG1orG5nS1rNu0RtTxGkoRvbvW4bPM0cvUcVPp/E3cXAyX+rsr1MVKazyXBfVnMz8y+aNeIdHBxKYp35l7L7J8LCvoudKX5a9Rc4tqMk1/y9Tm5I3LoYrTXvCPHYKVOUoSWa9Vua5GtMadOtotG4U8HDOybXT7AaMsHLa5vwsBXlRuwL+jNFOtK2yK+J8uC5sypXcsMuSKQ8f9p9TW0niUvhh7unFLYlGlTdvNs2YcyZ35c5h8ZUh8MnbhtXkzYxcnLi7Vt2eOTj48n1Q06Gmv1x8Y/ZnSxdV/8AZX+nPy9N/wDCzSw+KhP4ZJ8tj8jpYuTjy/TZz8nHyY/qhMe7xAAAAAAAABBBWxUI7XnwWbNfLy8WPzPdsYuLkyeIUK2lHsirc3mzmZep2n6I06OLp1Y73najWrSlnJt9Tn5Mt797Ttv0x0p9MaR0u8+SPNmvwMmL1j2F49f+Xh28+5WiuP5Jv0h5nneGdXomndFKtG6+OOzmv0s8bV22MWT0T+jhnhnGTTTTTzW9M8W9va0tZ7dgZLOAwMqklFeL3JcWWI2873isbl10cPGlS1Y5c+Le9mxWHPvabTuXyt2hxvvsTiK17qpVqSj/AGOT1P8A11UZPNmSRQiAXmXevCaX8NpWpHJ95c9vmb2HqGXH2nvDTy8HHfvHaWxhMfCpknZ/pe3w4nYwczHm7ROp+0uVm4mTF5jcfdaNtqgAAAIcRiYw2vw3mvn5NMUfinv9mxh418s9o/ll4jHylksly+rONn52TJ2jtDrYeFTH3nvKm2aUt3RLmIZPPIkiakrGUCxFlR0PYDTH4bH4eo3aLl7qf9tTu+ktV+BjaNkdu76SR4vVhdpaFFJVJSUJXUU/1Zpd7krrPcY2jb2xZJjtrcOdeOw6yliKEebrU93K935Hlpu99dqz/TpeymNw1alrYeop52m9klLhKO2OWa5M9a612aOaber8UaUfaRpN4fAYiadpe7ai/wCudoQ9ZLyPSrwl8xMyQjQQywUqCBgCLE6JaeD0vKOU+8uO9fc6XH6jena/eP8AloZ+BW/enaWxh8VCfwyvy3rqjsYuRjyx+GXJy4L4/qhMezxUMZjnF6sV48+hy+Vz5paaU/t0+NwYvWL3/pmSbbu82ci1ptO5datYrGoJYxZGtAMkYghtJAkTMhJFlA3v4fMkj6c7F6VWJwWHrXzlBKXKce7NeaZ5Wjuyr4eXe02GIrYr3843oQjqUeEF+eT5yds+CS3Grmi3l2ul5cdZms+ZcRiIpbzwdu0t72c4vEUsWq1FN0o2jiV+WVOV7J/1J95dLbG7+2He3G6nak1jfl1/t40jbD0KKf8ANqa3WFON3b/KdM3I8OFPl4lYoWMQhK0Mr8CzAjIpyQQJFCJEDllmnbnsMomYncJMRMalsaFxUpayk23tTf76HZ6byL3ma2nbk8/BWkRasaV8fL839XzyfozlZLbtMy6lI1ERBljFmEgG2AjqxMZEaeRBNBbjKA9uwCRZB7D7EdIa+HxOEcrak1UXKFRNSS/yg/8AmY2WrvMTgrrUnFNRazSumuLXBk7Sy8eHhHbTBLD4itTXwxldcozippeGtbwNC1dWmH1ODNOTj1tPl652N7OxwuAhGUe/Uj7yrxc5JWjflkvA3MVdVfO8rL7mSZ+HmntixV8TQo3v7ijq3/qlN39IQ8j0hquCgihbAR1a1slm/l1EyaQpEU+AQ6BQ1MBZcAL2iJ2qrmmvr9Dd6fb05o/XbU51fVin9NHYqN4yRqy2YMw07xT4r13khZOkUMSzClqokitYxEsbraZB1S21fv8Af1JIbTYgdl7KNIe60lSTeVWM6b5u2uv+nqJgfQGJrRjBzbskrN8jz1pnHd839pMa69SrWltqTlPPhJ5LwVl4HPmd22+vri9vDWn2ew9h+0H4rBUZTd50U41XxdPKDfOS1Zdbm/ituu3zHMxe3lmI8PFO2tdzxleT/V62Tfq2Z/DUYlMsBtZPOwkQQiiKkUAgmwHQRRC9pA6LvJcs/oiiSjOzuZVtNZ3DG1fVGl9lFTAStrR4P5mNWUrLMkMiRTplEE0YyFTAXdYBIAWcBjXQrUa6v/CqQqZcISTa8UmvESPfO3uk9TA1HF/zEoK3CdotropX8Dyzzqkt3p+P3ORSJ/f+nidfec59Zfw7b2VYnVpY2nx91JdXrxf/AFRt8efMPn+rU16Lfu830zX161Wf6qk2ujk2jalxlWACyKK0smYqlTCI5MKlgEQSCig/ifh5f/QHxKi/czRTi7Vf7kYR5VduZoYkFOAikQJFbyAQAgCayEj0vTGlPfaJwEr3dlCT4yp3hJvq4XNbkT+GHV6RH+f+JcZVRpPpbNfs1pD3NPEy36sGv8NeX09TZ4/mXE6x9FP3lxszclwBEBWUVqu0xU6LyAawJaYRXrO1wow+UeuYRJEovNmaKeMdnGXBmE+VhdgzIFgFKGMgiW23H5kCkCplCsSNTBaVboQwz2RqynHpJLLz1vM1eR4dfo/bNP7H1Xkab6OUE6toSXFW/fqbHH+pxer/AJVf3ZUtpuvnyoAkwKt7tsinXAAJIBFbFcOLCwfusEOiUXWzMV8VG8WYWIPwlS8V0Mo8CxcAAawIqiIBO+ZAqKHARU5WnFnhmjdW/wBOyejNH6tqTyNB9XKhiJbjb40d5lwurX/BWv6qjNpwjgIa87ISI4IilYCASQYFaec+hPkPKh6AuMzRDWeRjKoMHKza/eZIWV5MzQ4AAjmiCFOz6/P9/QgkQDkUQ1uJheNw9MVvTeJa9Gd4eBzZju+ypbdIlQqyzl4L0v8AU3ePH4XzfVL7y6+yFHu5p1yinOV5dDBUhQlgCwCpgV47X1IJUioUC42ZCCtsIKanaSfHIx+VacWeiHpgI2AjIK1VGKn053XPY+pUSIBlXYJFzASvE5+SNWfV8HJ6sUKzfq2/U3MUapD5/m23msbE9GoZXnZCRBQRIVJJgIANgJJgQ0d5IErKhALZlIhqsxGfidhjLKGlQqXinyM4Yp0yhGwFAr1CBkZWd92x/cirBkgkQOwVWymvE1M1fxO107LrHaPsa93Q2qxqIcnNO72n9SFealXneVuBjKpaRQTAbYBQGTeQDMO8iQSmsVCMC02ZCCqzEUa+xmMrCfRtXK3B/MyrJLQTMkIyByKIaqIpqREOpu3dfh9ih9wK1aVnb9WR53rtsYMno3H3W5Hq10FedkQU4L1MVWaRQVGAxMBWBFWeRAlFZCBPcqEYVZkyorVGQVqiMVQ4WdpMQstalMzYpGAsWUR1SSGoB7jcBsZX6raBHVjeUP7l6Z/QiwsyZlKKFWWs+RhKkYE1PYUR1QFSIGtgQ1mJD6bECWLKFYRPNlkQSZBWmRVX8xiyalCWw9IYLKYAgEkgGJEEkSiKtHO62ogSk7zT4Jvo9n1EeVGLqbkJRXiiKGBLHYURyIHMojnIggm80RVhRyKhUUOCJpsogmQQTMZVUrbiSyhqReSM2CenIoentAGA0B0QGzQkQUJWlOXBJeZIVGlve8gUBAqQqI5EBORRBJkEctqIqzRkWESNFCWCJ5lFeZFhBIxkVq+4ksoaMNngZsEtPcUSx3+ADgGsBUASAprf/cYqkYDGAqAcyiKQDKm0gZYgj3vp9wqWmVE8SoUD/9k=" alt="Foto Pengembang" style="width:64px;height:64px;object-fit:cover;border-radius:50%">
       </div>
 
       <div style="font-family:var(--font-display);font-size:18px;font-weight:700;color:var(--text-1);margin-bottom:.3rem">Wahyu Setiawan</div>
@@ -990,7 +995,7 @@ input[type=radio]:checked ~ .rubrik-score-btn {background:var(--primary);color:#
           </div>
           <div>
             <div style="font-size:13px;font-weight:600;color:var(--text-1)">Prof. Dr. H. Nanang Priatna, M.Pd</div>
-            <div style="font-size:11px;color:var(--text-3)">Pembimbing I</div>
+            <div style="font-size:11px;color:var(--text-3)">Promotor</div>
           </div>
         </div>
         <div style="display:flex;align-items:center;gap:12px;padding:.65rem .85rem;background:var(--surface-3);border-radius:var(--radius-sm)">
@@ -999,7 +1004,7 @@ input[type=radio]:checked ~ .rubrik-score-btn {background:var(--primary);color:#
           </div>
           <div>
             <div style="font-size:13px;font-weight:600;color:var(--text-1)">Prof. Drs. Suhendra, M.Ed., Ph.D</div>
-            <div style="font-size:11px;color:var(--text-3)">Pembimbing II</div>
+            <div style="font-size:11px;color:var(--text-3)">Co-Promotor</div>
           </div>
         </div>
         <div style="display:flex;align-items:center;gap:12px;padding:.65rem .85rem;background:var(--surface-3);border-radius:var(--radius-sm)">
@@ -1007,8 +1012,8 @@ input[type=radio]:checked ~ .rubrik-score-btn {background:var(--primary);color:#
             <span style="font-size:12px;font-weight:700;color:var(--primary-dark)">3</span>
           </div>
           <div>
-            <div style="font-size:13px;font-weight:600;color:var(--text-1)">Dr. Bambang Avip Priatna, M.Si</div>
-            <div style="font-size:11px;color:var(--text-3)">Pembimbing III</div>
+            <div style="font-size:13px;font-weight:600;color:var(--text-1)">Dr. Bambang Avip Priatna Martadiputra, M.Si</div>
+            <div style="font-size:11px;color:var(--text-3)">Anggota</div>
           </div>
         </div>
       </div>
@@ -1020,11 +1025,11 @@ input[type=radio]:checked ~ .rubrik-score-btn {background:var(--primary);color:#
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:.5rem">
         <div style="background:var(--surface-3);border-radius:var(--radius-sm);padding:.65rem .75rem;text-align:center">
           <div style="font-size:10px;color:var(--text-3);font-weight:600;text-transform:uppercase;letter-spacing:.05em;margin-bottom:3px">Versi</div>
-          <div style="font-size:14px;font-weight:700;color:var(--primary-dark)">V 2.0</div>
+          <div style="font-size:14px;font-weight:700;color:var(--primary-dark)">V 2.1</div>
         </div>
         <div style="background:var(--surface-3);border-radius:var(--radius-sm);padding:.65rem .75rem;text-align:center">
           <div style="font-size:10px;color:var(--text-3);font-weight:600;text-transform:uppercase;letter-spacing:.05em;margin-bottom:3px">Tahun</div>
-          <div style="font-size:14px;font-weight:700;color:var(--primary-dark)">2025</div>
+          <div style="font-size:14px;font-weight:700;color:var(--primary-dark)">2026</div>
         </div>
         <div style="background:var(--surface-3);border-radius:var(--radius-sm);padding:.65rem .75rem;text-align:center">
           <div style="font-size:10px;color:var(--text-3);font-weight:600;text-transform:uppercase;letter-spacing:.05em;margin-bottom:3px">Jenjang</div>
@@ -1044,7 +1049,7 @@ input[type=radio]:checked ~ .rubrik-score-btn {background:var(--primary);color:#
     <!-- Footer -->
     <div style="text-align:center;padding:.5rem 0 1rem">
       <div style="font-size:11px;color:var(--text-3);line-height:1.8">
-        © 2025 DataVista · Wahyu Setiawan · UPI<br>
+        © 2026 DataVista · Wahyu Setiawan · Universitas Pendidikan Indonesia<br>
         Hak cipta dilindungi. Penggunaan untuk keperluan pembelajaran diperbolehkan<br>
         dengan menyertakan atribusi kepada pengembang.
       </div>
@@ -1235,12 +1240,14 @@ function buildGuruNote(nPtm) {
   const saved = getStore(key, '');
   const isGuruMode = getStore('guru_mode', false);
   if (isGuruMode) {
+    const rekapHTML = nPtm === 5 ? buildGuruRekapHTML() : '';
     return `<div class="guru-note-box">
       <div class="guru-note-header">
         <span class="guru-note-badge">✏️ MODE GURU</span>
         <span style="font-size:12px;color:#7A4F00;font-weight:500">Catatan Guru — Pertemuan ${nPtm}</span>
         <button onclick="exitGuruMode(${nPtm})" style="margin-left:auto;font-size:10px;padding:2px 8px;border-radius:99px;border:1px solid #F4A932;background:transparent;color:#7A4F00;cursor:pointer;font-family:inherit">🔒 Keluar</button>
       </div>
+      ${rekapHTML}
       <p style="font-size:11px;color:var(--text-3);margin-bottom:.4rem">Tulis catatan/umpan balik untuk kelompok ini. Siswa hanya bisa membaca, tidak bisa mengubah.</p>
       <textarea class="guru-note-input" id="gnta_p${nPtm}" placeholder="Contoh: Analisis data sudah baik, namun kesimpulan perlu diperkuat dengan angka yang spesifik..." oninput="setStore('${key}',this.value)">${saved}</textarea>
       <div class="btn-row" style="margin-top:.5rem">
@@ -1257,6 +1264,45 @@ function buildGuruNote(nPtm) {
       <div class="guru-note-locked">${saved || '<span style="opacity:.5">Belum ada catatan dari guru.</span>'}</div>
     </div>`;
   }
+}
+
+function buildGuruRekapHTML() {
+  const submissions = getStore('laporan_submissions', {});
+  const entries = Object.entries(submissions);
+  if (entries.length === 0) {
+    return `<div style="background:#FFF8F0;border:1px dashed #F4A932;border-radius:var(--radius-sm);padding:.65rem .85rem;margin-bottom:.75rem;font-size:12px;color:#8A5A00">
+      <strong>📋 Rekap Pengumpulan Laporan:</strong> Belum ada kelompok yang mengumpulkan laporan proyek.
+    </div>`;
+  }
+  const rows = entries.map(([kel, info]) => {
+    return `<tr>
+      <td style="padding:5px 8px;border-bottom:0.5px solid #F4C96A;font-weight:600;color:#0F1C17">${kel}</td>
+      <td style="padding:5px 8px;border-bottom:0.5px solid #F4C96A;color:#3D5047">${info.kelas || '—'}</td>
+      <td style="padding:5px 8px;border-bottom:0.5px solid #F4C96A;color:#3D5047">${info.sekolah || '—'}</td>
+      <td style="padding:5px 8px;border-bottom:0.5px solid #F4C96A;color:#088A60;font-weight:600">✓ Sudah</td>
+      <td style="padding:5px 8px;border-bottom:0.5px solid #F4C96A;color:#7A9186;font-size:11px">${info.waktu || '—'}</td>
+    </tr>`;
+  }).join('');
+  return `<div style="background:#FFF8F0;border:1.5px solid #F4A932;border-radius:var(--radius-sm);padding:.75rem .85rem;margin-bottom:.75rem">
+    <div style="font-size:12px;font-weight:700;color:#8A5A00;margin-bottom:.5rem">📋 Rekap Pengumpulan Laporan Proyek (${entries.length} kelompok)</div>
+    <div style="overflow-x:auto">
+      <table style="width:100%;border-collapse:collapse;font-size:11px">
+        <thead>
+          <tr style="background:#F4A932;color:#fff">
+            <th style="padding:5px 8px;text-align:left">Kelompok</th>
+            <th style="padding:5px 8px;text-align:left">Kelas</th>
+            <th style="padding:5px 8px;text-align:left">Sekolah</th>
+            <th style="padding:5px 8px;text-align:left">Status</th>
+            <th style="padding:5px 8px;text-align:left">Waktu</th>
+          </tr>
+        </thead>
+        <tbody>${rows}</tbody>
+      </table>
+    </div>
+    <div style="margin-top:.45rem;display:flex;gap:.5rem;flex-wrap:wrap">
+      <button class="btn btn-sm" onclick="setStore('laporan_submissions',{});if(document.getElementById('gnta_p5'))buildP5&&showPtm(5)" style="font-size:11px;color:var(--danger);border-color:var(--danger)">🗑 Reset Rekap</button>
+    </div>
+  </div>`;
 }
 
 /* ── GURU MODE: tap logo 5× untuk buka modal ── */
@@ -1322,6 +1368,117 @@ function exitGuruMode(nPtm) {
 function saveTA(key, val) { setStore(key, val); }
 function loadTA(key) { return getStore(key, ''); }
 
+// ── UNDUH LAPORAN PROYEK (PDF) ──
+function unduhLaporanProyek() {
+  // Mark this group as having submitted
+  const id = getStore('identitas', null);
+  const kelompok = id ? id.kel : '—';
+  const submissions = getStore('laporan_submissions', {});
+  submissions[kelompok] = {
+    waktu: new Date().toLocaleString('id-ID'),
+    timestamp: Date.now(),
+    sekolah: id ? id.sek : '—',
+    kelas: id ? id.kls : '—'
+  };
+  setStore('laporan_submissions', submissions);
+
+  // Generate comprehensive project report (all 5 meetings + reflection)
+  const tgl = new Date().toLocaleDateString('id-ID', {weekday:'long', year:'numeric', month:'long', day:'numeric'});
+  const anggota = id && id.anggota ? id.anggota.map(a => a.nm + ' (' + a.pos + ')').join(', ') : '—';
+  const kelas = id ? id.kls : '—';
+  const sekolah = id ? id.sek : '—';
+  const ta = id ? id.ta : '—';
+
+  // Collect refleksi from P5
+  const ref1  = getStore('p5ref1','') || '(belum diisi)';
+  const ref2  = getStore('p5ref2','') || '(belum diisi)';
+  const ref3  = getStore('p5ref3','') || '(belum diisi)';
+  const ref4  = getStore('p5ref4','') || '(belum diisi)';
+  const ref5  = getStore('p5ref5','') || '(belum diisi)';
+  const ref6  = getStore('p5ref6','') || '(belum diisi)';
+
+  // Collect analysis from P4 key conclusions
+  const dq       = getStore('p1_driving_question','') || getStore('p1dq','') || '(belum diisi)';
+  const hipotesis = getStore('p1hipotesis','') || '(belum diisi)';
+  const kesimpulan = getStore('p4kc_harian_kesimpulan','') || getStore('p4_kesimpulan_umum','') || '(belum diisi)';
+
+  const printArea = document.getElementById('print-area');
+  printArea.innerHTML = `
+    <div class="print-header" style="display:flex">
+      <div class="print-header-logo">DV</div>
+      <div class="print-header-info">
+        <div class="print-header-title">DataVista V2.1 — Laporan Proyek Statistika</div>
+        <div class="print-header-sub">Laporan Akhir Project-Based Learning · Dicetak: ${tgl}</div>
+      </div>
+    </div>
+
+    <!-- IDENTITAS KELOMPOK -->
+    <div style="background:#f5faf7;border:1.5px solid #A8E8CF;border-radius:8px;padding:12px 14px;margin-bottom:14px">
+      <div style="font-size:12pt;font-weight:800;color:#055C3F;margin-bottom:8px">👥 Identitas Kelompok</div>
+      <table style="width:100%;border:none;font-size:10pt">
+        <tr>
+          <td style="border:none;padding:3px 12px 3px 0;color:#7A9186;font-weight:600;width:22%">Nama Kelompok</td>
+          <td style="border:none;padding:3px;color:#0F1C17;font-weight:700;width:28%">${kelompok}</td>
+          <td style="border:none;padding:3px 12px 3px 0;color:#7A9186;font-weight:600;width:22%">Sekolah</td>
+          <td style="border:none;padding:3px;color:#0F1C17;width:28%">${sekolah}</td>
+        </tr>
+        <tr>
+          <td style="border:none;padding:3px 12px 3px 0;color:#7A9186;font-weight:600">Kelas</td>
+          <td style="border:none;padding:3px;color:#0F1C17">${kelas}</td>
+          <td style="border:none;padding:3px 12px 3px 0;color:#7A9186;font-weight:600">Tahun Ajaran</td>
+          <td style="border:none;padding:3px;color:#0F1C17">${ta}</td>
+        </tr>
+        <tr>
+          <td style="border:none;padding:3px 12px 3px 0;color:#7A9186;font-weight:600">Anggota</td>
+          <td colspan="3" style="border:none;padding:3px;color:#0F1C17">${anggota}</td>
+        </tr>
+        <tr>
+          <td style="border:none;padding:3px 12px 3px 0;color:#7A9186;font-weight:600">Topik Proyek</td>
+          <td colspan="3" style="border:none;padding:3px;color:#0F1C17;font-style:italic">${dq}</td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- HASIL ANALISIS -->
+    <div style="border:1.5px solid #A8E8CF;border-radius:8px;padding:12px 14px;margin-bottom:14px">
+      <div style="font-size:12pt;font-weight:800;color:#055C3F;margin-bottom:8px">📊 Ringkasan Hasil Analisis</div>
+      <div style="margin-bottom:8px">
+        <div style="font-size:9.5pt;font-weight:700;color:#3D5047;margin-bottom:3px">Hipotesis Awal (P1)</div>
+        <div style="font-size:9.5pt;color:#0F1C17;padding:6px 10px;background:#f5faf7;border-radius:5px;border-left:3px solid #0BAF7A">${hipotesis}</div>
+      </div>
+      <div style="margin-bottom:8px">
+        <div style="font-size:9.5pt;font-weight:700;color:#3D5047;margin-bottom:3px">Kesimpulan Analisis Data (P4)</div>
+        <div style="font-size:9.5pt;color:#0F1C17;padding:6px 10px;background:#f5faf7;border-radius:5px;border-left:3px solid #0BAF7A">${kesimpulan}</div>
+      </div>
+      <div style="margin-top:6px;font-size:8.5pt;color:#7A9186;font-style:italic">Data statistik lengkap (mean, median, modus, jangkauan, kuartil) tersedia pada PDF Pertemuan 3 & 4.</div>
+    </div>
+
+    <!-- REFLEKSI -->
+    <div style="border:1.5px solid #F4C96A;border-radius:8px;padding:12px 14px;margin-bottom:14px;background:#FFFBF0">
+      <div style="font-size:12pt;font-weight:800;color:#8A5A00;margin-bottom:8px">💭 Refleksi Akhir Proyek (P5)</div>
+      ${[
+        ['1. Konsep yang paling dipahami', ref1],
+        ['2. Tantangan terbesar', ref2],
+        ['3. Hal baru yang dipelajari', ref3],
+        ['4. Koneksi dengan kehidupan nyata', ref4],
+        ['5. Yang akan dilakukan berbeda', ref5],
+        ['6. Pesan untuk teman sekelompok', ref6],
+      ].map(([q, a]) => `<div style="margin-bottom:8px">
+        <div style="font-size:9pt;font-weight:700;color:#7A4F00;margin-bottom:2px">${q}</div>
+        <div style="font-size:9.5pt;color:#0F1C17;padding:6px 10px;background:#fff;border-radius:5px;border-left:3px solid #F4A932">${a}</div>
+      </div>`).join('')}
+    </div>
+
+    <!-- FOOTER -->
+    <div style="margin-top:16px;padding-top:10px;border-top:1px solid #D6E8E0;display:flex;justify-content:space-between;font-size:8.5pt;color:#7A9186">
+      <span>DataVista V2.1 · Laporan Proyek Statistika · Universitas Pendidikan Indonesia · 2026</span>
+      <span>ID: ${kelompok.replace(/\s+/g,'').toUpperCase()}-LAPORAN-${new Date().toISOString().slice(0,10).replace(/-/g,'')}</span>
+    </div>`;
+
+  window.print();
+  showToast('✓ Laporan proyek berhasil diunduh! Status pengumpulan tercatat.');
+}
+
 // ── SAVE PDF ──
 function savePDF(nPtm) {
   const ptmNames = {
@@ -1338,6 +1495,26 @@ function savePDF(nPtm) {
   const ta       = id ? id.ta  : '—';
   const anggota  = id && id.anggota ? id.anggota.map(a => a.nm + ' (' + a.pos + ')').join(', ') : '—';
   const tgl = new Date().toLocaleDateString('id-ID', {weekday:'long', year:'numeric', month:'long', day:'numeric'});
+  const tglISO = new Date().toLocaleDateString('id-ID', {year:'numeric', month:'2-digit', day:'2-digit'});
+
+  // ── SOLO Latihan summary ──
+  const benarCount = Object.values(soalStatus).filter(Boolean).length;
+  const totalSoal  = Object.keys(soalJawaban).length;
+  const skorLatihan = totalSoal > 0 ? Math.round((benarCount / totalSoal) * 100) : null;
+  const soalDone = Object.keys(soalStatus).length;
+  // Map soal ke level SOLO
+  const soalSOLO = {
+    1:'Unistruktural', 2:'Unistruktural',
+    3:'Multistruktural', 4:'Multistruktural', 5:'Multistruktural',
+    6:'Relasional', 7:'Relasional', 8:'Relasional',
+    9:'Extended Abstract', 10:'Extended Abstract'
+  };
+  const soloCount = { Unistruktural:0, Multistruktural:0, Relasional:0, 'Extended Abstract':0 };
+  const soloBenar = { Unistruktural:0, Multistruktural:0, Relasional:0, 'Extended Abstract':0 };
+  Object.entries(soalStatus).forEach(([no, benar]) => {
+    const lvl = soalSOLO[no];
+    if (lvl) { soloCount[lvl]++; if (benar) soloBenar[lvl]++; }
+  });
 
   // Collect all textarea/input values from current ptm-content
   const ptmContent = document.getElementById('ptm-content');
@@ -1436,32 +1613,301 @@ function savePDF(nPtm) {
     inp.replaceWith(span);
   });
 
-  // Build the print area content
-  const printArea = document.getElementById('print-area');
-  printArea.innerHTML = `
-    <div class="print-header" style="display:flex">
-      <div class="print-header-logo">DV</div>
-      <div class="print-header-info">
-        <div class="print-header-title">DataVista V2 — Pertemuan ${nPtm}: ${ptmNames[nPtm]}</div>
-        <div class="print-header-sub">Laporan Kerja Kelompok · Dicetak: ${tgl}</div>
+  // ── Build SOLO Summary HTML ──
+  let soloSummaryHTML = '';
+  if (soalDone > 0) {
+    const soloColors = {
+      'Unistruktural':   {bg:'#EDE9FE', color:'#5B21B6', border:'#C4B5FD'},
+      'Multistruktural': {bg:'#FEF3DC', color:'#8A5A00', border:'#F4C96A'},
+      'Relasional':      {bg:'#D6F5EB', color:'#055C3F', border:'#A8E8CF'},
+      'Extended Abstract':{bg:'#FEE2E2',color:'#991B1B', border:'#FCA5A5'}
+    };
+    const soloRows = Object.entries(soloColors).map(([lvl, c]) => {
+      const tot = ['Unistruktural','Multistruktural','Relasional','Extended Abstract'].indexOf(lvl) < 2 ? 2 : (lvl==='Relasional'?3:2);
+      // count from actual soalSOLO mapping
+      const jumlahSoal = Object.values(soalSOLO).filter(v=>v===lvl).length;
+      const done = soloCount[lvl];
+      const benar = soloBenar[lvl];
+      const pct = done > 0 ? Math.round(benar/done*100) : (done===0 && jumlahSoal>0 ? '—' : '—');
+      return `<tr>
+        <td style="border:1px solid #D6E8E0;padding:5pt 7pt">
+          <span style="display:inline-block;background:${c.bg};color:${c.color};border:1px solid ${c.border};border-radius:99px;padding:2px 9px;font-size:8.5pt;font-weight:700">${lvl}</span>
+        </td>
+        <td style="border:1px solid #D6E8E0;padding:5pt 7pt;text-align:center">${jumlahSoal} soal</td>
+        <td style="border:1px solid #D6E8E0;padding:5pt 7pt;text-align:center">${done} dijawab</td>
+        <td style="border:1px solid #D6E8E0;padding:5pt 7pt;text-align:center;font-weight:700;color:${benar===jumlahSoal&&done===jumlahSoal?'#088A60':'#0F1C17'}">${benar}/${jumlahSoal}</td>
+        <td style="border:1px solid #D6E8E0;padding:5pt 7pt;text-align:center">${typeof pct==='number'?pct+'%':'—'}</td>
+      </tr>`;
+    }).join('');
+    const soloLabel = skorLatihan===100?'Semua soal dijawab benar — Literasi Statistik Excellent!':
+                      skorLatihan>=80?'Literasi Statistik sangat baik.':
+                      skorLatihan>=60?'Literasi Statistik cukup baik — perlu pengulangan di beberapa level.':
+                      skorLatihan>=40?'Perlu latihan lebih lanjut.':'Belum mencapai target minimum.';
+    soloSummaryHTML = `
+      <div class="print-solo-summary" style="display:none;margin-bottom:14pt;border:1.5px solid #A8E8CF;border-radius:8pt;padding:10pt 12pt;background:#EDFBF5">
+        <div style="font-size:11pt;font-weight:700;color:#055C3F;margin-bottom:6pt">📊 Ringkasan Skor Latihan SOLO Taksonomi</div>
+        <div style="display:flex;gap:16pt;margin-bottom:8pt;flex-wrap:wrap">
+          <div style="text-align:center;background:#fff;border:1px solid #A8E8CF;border-radius:6pt;padding:6pt 14pt;flex:1;min-width:80pt">
+            <div style="font-size:22pt;font-weight:800;color:#0BAF7A;line-height:1">${skorLatihan !== null ? skorLatihan : '—'}</div>
+            <div style="font-size:8.5pt;color:#7A9186;margin-top:2pt">Skor Total (%)</div>
+          </div>
+          <div style="text-align:center;background:#fff;border:1px solid #A8E8CF;border-radius:6pt;padding:6pt 14pt;flex:1;min-width:80pt">
+            <div style="font-size:22pt;font-weight:800;color:#0BAF7A;line-height:1">${benarCount}/${totalSoal}</div>
+            <div style="font-size:8.5pt;color:#7A9186;margin-top:2pt">Pilihan Ganda</div>
+          </div>
+          <div style="flex:3;min-width:160pt;display:flex;align-items:center">
+            <div style="font-size:9.5pt;color:#088A60;font-style:italic">${soloLabel}</div>
+          </div>
+        </div>
+        <table style="width:100%;border-collapse:collapse;font-size:9pt">
+          <thead><tr style="background:#0BAF7A;color:#fff">
+            <th style="padding:5pt 7pt;text-align:left">Level SOLO</th>
+            <th style="padding:5pt 7pt;text-align:center">Jumlah</th>
+            <th style="padding:5pt 7pt;text-align:center">Dikerjakan</th>
+            <th style="padding:5pt 7pt;text-align:center">Benar</th>
+            <th style="padding:5pt 7pt;text-align:center">%</th>
+          </tr></thead>
+          <tbody>${soloRows}</tbody>
+        </table>
+        <div style="font-size:8pt;color:#7A9186;margin-top:5pt">* Latihan SOLO mengukur literasi statistik. Essay tidak terhitung dalam skor otomatis.</div>
+      </div>`;
+  }
+
+  // ── Build Rubrik Guru HTML ──
+  const rubrikGuruHTML = `
+    <div class="pdf-page-break print-rubrik-guru" style="display:none">
+      <div style="border-bottom:2px solid #0BAF7A;padding-bottom:8pt;margin-bottom:12pt">
+        <div style="font-size:14pt;font-weight:800;color:#0F1C17">📋 Rubrik Penilaian Guru</div>
+        <div style="font-size:9pt;color:#7A9186;margin-top:3pt">DataVista V2.1 — Pertemuan ${nPtm}: ${ptmNames[nPtm]} · ${kelompok} · ${sekolah} · ${tglISO}</div>
       </div>
-    </div>
-    <div style="background:#f5faf7;border:1px solid #A8E8CF;border-radius:8px;padding:10px 14px;margin-bottom:16px;font-size:10pt">
-      <table style="width:100%;border:none;font-size:10pt">
-        <tr><td style="border:none;padding:2px 12px 2px 0;color:#7A9186;font-weight:600">Kelompok</td><td style="border:none;padding:2px;color:#0F1C17;font-weight:700">${kelompok}</td>
-            <td style="border:none;padding:2px 12px 2px 0;color:#7A9186;font-weight:600">Sekolah</td><td style="border:none;padding:2px;color:#0F1C17">${sekolah}</td></tr>
-        <tr><td style="border:none;padding:2px 12px 2px 0;color:#7A9186;font-weight:600">Kelas</td><td style="border:none;padding:2px;color:#0F1C17">${kelas}</td>
-            <td style="border:none;padding:2px 12px 2px 0;color:#7A9186;font-weight:600">Tahun Ajaran</td><td style="border:none;padding:2px;color:#0F1C17">${ta}</td></tr>
-        <tr><td style="border:none;padding:2px 12px 2px 0;color:#7A9186;font-weight:600">Anggota</td><td colspan="3" style="border:none;padding:2px;color:#0F1C17">${anggota}</td></tr>
+
+      <div style="background:#f5faf7;border:1px solid #A8E8CF;border-radius:6pt;padding:8pt 10pt;margin-bottom:10pt;font-size:9pt">
+        <table style="width:100%;border:none;font-size:9pt">
+          <tr>
+            <td style="border:none;padding:2pt 10pt 2pt 0;color:#7A9186;font-weight:600;width:18%">Kelompok</td>
+            <td style="border:none;padding:2pt;color:#0F1C17;font-weight:700;width:32%">${kelompok}</td>
+            <td style="border:none;padding:2pt 10pt 2pt 0;color:#7A9186;font-weight:600;width:18%">Sekolah</td>
+            <td style="border:none;padding:2pt;color:#0F1C17;width:32%">${sekolah}</td>
+          </tr>
+          <tr>
+            <td style="border:none;padding:2pt 10pt 2pt 0;color:#7A9186;font-weight:600">Kelas</td>
+            <td style="border:none;padding:2pt;color:#0F1C17">${kelas}</td>
+            <td style="border:none;padding:2pt 10pt 2pt 0;color:#7A9186;font-weight:600">Tahun Ajaran</td>
+            <td style="border:none;padding:2pt;color:#0F1C17">${ta}</td>
+          </tr>
+          <tr>
+            <td style="border:none;padding:2pt 10pt 2pt 0;color:#7A9186;font-weight:600">Anggota</td>
+            <td colspan="3" style="border:none;padding:2pt;color:#0F1C17">${anggota}</td>
+          </tr>
+        </table>
+      </div>
+
+      <table style="width:100%;border-collapse:collapse;font-size:9pt;margin-bottom:10pt">
+        <thead>
+          <tr style="background:#0BAF7A;color:#fff">
+            <th style="padding:5pt 7pt;text-align:left;width:5%">No</th>
+            <th style="padding:5pt 7pt;text-align:left;width:30%">Aspek Penilaian</th>
+            <th style="padding:5pt 7pt;text-align:left;width:35%">Indikator</th>
+            <th style="padding:5pt 7pt;text-align:center;width:10%">Skor<br><span style="font-weight:400;font-size:8pt">(1–4)</span></th>
+            <th style="padding:5pt 7pt;text-align:center;width:20%">Catatan Guru</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td colspan="5" style="border:1px solid #D6E8E0;padding:4pt 7pt;background:#EDF6F1;font-weight:700;font-size:9pt;color:#055C3F">A. Proses Pembelajaran (Pertemuan ${nPtm})</td></tr>
+          <tr>
+            <td style="border:1px solid #D6E8E0;padding:5pt 7pt;text-align:center">1</td>
+            <td style="border:1px solid #D6E8E0;padding:5pt 7pt">Partisipasi Aktif</td>
+            <td style="border:1px solid #D6E8E0;padding:5pt 7pt;font-size:8.5pt;color:#3D5047">4=Semua anggota aktif; 3=Sebagian besar aktif; 2=Sebagian kecil aktif; 1=Pasif</td>
+            <td style="border:1px solid #D6E8E0;padding:5pt 7pt;text-align:center">_____</td>
+            <td style="border:1px solid #D6E8E0;padding:5pt 7pt"></td>
+          </tr>
+          <tr>
+            <td style="border:1px solid #D6E8E0;padding:5pt 7pt;text-align:center">2</td>
+            <td style="border:1px solid #D6E8E0;padding:5pt 7pt">Kemampuan Diskusi & Komunikasi</td>
+            <td style="border:1px solid #D6E8E0;padding:5pt 7pt;font-size:8.5pt;color:#3D5047">4=Diskusi produktif, ide terstruktur; 3=Diskusi cukup; 2=Diskusi minimal; 1=Tidak berdiskusi</td>
+            <td style="border:1px solid #D6E8E0;padding:5pt 7pt;text-align:center">_____</td>
+            <td style="border:1px solid #D6E8E0;padding:5pt 7pt"></td>
+          </tr>
+          <tr>
+            <td style="border:1px solid #D6E8E0;padding:5pt 7pt;text-align:center">3</td>
+            <td style="border:1px solid #D6E8E0;padding:5pt 7pt">Penggunaan DataVista</td>
+            <td style="border:1px solid #D6E8E0;padding:5pt 7pt;font-size:8.5pt;color:#3D5047">4=Mandiri & optimal; 3=Mandiri dgn sedikit bantuan; 2=Perlu bimbingan; 1=Tidak menggunakan</td>
+            <td style="border:1px solid #D6E8E0;padding:5pt 7pt;text-align:center">_____</td>
+            <td style="border:1px solid #D6E8E0;padding:5pt 7pt"></td>
+          </tr>
+          <tr><td colspan="5" style="border:1px solid #D6E8E0;padding:4pt 7pt;background:#EDF6F1;font-weight:700;font-size:9pt;color:#055C3F">B. Kualitas Laporan / Hasil Kerja</td></tr>
+          <tr>
+            <td style="border:1px solid #D6E8E0;padding:5pt 7pt;text-align:center">4</td>
+            <td style="border:1px solid #D6E8E0;padding:5pt 7pt">Kelengkapan Jawaban</td>
+            <td style="border:1px solid #D6E8E0;padding:5pt 7pt;font-size:8.5pt;color:#3D5047">4=>90% terisi lengkap; 3=70–90%; 2=50–70%; 1=&lt;50%</td>
+            <td style="border:1px solid #D6E8E0;padding:5pt 7pt;text-align:center">_____</td>
+            <td style="border:1px solid #D6E8E0;padding:5pt 7pt"></td>
+          </tr>
+          <tr>
+            <td style="border:1px solid #D6E8E0;padding:5pt 7pt;text-align:center">5</td>
+            <td style="border:1px solid #D6E8E0;padding:5pt 7pt">Ketepatan Konsep Statistika</td>
+            <td style="border:1px solid #D6E8E0;padding:5pt 7pt;font-size:8.5pt;color:#3D5047">4=Semua konsep tepat; 3=Sebagian besar tepat; 2=Beberapa keliru; 1=Banyak kesalahan konsep</td>
+            <td style="border:1px solid #D6E8E0;padding:5pt 7pt;text-align:center">_____</td>
+            <td style="border:1px solid #D6E8E0;padding:5pt 7pt"></td>
+          </tr>
+          <tr>
+            <td style="border:1px solid #D6E8E0;padding:5pt 7pt;text-align:center">6</td>
+            <td style="border:1px solid #D6E8E0;padding:5pt 7pt">Kedalaman Analisis</td>
+            <td style="border:1px solid #D6E8E0;padding:5pt 7pt;font-size:8.5pt;color:#3D5047">4=Analisis mendalam & kritis; 3=Analisis cukup; 2=Deskriptif saja; 1=Tidak ada analisis</td>
+            <td style="border:1px solid #D6E8E0;padding:5pt 7pt;text-align:center">_____</td>
+            <td style="border:1px solid #D6E8E0;padding:5pt 7pt"></td>
+          </tr>
+          <tr><td colspan="5" style="border:1px solid #D6E8E0;padding:4pt 7pt;background:#EDF6F1;font-weight:700;font-size:9pt;color:#055C3F">C. Resiliensi Matematis</td></tr>
+          <tr>
+            <td style="border:1px solid #D6E8E0;padding:5pt 7pt;text-align:center">7</td>
+            <td style="border:1px solid #D6E8E0;padding:5pt 7pt">Ketekunan & Semangat Belajar</td>
+            <td style="border:1px solid #D6E8E0;padding:5pt 7pt;font-size:8.5pt;color:#3D5047">4=Sangat tekun, tidak mudah menyerah; 3=Cukup tekun; 2=Kurang gigih; 1=Mudah menyerah</td>
+            <td style="border:1px solid #D6E8E0;padding:5pt 7pt;text-align:center">_____</td>
+            <td style="border:1px solid #D6E8E0;padding:5pt 7pt"></td>
+          </tr>
+          <tr>
+            <td style="border:1px solid #D6E8E0;padding:5pt 7pt;text-align:center">8</td>
+            <td style="border:1px solid #D6E8E0;padding:5pt 7pt">Kepercayaan Diri Matematika</td>
+            <td style="border:1px solid #D6E8E0;padding:5pt 7pt;font-size:8.5pt;color:#3D5047">4=Percaya diri, berani berpendapat; 3=Cukup percaya diri; 2=Ragu-ragu; 1=Tidak percaya diri</td>
+            <td style="border:1px solid #D6E8E0;padding:5pt 7pt;text-align:center">_____</td>
+            <td style="border:1px solid #D6E8E0;padding:5pt 7pt"></td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr style="background:#0BAF7A;color:#fff">
+            <td colspan="3" style="padding:6pt 7pt;font-weight:700;text-align:right">TOTAL SKOR (maks. 32)</td>
+            <td style="padding:6pt 7pt;text-align:center;font-weight:700">_____</td>
+            <td style="padding:6pt 7pt"></td>
+          </tr>
+          <tr style="background:#EDFBF5">
+            <td colspan="3" style="padding:5pt 7pt;font-weight:600;color:#055C3F;text-align:right">Nilai Akhir (Skor × 100 ÷ 32)</td>
+            <td style="padding:5pt 7pt;text-align:center;font-weight:700;color:#088A60">_____</td>
+            <td style="padding:5pt 7pt"></td>
+          </tr>
+        </tfoot>
       </table>
-    </div>
-    ${clone.innerHTML}
-    <div style="margin-top:32px;border-top:1px solid #D6E8E0;padding-top:12px;display:flex;justify-content:space-between;font-size:9pt;color:#7A9186">
-      <span>DataVista V2 · Wahyu Setiawan · UPI · 2025</span>
-      <span>Pertemuan ${nPtm} dari 5</span>
+
+      <div style="display:flex;gap:10pt;margin-bottom:10pt">
+        <div style="flex:1;border:1px solid #D6E8E0;border-radius:6pt;padding:8pt 10pt">
+          <div style="font-weight:700;font-size:9.5pt;color:#0F1C17;margin-bottom:4pt">Catatan Khusus Guru</div>
+          <div style="height:50pt;border-bottom:1px dashed #D6E8E0"></div>
+          <div style="height:50pt;border-bottom:1px dashed #D6E8E0"></div>
+        </div>
+        <div style="flex:1;border:1px solid #D6E8E0;border-radius:6pt;padding:8pt 10pt">
+          <div style="font-weight:700;font-size:9.5pt;color:#0F1C17;margin-bottom:4pt">Tindak Lanjut / Rekomendasi</div>
+          <div style="height:50pt;border-bottom:1px dashed #D6E8E0"></div>
+          <div style="height:50pt;border-bottom:1px dashed #D6E8E0"></div>
+        </div>
+      </div>
+
+      <div style="display:flex;justify-content:flex-end;gap:30pt;margin-top:8pt">
+        <div style="text-align:center">
+          <div style="font-size:9pt;color:#7A9186;margin-bottom:28pt">Mengetahui,<br>Kepala Sekolah</div>
+          <div style="border-top:1px solid #0F1C17;padding-top:3pt;font-size:9pt;font-weight:600">NIP. ___________________</div>
+        </div>
+        <div style="text-align:center">
+          <div style="font-size:9pt;color:#7A9186;margin-bottom:28pt">${tglISO}<br>Guru Matematika</div>
+          <div style="border-top:1px solid #0F1C17;padding-top:3pt;font-size:9pt;font-weight:600">NIP. ___________________</div>
+        </div>
+      </div>
+
+      <div style="margin-top:14pt;padding-top:8pt;border-top:1px solid #D6E8E0;display:flex;justify-content:space-between;font-size:8pt;color:#7A9186">
+        <span>DataVista V2.1 · Rubrik Penilaian Guru · Instrumen Penelitian Disertasi Universitas Pendidikan Indonesia</span>
+        <span>Kang Wahyu Setiawan · 2026</span>
+      </div>
     </div>`;
 
-  window.print();
+  // ── Build the print area content ──
+  const printArea = document.getElementById('print-area');
+
+  // Temporary QR container (off-screen)
+  const qrTempDiv = document.createElement('div');
+  qrTempDiv.style.cssText = 'position:absolute;left:-9999px;top:-9999px;width:80px;height:80px';
+  document.body.appendChild(qrTempDiv);
+
+  const appURL = window.location.href.split('?')[0];
+  let qrImgSrc = '';
+
+  function buildAndPrint(qrSrc) {
+    qrImgSrc = qrSrc || '';
+    const qrSection = qrImgSrc ? `
+      <div class="print-qr-section" style="display:none;align-items:flex-start;gap:12pt;border:1px solid #A8E8CF;border-radius:6pt;padding:8pt 10pt;background:#EDFBF5;margin-bottom:10pt">
+        <img src="${qrImgSrc}" style="width:72pt;height:72pt;border-radius:4pt;flex-shrink:0" alt="QR Code DataVista">
+        <div style="flex:1">
+          <div style="font-size:10pt;font-weight:700;color:#055C3F;margin-bottom:3pt">🔗 Versi Interaktif DataVista</div>
+          <div style="font-size:8.5pt;color:#3D5047;margin-bottom:4pt">Scan QR code untuk membuka versi interaktif dan memverifikasi keaslian laporan ini secara digital.</div>
+          <div style="font-size:7.5pt;color:#7A9186;word-break:break-all">${appURL}</div>
+          <div style="margin-top:4pt;font-size:8pt;color:#088A60;font-weight:600">ID Laporan: ${kelompok.replace(/\s+/g,'').toUpperCase()}-PTM${nPtm}-${new Date().toISOString().slice(0,10).replace(/-/g,'')}</div>
+        </div>
+      </div>` : '';
+
+    printArea.innerHTML = `
+      <div class="print-header" style="display:flex">
+        <div class="print-header-logo">DV</div>
+        <div class="print-header-info">
+          <div class="print-header-title">DataVista V2.1 — Pertemuan ${nPtm}: ${ptmNames[nPtm]}</div>
+          <div class="print-header-sub">Laporan Kerja Kelompok · Dicetak: ${tgl}</div>
+        </div>
+      </div>
+
+      <div style="background:#f5faf7;border:1px solid #A8E8CF;border-radius:8px;padding:10px 14px;margin-bottom:12px;font-size:10pt">
+        <table style="width:100%;border:none;font-size:10pt">
+          <tr>
+            <td style="border:none;padding:2px 12px 2px 0;color:#7A9186;font-weight:600">Kelompok</td>
+            <td style="border:none;padding:2px;color:#0F1C17;font-weight:700">${kelompok}</td>
+            <td style="border:none;padding:2px 12px 2px 0;color:#7A9186;font-weight:600">Sekolah</td>
+            <td style="border:none;padding:2px;color:#0F1C17">${sekolah}</td>
+          </tr>
+          <tr>
+            <td style="border:none;padding:2px 12px 2px 0;color:#7A9186;font-weight:600">Kelas</td>
+            <td style="border:none;padding:2px;color:#0F1C17">${kelas}</td>
+            <td style="border:none;padding:2px 12px 2px 0;color:#7A9186;font-weight:600">Tahun Ajaran</td>
+            <td style="border:none;padding:2px;color:#0F1C17">${ta}</td>
+          </tr>
+          <tr>
+            <td style="border:none;padding:2px 12px 2px 0;color:#7A9186;font-weight:600">Anggota</td>
+            <td colspan="3" style="border:none;padding:2px;color:#0F1C17">${anggota}</td>
+          </tr>
+        </table>
+      </div>
+
+      ${qrSection}
+      ${soloSummaryHTML}
+      ${clone.innerHTML}
+
+      <div style="margin-top:32px;border-top:1px solid #D6E8E0;padding-top:12px;display:flex;justify-content:space-between;font-size:9pt;color:#7A9186">
+        <span>DataVista V2.1 · Wahyu Setiawan · Universitas Pendidikan Indonesia · 2026</span>
+        <span>Pertemuan ${nPtm} dari 5</span>
+      </div>
+
+      ${rubrikGuruHTML}`;
+
+    if (qrTempDiv.parentNode) document.body.removeChild(qrTempDiv);
+    window.print();
+  }
+
+  // Generate QR code
+  try {
+    if (typeof QRCode !== 'undefined') {
+      new QRCode(qrTempDiv, {
+        text: appURL,
+        width: 128, height: 128,
+        colorDark: '#0BAF7A', colorLight: '#ffffff',
+        correctLevel: QRCode.CorrectLevel.M
+      });
+      // Wait for QR to render then grab canvas/img
+      setTimeout(() => {
+        const qrCanvas = qrTempDiv.querySelector('canvas');
+        const qrImg    = qrTempDiv.querySelector('img');
+        const src = qrCanvas ? qrCanvas.toDataURL('image/png') : (qrImg ? qrImg.src : '');
+        buildAndPrint(src);
+      }, 300);
+    } else {
+      buildAndPrint('');
+    }
+  } catch(e) {
+    buildAndPrint('');
+  }
 }
 
 function taField(key, placeholder, multiline, minH) {
@@ -1530,7 +1976,78 @@ function buildP2() {
     <div class="pertanyaan"><div class="pq">1. Siapa saja responden? Berapa orang? Mengapa?</div>${taField('p2a1q1','Responden: ...\\nJumlah: ... orang, karena...',true,60)}</div>
     <div class="pertanyaan"><div class="pq">2. Cara mengumpulkan data?</div>${taField('p2a1q2','Cara: ...\\nAlasan: ...',true,50)}</div>`,0,2,'Lanjut →');
   const a2 = wrapAkt(2,'Jadwal & Pembagian Tugas',`
-    <div class="pertanyaan"><div class="pq">Isi tabel pembagian tugas kelompok:</div>${taField('p2a2q1','Nama — Tugas — Target\\n...: survei kelas VIII-A → Senin\\n...: rekap data → Selasa',true,100)}</div>`,1,3,'Lanjut ke Refleksi →');
+    <!-- A. PEMBAGIAN PERAN -->
+    <div style="font-family:var(--font-display);font-size:13px;font-weight:700;color:var(--primary-dark);margin-bottom:.5rem">A. Pembagian Peran dalam Kelompok</div>
+    <p style="font-size:12px;color:var(--text-2);margin-bottom:.65rem">Isi peran dan tugas utama setiap anggota kelompok.</p>
+    <div style="overflow-x:auto;margin-bottom:1.25rem">
+      <table style="width:100%;border-collapse:collapse;font-size:12px">
+        <thead>
+          <tr>
+            <th style="background:var(--primary);color:#fff;padding:8px 10px;border-radius:6px 0 0 0;text-align:left;white-space:nowrap;min-width:120px">Nama Anggota</th>
+            <th style="background:var(--primary);color:#fff;padding:8px 10px;text-align:left;white-space:nowrap;min-width:130px">Peran</th>
+            <th style="background:var(--primary);color:#fff;padding:8px 10px;border-radius:0 6px 0 0;text-align:left;min-width:180px">Tugas Utama</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${[0,1,2,3,4,5].map(i => {
+            const id = getStore('identitas',null);
+            const nm = loadTA('p2_peran'+i+'_nama') || (id && id.anggota && id.anggota[i] ? id.anggota[i].nm : '');
+            const peran = loadTA('p2_peran'+i+'_peran');
+            const tugas = loadTA('p2_peran'+i+'_tugas');
+            const bg = i%2===0 ? 'var(--surface)' : 'var(--primary-xlight)';
+            const opts = ['Ketua Kelompok','Pencari Data','Analis Data','Desainer Infografis','Notulen/Dokumenter','Penyaji'];
+            return `<tr style="background:${bg}">
+              <td style="padding:6px 8px;border-bottom:1px solid var(--border)">
+                <input type="text" placeholder="Nama anggota ${i+1}" value="${nm.replace(/"/g,'&quot;')}" oninput="saveTA('p2_peran${i}_nama',this.value)" style="width:100%;font-size:12px;border:1px solid var(--border);border-radius:4px;padding:4px 6px;background:transparent;font-family:var(--font-body)">
+              </td>
+              <td style="padding:6px 8px;border-bottom:1px solid var(--border)">
+                <select oninput="saveTA('p2_peran${i}_peran',this.value)" style="width:100%;font-size:12px;border:1px solid var(--border);border-radius:4px;padding:4px 6px;background:var(--surface);font-family:var(--font-body)">
+                  <option value="">— Pilih peran —</option>
+                  ${opts.map(o=>`<option ${peran===o?'selected':''}>${o}</option>`).join('')}
+                </select>
+              </td>
+              <td style="padding:6px 8px;border-bottom:1px solid var(--border)">
+                <input type="text" placeholder="Tuliskan tugas utama..." value="${tugas.replace(/"/g,'&quot;')}" oninput="saveTA('p2_peran${i}_tugas',this.value)" style="width:100%;font-size:12px;border:1px solid var(--border);border-radius:4px;padding:4px 6px;background:transparent;font-family:var(--font-body)">
+              </td>
+            </tr>`;
+          }).join('')}
+        </tbody>
+      </table>
+    </div>
+
+    <!-- B. JADWAL PENGERJAAN -->
+    <div style="font-family:var(--font-display);font-size:13px;font-weight:700;color:var(--primary-dark);margin-bottom:.5rem">B. Jadwal Pengerjaan Proyek</div>
+    <p style="font-size:12px;color:var(--text-2);margin-bottom:.65rem">Isi target waktu dan penanggung jawab untuk setiap pertemuan.</p>
+    <div style="overflow-x:auto;margin-bottom:.5rem">
+      <table style="width:100%;border-collapse:collapse;font-size:12px">
+        <thead>
+          <tr>
+            <th style="background:var(--primary);color:#fff;padding:8px 10px;border-radius:6px 0 0 0;text-align:center;white-space:nowrap;width:48px">Ptm</th>
+            <th style="background:var(--primary);color:#fff;padding:8px 10px;text-align:left;min-width:140px">Kegiatan</th>
+            <th style="background:var(--primary);color:#fff;padding:8px 10px;text-align:left;white-space:nowrap;min-width:110px">Target Selesai</th>
+            <th style="background:var(--primary);color:#fff;padding:8px 10px;border-radius:0 6px 0 0;text-align:left;min-width:130px">Penanggung Jawab</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${[
+            {ptm:'P1',ket:'Orientasi masalah & prediksi awal',key:'p1'},
+            {ptm:'P2',ket:'Perencanaan & instrumen survei',key:'p2'},
+            {ptm:'P3',ket:'Pengumpulan data 40 responden',key:'p3'},
+            {ptm:'P4',ket:'Pengolahan data & grafik',key:'p4'},
+            {ptm:'P5',ket:'Presentasi & refleksi akhir',key:'p5'},
+          ].map(({ptm,ket,key},i) => `<tr style="background:${i%2===0?'var(--surface)':'var(--primary-xlight)'}">
+            <td style="padding:6px 8px;border-bottom:1px solid var(--border);font-weight:700;color:var(--primary-dark);text-align:center">${ptm}</td>
+            <td style="padding:6px 8px;border-bottom:1px solid var(--border);color:var(--text-2)">${ket}</td>
+            <td style="padding:6px 8px;border-bottom:1px solid var(--border)">
+              <input type="text" placeholder="Minggu ke- / tgl" value="${loadTA('p2_jadwal_'+key+'_tgl').replace(/"/g,'&quot;')}" oninput="saveTA('p2_jadwal_${key}_tgl',this.value)" style="width:100%;font-size:12px;border:1px solid var(--border);border-radius:4px;padding:4px 6px;background:transparent;font-family:var(--font-body)">
+            </td>
+            <td style="padding:6px 8px;border-bottom:1px solid var(--border)">
+              <input type="text" placeholder="Nama PJ..." value="${loadTA('p2_jadwal_'+key+'_pj').replace(/"/g,'&quot;')}" oninput="saveTA('p2_jadwal_${key}_pj',this.value)" style="width:100%;font-size:12px;border:1px solid var(--border);border-radius:4px;padding:4px 6px;background:transparent;font-family:var(--font-body)">
+            </td>
+          </tr>`).join('')}
+        </tbody>
+      </table>
+    </div>`,1,3,'Lanjut ke Refleksi →');
   const ref = wrapRefleksi(3,`
     <div class="pertanyaan"><div class="pq">1. Apakah rencana terasa realistis? Bagian mana yang menantang?</div>${taField('p2ref1','Menurut kami: ...',true,55)}</div>
     <div class="pertanyaan"><div class="pq">2. Apa yang perlu disiapkan sebelum pertemuan pengumpulan data?</div>${taField('p2ref2','Yang perlu disiapkan: ...',true,55)}</div>`,2,2);
@@ -2339,6 +2856,13 @@ function buildP5() {
     <div class="btn-row" style="margin-top:.75rem">
       <button class="btn" onclick="ptmNav(1)">← Kembali</button>
       <button class="btn btn-primary" onclick="savePDF(5)" style="background:#0BAF7A;border-color:#0BAF7A">🖨 Simpan PDF Pertemuan 5</button>
+    </div>
+    <div style="margin-top:.85rem;padding:.85rem 1rem;background:var(--primary-xlight);border:1.5px solid var(--primary-light);border-radius:var(--radius);text-align:center">
+      <div style="font-size:12px;color:var(--primary-dark);font-weight:600;margin-bottom:.5rem">📄 Laporan Proyek Lengkap</div>
+      <p style="font-size:12px;color:var(--text-2);margin-bottom:.65rem">PDF ini memuat <strong>Identitas Kelompok</strong>, <strong>Hasil Analisis</strong> dari seluruh pertemuan, dan <strong>Refleksi</strong> akhir proyek.</p>
+      <button class="btn btn-primary" onclick="unduhLaporanProyek()" style="background:var(--primary-dark);border-color:var(--primary-dark);font-size:14px;padding:10px 22px;font-weight:700">
+        📥 Unduh Laporan Proyek (PDF)
+      </button>
     </div>`,
   1, 3);
 
@@ -2602,7 +3126,7 @@ function kRenderCalc(){
 
 // ── LATIHAN SOAL ──
 const soalJawaban = { 1:'A', 2:'B', 3:'A', 4:'B', 5:'B', 6:'C', 7:'A', 8:'B', 9:'B', 10:'B' };
-let soalStatus = {};
+let soalStatus = (() => { try { return JSON.parse(localStorage.getItem('datavista_soalStatus')||'{}'); } catch(e){ return {}; } })();
 
 function initProgressDots() {
   const wrap = document.getElementById('progress-dots');
@@ -2634,6 +3158,7 @@ function pilihJawaban(no, huruf) {
   if (dipilih) dipilih.className = 'pilihan-opt ' + (isBenar ? 'correct' : 'wrong');
   if (!isBenar && correct) correct.className = 'pilihan-opt correct';
   soalStatus[no] = isBenar;
+  try { localStorage.setItem('datavista_soalStatus', JSON.stringify(soalStatus)); } catch(e){}
   updateDot(no, isBenar);
   const pb = document.getElementById('pembahasan-'+no);
   if (pb) pb.className = 'pembahasan-box show';
@@ -2676,6 +3201,7 @@ function lihatRubrik(id) {
 
 function resetLatihan() {
   soalStatus = {};
+  try { localStorage.removeItem('datavista_soalStatus'); } catch(e){}
   for (let i=1; i<=10; i++) {
     ['a','b','c','d'].forEach(h => {
       const el = document.getElementById('s'+i+'-'+h);
