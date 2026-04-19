@@ -116,6 +116,17 @@ h3{font-size:15px;font-weight:600;color:var(--primary-dark);margin-bottom:.4rem}
 p{font-size:15px;color:var(--text-2);line-height:1.75;margin-bottom:.5rem}
 p:last-child{margin-bottom:0}
 
+/* SCAFFOLDING */
+.scaffolding-box{margin:.6rem 0 1rem;background:#F0FDF8;border:1.5px solid #A8E8CF;border-radius:var(--radius);padding:.75rem .9rem;display:flex;flex-direction:column;gap:.55rem}
+.scaf-title{font-size:12px;font-weight:700;color:var(--primary-dark);letter-spacing:.06em;text-transform:uppercase;margin-bottom:.15rem}
+.scaf-row{display:flex;gap:10px;align-items:flex-start}
+.scaf-num{min-width:24px;height:24px;border-radius:50%;background:var(--primary);color:#fff;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+.scaf-content{flex:1;display:flex;flex-direction:column;gap:4px}
+.scaf-label{font-size:13px;color:var(--text-1);font-weight:500;line-height:1.45}
+.scaf-input{width:100%;border:1.5px solid #B5E0CF;border-radius:var(--radius-sm);padding:7px 10px;font-size:13px;font-family:var(--font-body);background:#fff;color:var(--text-1);outline:none;transition:border-color .15s}
+.scaf-input:focus{border-color:var(--primary);box-shadow:0 0 0 3px rgba(11,175,122,0.1)}
+.scaf-input::placeholder{color:#9FBFB5;font-style:italic}
+
 /* BADGE */
 .badge{display:inline-block;font-size:10px;font-weight:600;padding:2px 8px;border-radius:99px;vertical-align:middle;margin-left:4px}
 .badge-green{background:var(--primary-light);color:var(--primary-dark)}
@@ -629,7 +640,7 @@ input[type=radio]:checked ~ .rubrik-score-btn {background:var(--primary);color:#
 <div id="page-latihan" class="page">
   <div style="padding:.75rem 0 .5rem">
     <h2 style="margin-bottom:.25rem">Latihan Soal Literasi Statistik</h2>
-    <p style="margin-bottom:.65rem">12 soal (10 pilihan ganda + 2 essay) berbasis Taksonomi SOLO — dari level paling dasar hingga paling tinggi. Skor muncul setelah semua pilihan ganda dijawab.</p>
+    <p style="margin-bottom:.65rem">15 soal (12 pilihan ganda + 3 essay) berbasis Taksonomi SOLO — dari level paling dasar hingga paling tinggi. Skor muncul setelah semua pilihan ganda dijawab.</p>
     <div class="card-amber" style="padding:.7rem 1rem;margin-bottom:.85rem">
       <strong style="font-size:13px">Tingkatan SOLO yang diuji:</strong>
       <div style="margin-top:.4rem;display:flex;flex-wrap:wrap;gap:6px">
@@ -646,21 +657,30 @@ input[type=radio]:checked ~ .rubrik-score-btn {background:var(--primary);color:#
 
   <!-- Soal 1 — Unistruktural -->
   <div class="soal-card" id="soal-card-1">
-    <div class="soal-nomor-strip"><span class="nomor-circle">1</span><span class="sec-lbl" style="margin-bottom:0">Pilihan Ganda &nbsp;·&nbsp; 10 soal</span></div>
+    <div class="soal-nomor-strip"><span class="nomor-circle">1</span><span class="sec-lbl" style="margin-bottom:0">Pilihan Ganda &nbsp;·&nbsp; 12 soal</span></div>
     <span class="solo-badge solo-unistruktural">SOLO: Unistruktural</span>
     <p style="font-weight:600;color:var(--text-1);font-size:15px;margin:.6rem 0 .75rem">
-      Nilai ulangan 7 siswa adalah: <strong style="color:var(--primary-dark)">6, 7, 8, 7, 9, 7, 10</strong>.<br>
+      Nilai ulangan <strong>15 siswa</strong> adalah:<br>
+      <strong style="color:var(--primary-dark)">4, 6, 7, 8, 6, 9, 7, 10, 6, 8, 7, 5, 6, 7, 9</strong><br>
       Berapakah <em>modus</em> dari data tersebut?
     </p>
-    <div class="pilihan-opt" id="s1-a" onclick="pilihJawaban(1,'A')"><span class="pilihan-key">A</span><span>7</span></div>
-    <div class="pilihan-opt" id="s1-b" onclick="pilihJawaban(1,'B')"><span class="pilihan-key">B</span><span>8</span></div>
-    <div class="pilihan-opt" id="s1-c" onclick="pilihJawaban(1,'C')"><span class="pilihan-key">C</span><span>9</span></div>
-    <div class="pilihan-opt" id="s1-d" onclick="pilihJawaban(1,'D')"><span class="pilihan-key">D</span><span>10</span></div>
+<div class="scaffolding-box">
+      <div class="scaf-title">&#x1F9ED; Langkah Menjawab</div>
+      <div class="scaf-row"><div class="scaf-num">1</div><div class="scaf-content"><div class="scaf-label">Apa yang kita cari pada soal ini?</div><input class="scaf-input" type="text" placeholder="Kita mencari ... (tulis nama ukurannya)"></div></div>
+<div class="scaf-row"><div class="scaf-num">2</div><div class="scaf-content"><div class="scaf-label">Hitung kemunculan setiap nilai (buat turus/tally):</div><input class="scaf-input" type="text" placeholder="4 muncul ...×, 5 muncul ...×, 6 muncul ...×, 7 muncul ...×, 8 muncul ...×, 9 muncul ...×, 10 muncul ...×"></div></div>
+<div class="scaf-row"><div class="scaf-num">3</div><div class="scaf-content"><div class="scaf-label">Nilai mana yang frekuensinya terbesar? Apakah ada lebih dari satu nilai dengan frekuensi tertinggi?</div><input class="scaf-input" type="text" placeholder="Frekuensi terbesar = ...×, yaitu nilai ... dan nilai ..."></div></div>
+<div class="scaf-row"><div class="scaf-num">4</div><div class="scaf-content"><div class="scaf-label">Tentukan modus dari data tersebut:</div><input class="scaf-input" type="text" placeholder="Modus = ..."></div></div>
+    </div>
+    <div class="pilihan-opt" id="s1-a" onclick="pilihJawaban(1,'A')"><span class="pilihan-key">A</span><span>6</span></div>
+    <div class="pilihan-opt" id="s1-b" onclick="pilihJawaban(1,'B')"><span class="pilihan-key">B</span><span>6 dan 7</span></div>
+    <div class="pilihan-opt" id="s1-c" onclick="pilihJawaban(1,'C')"><span class="pilihan-key">C</span><span>7</span></div>
+    <div class="pilihan-opt" id="s1-d" onclick="pilihJawaban(1,'D')"><span class="pilihan-key">D</span><span>8</span></div>
     <div class="pembahasan-box" id="pembahasan-1">
       <div class="step-head"><span class="step-no-circle">✓</span>Pembahasan</div>
-      <p>Modus adalah nilai yang paling sering muncul. Nilai 7 muncul <strong>3 kali</strong>, nilai lainnya hanya 1 kali.</p>
-      <p style="color:var(--primary-dark);font-weight:600">Jawaban benar: <strong>A — 7</strong></p>
-      <p style="font-size:13px;color:var(--text-3)"><em>Unistruktural:</em> hanya membutuhkan satu konsep (modus = nilai terbanyak) tanpa perhitungan lanjutan.</p>
+      <p>Hitung frekuensi setiap nilai: 4→1×, 5→1×, <strong>6→4×</strong>, <strong>7→4×</strong>, 8→2×, 9→2×, 10→1×.</p>
+      <p>Nilai 6 dan nilai 7 sama-sama muncul <strong>4 kali</strong> (terbanyak), sehingga data ini memiliki <strong>dua modus (bimodal)</strong>.</p>
+      <p style="color:var(--primary-dark);font-weight:600">Jawaban benar: <strong>B — 6 dan 7</strong></p>
+      <p style="font-size:13px;color:var(--text-3)"><em>Unistruktural:</em> mengenali konsep modus pada data dengan lebih dari satu nilai dominan (bimodal).</p>
     </div>
   </div>
 
@@ -669,18 +689,28 @@ input[type=radio]:checked ~ .rubrik-score-btn {background:var(--primary);color:#
     <div class="soal-nomor-strip"><span class="nomor-circle">2</span></div>
     <span class="solo-badge solo-unistruktural">SOLO: Unistruktural</span>
     <p style="font-weight:600;color:var(--text-1);font-size:15px;margin:.6rem 0 .75rem">
-      Data waktu belajar (jam/hari): <strong style="color:var(--primary-dark)">1, 2, 3, 4, 5, 6, 7</strong>.<br>
+      Data waktu belajar (jam/hari) dari <strong>15 siswa</strong>:<br>
+      <strong style="color:var(--primary-dark)">7, 3, 5, 8, 4, 6, 5, 9, 3, 7, 4, 8, 5, 6, 7</strong><br>
       Berapakah <em>median</em> dari data tersebut?
     </p>
-    <div class="pilihan-opt" id="s2-a" onclick="pilihJawaban(2,'A')"><span class="pilihan-key">A</span><span>3 jam</span></div>
-    <div class="pilihan-opt" id="s2-b" onclick="pilihJawaban(2,'B')"><span class="pilihan-key">B</span><span>4 jam</span></div>
-    <div class="pilihan-opt" id="s2-c" onclick="pilihJawaban(2,'C')"><span class="pilihan-key">C</span><span>5 jam</span></div>
-    <div class="pilihan-opt" id="s2-d" onclick="pilihJawaban(2,'D')"><span class="pilihan-key">D</span><span>3,5 jam</span></div>
+<div class="scaffolding-box">
+      <div class="scaf-title">&#x1F9ED; Langkah Menjawab</div>
+      <div class="scaf-row"><div class="scaf-num">1</div><div class="scaf-content"><div class="scaf-label">Apa yang kita cari? Urutkan data dari terkecil ke terbesar:</div><input class="scaf-input" type="text" placeholder="Data terurut: 3, 3, 4, 4, 5, 5, 5, ..., ..., ..., ..., ..., ..., ..., ..."></div></div>
+<div class="scaf-row"><div class="scaf-num">2</div><div class="scaf-content"><div class="scaf-label">Hitung banyak data (n) — ganjil atau genap?</div><input class="scaf-input" type="text" placeholder="n = ... → ganjil/genap"></div></div>
+<div class="scaf-row"><div class="scaf-num">3</div><div class="scaf-content"><div class="scaf-label">Tentukan posisi median dengan rumus (n+1) ÷ 2:</div><input class="scaf-input" type="text" placeholder="Posisi median = (...+1) ÷ 2 = ... → data ke-..."></div></div>
+<div class="scaf-row"><div class="scaf-num">4</div><div class="scaf-content"><div class="scaf-label">Ambil nilai data pada posisi tersebut dari data yang sudah diurutkan:</div><input class="scaf-input" type="text" placeholder="Median = ... jam"></div></div>
+    </div>
+    <div class="pilihan-opt" id="s2-a" onclick="pilihJawaban(2,'A')"><span class="pilihan-key">A</span><span>4 jam</span></div>
+    <div class="pilihan-opt" id="s2-b" onclick="pilihJawaban(2,'B')"><span class="pilihan-key">B</span><span>5 jam</span></div>
+    <div class="pilihan-opt" id="s2-c" onclick="pilihJawaban(2,'C')"><span class="pilihan-key">C</span><span>6 jam</span></div>
+    <div class="pilihan-opt" id="s2-d" onclick="pilihJawaban(2,'D')"><span class="pilihan-key">D</span><span>5,5 jam</span></div>
     <div class="pembahasan-box" id="pembahasan-2">
       <div class="step-head"><span class="step-no-circle">✓</span>Pembahasan</div>
-      <p>Data sudah urut. n = 7 (ganjil) → Median = data ke-⌊7/2⌋+1 = data ke-<strong>4</strong> = <strong>4 jam</strong>.</p>
-      <p style="color:var(--primary-dark);font-weight:600">Jawaban benar: <strong>B — 4 jam</strong></p>
-      <p style="font-size:13px;color:var(--text-3)"><em>Unistruktural:</em> cukup menentukan posisi tengah data yang sudah terurut.</p>
+      <p><strong>Urutkan data:</strong> 3, 3, 4, 4, 5, 5, 5, <strong style="color:var(--primary-dark)">[6]</strong>, 6, 7, 7, 7, 8, 8, 9</p>
+      <p>n = 15 (ganjil) → posisi median = (15+1) ÷ 2 = data ke-<strong>8</strong></p>
+      <p>Nilai data ke-8 dari urutan = <strong>6 jam</strong></p>
+      <p style="color:var(--primary-dark);font-weight:600">Jawaban benar: <strong>C — 6 jam</strong></p>
+      <p style="font-size:13px;color:var(--text-3)"><em>Unistruktural:</em> mengurutkan data terlebih dahulu, lalu menentukan nilai tengah dengan tepat.</p>
     </div>
   </div>
 
@@ -689,20 +719,29 @@ input[type=radio]:checked ~ .rubrik-score-btn {background:var(--primary);color:#
     <div class="soal-nomor-strip"><span class="nomor-circle">3</span></div>
     <span class="solo-badge solo-multistruktural">SOLO: Multistruktural</span>
     <p style="font-weight:600;color:var(--text-1);font-size:15px;margin:.6rem 0 .75rem">
-      Durasi penggunaan HP (jam/hari) dari 8 siswa:<br>
-      <strong style="color:var(--primary-dark)">3, 5, 2, 4, 5, 6, 4, 5</strong><br>
+      Durasi penggunaan HP (jam/hari) dari <strong>20 siswa</strong>:<br>
+      <strong style="color:var(--primary-dark)">3, 5, 2, 4, 5, 6, 4, 5, 3, 7, 4, 6, 5, 3, 4, 7, 5, 6, 4, 5</strong><br>
       Hitunglah <em>mean</em> dan <em>jangkauan</em> data tersebut!
     </p>
-    <div class="pilihan-opt" id="s3-a" onclick="pilihJawaban(3,'A')"><span class="pilihan-key">A</span><span>Mean = 4,25 jam; Jangkauan = 4 jam</span></div>
-    <div class="pilihan-opt" id="s3-b" onclick="pilihJawaban(3,'B')"><span class="pilihan-key">B</span><span>Mean = 4,5 jam; Jangkauan = 3 jam</span></div>
-    <div class="pilihan-opt" id="s3-c" onclick="pilihJawaban(3,'C')"><span class="pilihan-key">C</span><span>Mean = 4 jam; Jangkauan = 4 jam</span></div>
-    <div class="pilihan-opt" id="s3-d" onclick="pilihJawaban(3,'D')"><span class="pilihan-key">D</span><span>Mean = 4,25 jam; Jangkauan = 3 jam</span></div>
+<div class="scaffolding-box">
+      <div class="scaf-title">&#x1F9ED; Langkah Menjawab</div>
+      <div class="scaf-row"><div class="scaf-num">1</div><div class="scaf-content"><div class="scaf-label">Jumlahkan semua 20 data (kelompokkan agar mudah):</div><input class="scaf-input" type="text" placeholder="Contoh: (3+5+2+4+5+6+4+5) + (3+7+4+6+5+3+4+7) + (5+6+4+5) = ..."></div></div>
+<div class="scaf-row"><div class="scaf-num">2</div><div class="scaf-content"><div class="scaf-label">Hitung mean — bagi jumlah total dengan banyak data (n = 20):</div><input class="scaf-input" type="text" placeholder="Mean = ... ÷ 20 = ... jam"></div></div>
+<div class="scaf-row"><div class="scaf-num">3</div><div class="scaf-content"><div class="scaf-label">Temukan nilai terbesar dan terkecil dari 20 data di atas:</div><input class="scaf-input" type="text" placeholder="Nilai terbesar = ..., nilai terkecil = ..."></div></div>
+<div class="scaf-row"><div class="scaf-num">4</div><div class="scaf-content"><div class="scaf-label">Hitung jangkauan (nilai terbesar − nilai terkecil):</div><input class="scaf-input" type="text" placeholder="Jangkauan = ... − ... = ... jam"></div></div>
+    </div>
+    <div class="pilihan-opt" id="s3-a" onclick="pilihJawaban(3,'A')"><span class="pilihan-key">A</span><span>Mean = 4,9 jam; Jangkauan = 5 jam</span></div>
+    <div class="pilihan-opt" id="s3-b" onclick="pilihJawaban(3,'B')"><span class="pilihan-key">B</span><span>Mean = 4,5 jam; Jangkauan = 5 jam</span></div>
+    <div class="pilihan-opt" id="s3-c" onclick="pilihJawaban(3,'C')"><span class="pilihan-key">C</span><span>Mean = 4,9 jam; Jangkauan = 4 jam</span></div>
+    <div class="pilihan-opt" id="s3-d" onclick="pilihJawaban(3,'D')"><span class="pilihan-key">D</span><span>Mean = 5,0 jam; Jangkauan = 5 jam</span></div>
     <div class="pembahasan-box" id="pembahasan-3">
       <div class="step-head"><span class="step-no-circle">✓</span>Pembahasan</div>
-      <p><strong>Mean</strong> = (3+5+2+4+5+6+4+5) ÷ 8 = 34 ÷ 8 = <strong>4,25 jam</strong></p>
-      <p><strong>Jangkauan</strong> = Nilai maks − Nilai min = 6 − 2 = <strong>4 jam</strong></p>
-      <p style="color:var(--primary-dark);font-weight:600">Jawaban benar: <strong>A — Mean = 4,25 jam; Jangkauan = 4 jam</strong></p>
-      <p style="font-size:13px;color:var(--text-3)"><em>Multistruktural:</em> dua konsep dihitung terpisah (mean dan jangkauan), belum dihubungkan maknanya.</p>
+      <p><strong>Jumlah semua data</strong> = 3+5+2+4+5+6+4+5+3+7+4+6+5+3+4+7+5+6+4+5 = <strong>98</strong></p>
+      <p><strong>Mean</strong> = 98 ÷ 20 = <strong>4,9 jam</strong></p>
+      <p><strong>Nilai terbesar</strong> = 7, <strong>nilai terkecil</strong> = 2</p>
+      <p><strong>Jangkauan</strong> = 7 − 2 = <strong>5 jam</strong></p>
+      <p style="color:var(--primary-dark);font-weight:600">Jawaban benar: <strong>A — Mean = 4,9 jam; Jangkauan = 5 jam</strong></p>
+      <p style="font-size:13px;color:var(--text-3)"><em>Multistruktural:</em> dua konsep dihitung terpisah (mean dan jangkauan) pada data yang lebih besar.</p>
     </div>
   </div>
 
@@ -711,43 +750,125 @@ input[type=radio]:checked ~ .rubrik-score-btn {background:var(--primary);color:#
     <div class="soal-nomor-strip"><span class="nomor-circle">4</span></div>
     <span class="solo-badge solo-multistruktural">SOLO: Multistruktural</span>
     <p style="font-weight:600;color:var(--text-1);font-size:15px;margin:.6rem 0 .75rem">
-      Data nilai matematika 10 siswa (terurut):<br>
-      <strong style="color:var(--primary-dark)">50, 60, 65, 70, 70, 75, 75, 80, 85, 90</strong><br>
-      Berapakah nilai <em>Q1 (kuartil bawah)</em>?
+      Data durasi penggunaan HP (jam/hari) dari <strong>20 siswa</strong> disajikan dalam tabel distribusi frekuensi tunggal berikut. Hitunglah <em>rata-rata (mean)</em> dari data tersebut!
     </p>
-    <div class="pilihan-opt" id="s4-a" onclick="pilihJawaban(4,'A')"><span class="pilihan-key">A</span><span>62,5</span></div>
-    <div class="pilihan-opt" id="s4-b" onclick="pilihJawaban(4,'B')"><span class="pilihan-key">B</span><span>65</span></div>
-    <div class="pilihan-opt" id="s4-c" onclick="pilihJawaban(4,'C')"><span class="pilihan-key">C</span><span>70</span></div>
-    <div class="pilihan-opt" id="s4-d" onclick="pilihJawaban(4,'D')"><span class="pilihan-key">D</span><span>67,5</span></div>
+    <div style="overflow-x:auto;margin-bottom:.85rem">
+      <table style="width:100%;border-collapse:collapse;font-size:14px">
+        <thead>
+          <tr style="background:var(--primary);color:#fff">
+            <th style="padding:8px 12px;text-align:center;border:1px solid var(--primary-dark)">Nilai x<br><span style="font-weight:400;font-size:12px">(jam/hari)</span></th>
+            <th style="padding:8px 12px;text-align:center;border:1px solid var(--primary-dark)">Frekuensi (f)</th>
+            <th style="padding:8px 12px;text-align:center;border:1px solid var(--primary-dark)">f &times; x</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="background:var(--surface)">
+            <td style="padding:7px 12px;text-align:center;border:1px solid var(--border);font-weight:600;color:var(--primary-dark)">2</td>
+            <td style="padding:7px 12px;text-align:center;border:1px solid var(--border)">3</td>
+            <td style="padding:7px 12px;text-align:center;border:1px solid var(--border);color:var(--text-3);font-style:italic">...</td>
+          </tr>
+          <tr style="background:var(--surface-3)">
+            <td style="padding:7px 12px;text-align:center;border:1px solid var(--border);font-weight:600;color:var(--primary-dark)">3</td>
+            <td style="padding:7px 12px;text-align:center;border:1px solid var(--border)">4</td>
+            <td style="padding:7px 12px;text-align:center;border:1px solid var(--border);color:var(--text-3);font-style:italic">...</td>
+          </tr>
+          <tr style="background:var(--surface)">
+            <td style="padding:7px 12px;text-align:center;border:1px solid var(--border);font-weight:600;color:var(--primary-dark)">4</td>
+            <td style="padding:7px 12px;text-align:center;border:1px solid var(--border)">6</td>
+            <td style="padding:7px 12px;text-align:center;border:1px solid var(--border);color:var(--text-3);font-style:italic">...</td>
+          </tr>
+          <tr style="background:var(--surface-3)">
+            <td style="padding:7px 12px;text-align:center;border:1px solid var(--border);font-weight:600;color:var(--primary-dark)">5</td>
+            <td style="padding:7px 12px;text-align:center;border:1px solid var(--border)">4</td>
+            <td style="padding:7px 12px;text-align:center;border:1px solid var(--border);color:var(--text-3);font-style:italic">...</td>
+          </tr>
+          <tr style="background:var(--surface)">
+            <td style="padding:7px 12px;text-align:center;border:1px solid var(--border);font-weight:600;color:var(--primary-dark)">6</td>
+            <td style="padding:7px 12px;text-align:center;border:1px solid var(--border)">2</td>
+            <td style="padding:7px 12px;text-align:center;border:1px solid var(--border);color:var(--text-3);font-style:italic">...</td>
+          </tr>
+          <tr style="background:var(--surface-3)">
+            <td style="padding:7px 12px;text-align:center;border:1px solid var(--border);font-weight:600;color:var(--primary-dark)">7</td>
+            <td style="padding:7px 12px;text-align:center;border:1px solid var(--border)">1</td>
+            <td style="padding:7px 12px;text-align:center;border:1px solid var(--border);color:var(--text-3);font-style:italic">...</td>
+          </tr>
+          <tr style="background:var(--primary-xlight);font-weight:700">
+            <td style="padding:7px 12px;text-align:center;border:1px solid var(--border);color:var(--primary-dark)">Total</td>
+            <td style="padding:7px 12px;text-align:center;border:1px solid var(--border);color:var(--primary-dark)">20</td>
+            <td style="padding:7px 12px;text-align:center;border:1px solid var(--border);color:var(--primary-dark)">&Sigma;(f&times;x) = ?</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+<div class="scaffolding-box">
+      <div class="scaf-title">&#x1F9ED; Langkah Menjawab</div>
+      <div class="scaf-row"><div class="scaf-num">1</div><div class="scaf-content"><div class="scaf-label">Apa yang kita cari? Ingat rumus mean dari tabel distribusi: Mean = &Sigma;(f&times;x) &divide; &Sigma;f</div><input class="scaf-input" type="text" placeholder="Kita mencari ... menggunakan rumus ..."></div></div>
+<div class="scaf-row"><div class="scaf-num">2</div><div class="scaf-content"><div class="scaf-label">Lengkapi kolom f&times;x — kalikan setiap nilai x dengan frekuensinya:</div><input class="scaf-input" type="text" placeholder="x=2: 2×3=..., x=3: 3×4=..., x=4: 4×6=..., x=5: 5×4=..., x=6: 6×2=..., x=7: 7×1=..."></div></div>
+<div class="scaf-row"><div class="scaf-num">3</div><div class="scaf-content"><div class="scaf-label">Jumlahkan seluruh f&times;x untuk mendapat &Sigma;(f&times;x):</div><input class="scaf-input" type="text" placeholder="&Sigma;(f&times;x) = ... + ... + ... + ... + ... + ... = ..."></div></div>
+<div class="scaf-row"><div class="scaf-num">4</div><div class="scaf-content"><div class="scaf-label">Hitung mean: &Sigma;(f&times;x) &divide; &Sigma;f = ... &divide; 20 = ?</div><input class="scaf-input" type="text" placeholder="Mean = ... &divide; 20 = ... jam/hari"></div></div>
+    </div>
+    <div class="pilihan-opt" id="s4-a" onclick="pilihJawaban(4,'A')"><span class="pilihan-key">A</span><span>3,9 jam/hari</span></div>
+    <div class="pilihan-opt" id="s4-b" onclick="pilihJawaban(4,'B')"><span class="pilihan-key">B</span><span>4,0 jam/hari</span></div>
+    <div class="pilihan-opt" id="s4-c" onclick="pilihJawaban(4,'C')"><span class="pilihan-key">C</span><span>4,1 jam/hari</span></div>
+    <div class="pilihan-opt" id="s4-d" onclick="pilihJawaban(4,'D')"><span class="pilihan-key">D</span><span>4,3 jam/hari</span></div>
     <div class="pembahasan-box" id="pembahasan-4">
       <div class="step-head"><span class="step-no-circle">✓</span>Pembahasan</div>
-      <p>n = 10. Q1 berada di posisi ¼(10+1) = 2,75 → interpolasi antara data ke-2 dan ke-3:</p>
-      <p>Q1 = 60 + 0,75 × (65−60) = 60 + 3,75 = <strong>63,75</strong></p>
-      <p>Cara lain yang umum di SMP: Q1 = median dari 5 data bawah {50,60,65,70,70} = data ke-3 = <strong>65</strong></p>
-      <p style="color:var(--primary-dark);font-weight:600">Jawaban benar: <strong>B — 65</strong> (metode median kelompok bawah)</p>
-      <p style="font-size:13px;color:var(--text-3)"><em>Multistruktural:</em> membutuhkan pemahaman posisi kuartil dan prosedur pembagian data.</p>
+      <p>Lengkapi kolom f &times; x terlebih dahulu:</p>
+      <div style="overflow-x:auto;margin:.5rem 0">
+        <table style="width:100%;border-collapse:collapse;font-size:13px">
+          <thead><tr style="background:var(--primary);color:#fff">
+            <th style="padding:5px 8px;text-align:center;border:1px solid var(--primary-dark)">x</th>
+            <th style="padding:5px 8px;text-align:center;border:1px solid var(--primary-dark)">f</th>
+            <th style="padding:5px 8px;text-align:center;border:1px solid var(--primary-dark)">f &times; x</th>
+          </tr></thead>
+          <tbody>
+            <tr><td style="padding:4px 8px;text-align:center;border:1px solid var(--border)">2</td><td style="padding:4px 8px;text-align:center;border:1px solid var(--border)">3</td><td style="padding:4px 8px;text-align:center;border:1px solid var(--border)"><strong>6</strong></td></tr>
+            <tr style="background:var(--surface-3)"><td style="padding:4px 8px;text-align:center;border:1px solid var(--border)">3</td><td style="padding:4px 8px;text-align:center;border:1px solid var(--border)">4</td><td style="padding:4px 8px;text-align:center;border:1px solid var(--border)"><strong>12</strong></td></tr>
+            <tr><td style="padding:4px 8px;text-align:center;border:1px solid var(--border)">4</td><td style="padding:4px 8px;text-align:center;border:1px solid var(--border)">6</td><td style="padding:4px 8px;text-align:center;border:1px solid var(--border)"><strong>24</strong></td></tr>
+            <tr style="background:var(--surface-3)"><td style="padding:4px 8px;text-align:center;border:1px solid var(--border)">5</td><td style="padding:4px 8px;text-align:center;border:1px solid var(--border)">4</td><td style="padding:4px 8px;text-align:center;border:1px solid var(--border)"><strong>20</strong></td></tr>
+            <tr><td style="padding:4px 8px;text-align:center;border:1px solid var(--border)">6</td><td style="padding:4px 8px;text-align:center;border:1px solid var(--border)">2</td><td style="padding:4px 8px;text-align:center;border:1px solid var(--border)"><strong>12</strong></td></tr>
+            <tr style="background:var(--surface-3)"><td style="padding:4px 8px;text-align:center;border:1px solid var(--border)">7</td><td style="padding:4px 8px;text-align:center;border:1px solid var(--border)">1</td><td style="padding:4px 8px;text-align:center;border:1px solid var(--border)"><strong>7</strong></td></tr>
+            <tr style="background:var(--primary-xlight);font-weight:700"><td style="padding:4px 8px;text-align:center;border:1px solid var(--border);color:var(--primary-dark)">Total</td><td style="padding:4px 8px;text-align:center;border:1px solid var(--border);color:var(--primary-dark)">20</td><td style="padding:4px 8px;text-align:center;border:1px solid var(--border);color:var(--primary-dark)">81</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>&Sigma;(f&times;x) = 6 + 12 + 24 + 20 + 12 + 7 = <strong>81</strong></p>
+      <p><strong>Mean</strong> = 81 &divide; 20 = <strong>4,05 &asymp; 4,1 jam/hari</strong></p>
+      <p style="color:var(--primary-dark);font-weight:600">Jawaban benar: <strong>C — 4,1 jam/hari</strong></p>
+      <p style="font-size:13px;color:var(--text-3)"><em>Multistruktural:</em> menghitung rata-rata dari tabel distribusi frekuensi tunggal menggunakan rumus &Sigma;(f&times;x) &divide; &Sigma;f.</p>
     </div>
   </div>
 
-  <!-- Soal 5 — Multistruktural -->
+  <!-- Soal 5 — Multistruktural -->  <!-- Soal 5 — Multistruktural -->
   <div class="soal-card" id="soal-card-5">
     <div class="soal-nomor-strip"><span class="nomor-circle">5</span></div>
     <span class="solo-badge solo-multistruktural">SOLO: Multistruktural</span>
-    <p style="font-weight:600;color:var(--text-1);font-size:15px;margin:.6rem 0 .75rem">
-      Diagram batang menunjukkan jumlah siswa yang menggunakan HP untuk:<br>
-      <strong style="color:var(--primary-dark)">Games: 12 siswa &nbsp;|&nbsp; Belajar: 8 siswa &nbsp;|&nbsp; Media Sosial: 15 siswa &nbsp;|&nbsp; Hiburan: 5 siswa</strong><br>
-      Berapa <em>persentase</em> siswa yang menggunakan HP untuk Media Sosial?
+    <p style="font-weight:600;color:var(--text-1);font-size:15px;margin:.6rem 0 .5rem">
+      Perhatikan <strong>diagram batang</strong> berikut yang menunjukkan jumlah siswa berdasarkan tujuan penggunaan HP:
     </p>
+    <div style="background:var(--surface-3);border:1px solid var(--border);border-radius:var(--radius);padding:.85rem;margin-bottom:.75rem">
+      <canvas id="chart-s5" style="width:100%;max-height:220px"></canvas>
+    </div>
+    <p style="font-weight:600;color:var(--text-1);font-size:15px;margin:.4rem 0 .75rem">
+      Berdasarkan diagram di atas, berapa <em>persentase</em> siswa yang menggunakan HP untuk <em>Media Sosial</em>?
+    </p>
+<div class="scaffolding-box">
+      <div class="scaf-title">&#x1F9ED; Langkah Menjawab</div>
+      <div class="scaf-row"><div class="scaf-num">1</div><div class="scaf-content"><div class="scaf-label">Baca frekuensi setiap kategori dari diagram batang:</div><input class="scaf-input" type="text" placeholder="Games = ... siswa, Belajar = ... siswa, Media Sosial = ... siswa, Hiburan = ... siswa"></div></div>
+<div class="scaf-row"><div class="scaf-num">2</div><div class="scaf-content"><div class="scaf-label">Hitung total seluruh siswa (jumlahkan semua kategori):</div><input class="scaf-input" type="text" placeholder="Total = ... + ... + ... + ... = ... siswa"></div></div>
+<div class="scaf-row"><div class="scaf-num">3</div><div class="scaf-content"><div class="scaf-label">Hitung persentase Media Sosial dengan rumus (frekuensi ÷ total) × 100%:</div><input class="scaf-input" type="text" placeholder="Persentase = (... ÷ ...) × 100% = ...%"></div></div>
+    </div>
     <div class="pilihan-opt" id="s5-a" onclick="pilihJawaban(5,'A')"><span class="pilihan-key">A</span><span>30%</span></div>
     <div class="pilihan-opt" id="s5-b" onclick="pilihJawaban(5,'B')"><span class="pilihan-key">B</span><span>37,5%</span></div>
     <div class="pilihan-opt" id="s5-c" onclick="pilihJawaban(5,'C')"><span class="pilihan-key">C</span><span>40%</span></div>
     <div class="pilihan-opt" id="s5-d" onclick="pilihJawaban(5,'D')"><span class="pilihan-key">D</span><span>45%</span></div>
     <div class="pembahasan-box" id="pembahasan-5">
       <div class="step-head"><span class="step-no-circle">✓</span>Pembahasan</div>
+      <p>Dari diagram: Games = 12, Belajar = 8, Media Sosial = 15, Hiburan = 5.</p>
       <p>Total siswa = 12 + 8 + 15 + 5 = <strong>40 siswa</strong></p>
       <p>Persentase Media Sosial = (15 ÷ 40) × 100% = <strong>37,5%</strong></p>
       <p style="color:var(--primary-dark);font-weight:600">Jawaban benar: <strong>B — 37,5%</strong></p>
-      <p style="font-size:13px;color:var(--text-3)"><em>Multistruktural:</em> membaca diagram, menjumlahkan, lalu menghitung persentase — tiga langkah terpisah.</p>
+      <p style="font-size:13px;color:var(--text-3)"><em>Multistruktural:</em> membaca diagram batang, menjumlahkan, lalu menghitung persentase — tiga langkah terpisah.</p>
     </div>
   </div>
 
@@ -761,6 +882,12 @@ input[type=radio]:checked ~ .rubrik-score-btn {background:var(--primary);color:#
       <strong style="color:var(--primary-dark)">Kelompok Q:</strong> Mean = 7 jam, Jangkauan = 6 jam<br>
       Kesimpulan yang <em>paling tepat</em> adalah…
     </p>
+<div class="scaffolding-box">
+      <div class="scaf-title">&#x1F9ED; Langkah Menjawab</div>
+      <div class="scaf-row"><div class="scaf-num">1</div><div class="scaf-content"><div class="scaf-label">Bandingkan mean kedua kelompok — apa yang bisa kamu simpulkan dari mean yang sama?</div><input class="scaf-input" type="text" placeholder="Mean P = ..., Mean Q = ... → artinya ..."></div></div>
+<div class="scaf-row"><div class="scaf-num">2</div><div class="scaf-content"><div class="scaf-label">Bandingkan jangkauan — kelompok mana yang jangkauannya lebih kecil?</div><input class="scaf-input" type="text" placeholder="Jangkauan P = ..., Jangkauan Q = ... → yang lebih kecil adalah Kelompok ..."></div></div>
+<div class="scaf-row"><div class="scaf-num">3</div><div class="scaf-content"><div class="scaf-label">Jangkauan kecil berarti data lebih ... (seragam/beragam). Jadi kelompok mana yang lebih konsisten?</div><input class="scaf-input" type="text" placeholder="Kelompok yang lebih konsisten adalah Kelompok ... karena ..."></div></div>
+    </div>
     <div class="pilihan-opt" id="s6-a" onclick="pilihJawaban(6,'A')"><span class="pilihan-key">A</span><span>Kelompok P dan Q memiliki pola tidur yang sama karena mean-nya sama.</span></div>
     <div class="pilihan-opt" id="s6-b" onclick="pilihJawaban(6,'B')"><span class="pilihan-key">B</span><span>Kelompok Q lebih baik karena jangkauannya lebih besar sehingga lebih beragam.</span></div>
     <div class="pilihan-opt" id="s6-c" onclick="pilihJawaban(6,'C')"><span class="pilihan-key">C</span><span>Kelompok P lebih konsisten karena jangkauannya lebih kecil, meski rata-rata sama.</span></div>
@@ -779,21 +906,27 @@ input[type=radio]:checked ~ .rubrik-score-btn {background:var(--primary);color:#
     <div class="soal-nomor-strip"><span class="nomor-circle">7</span></div>
     <span class="solo-badge solo-relasional">SOLO: Relasional</span>
     <p style="font-weight:600;color:var(--text-1);font-size:15px;margin:.6rem 0 .75rem">
-      Data durasi belajar 10 siswa (jam/minggu):<br>
-      <strong style="color:var(--primary-dark)">5, 8, 6, 10, 7, 8, 9, 6, 8, 3</strong><br>
+      Data durasi belajar <strong>15 siswa</strong> (jam/minggu):<br>
+      <strong style="color:var(--primary-dark)">5, 8, 6, 10, 7, 8, 9, 6, 8, 3, 7, 9, 5, 8, 6</strong><br>
       Jika nilai <em>3</em> diganti menjadi <em>8</em>, bagaimana pengaruhnya terhadap mean dan modus?
     </p>
+<div class="scaffolding-box">
+      <div class="scaf-title">&#x1F9ED; Langkah Menjawab</div>
+      <div class="scaf-row"><div class="scaf-num">1</div><div class="scaf-content"><div class="scaf-label">Hitung mean data ASLI — jumlahkan semua 15 data lalu bagi 15:</div><input class="scaf-input" type="text" placeholder="Jumlah = ..., Mean asli = ... ÷ 15 = ..."></div></div>
+<div class="scaf-row"><div class="scaf-num">2</div><div class="scaf-content"><div class="scaf-label">Setelah nilai 3 diganti 8, jumlah total berubah menjadi berapa? Hitung mean baru:</div><input class="scaf-input" type="text" placeholder="Jumlah baru = ... − 3 + 8 = ..., Mean baru = ... ÷ 15 = ... → naik/turun/tetap?"></div></div>
+<div class="scaf-row"><div class="scaf-num">3</div><div class="scaf-content"><div class="scaf-label">Hitung kemunculan nilai 8 di data ASLI dan SETELAH perubahan:</div><input class="scaf-input" type="text" placeholder="Asli: nilai 8 muncul ...×. Setelah: nilai 8 muncul ...× → Modus (berubah/tetap)?"></div></div>
+    </div>
     <div class="pilihan-opt" id="s7-a" onclick="pilihJawaban(7,'A')"><span class="pilihan-key">A</span><span>Mean naik, modus tetap sama.</span></div>
-    <div class="pilihan-opt" id="s7-b" onclick="pilihJawaban(7,'B')"><span class="pilihan-key">B</span><span>Mean naik, modus berubah menjadi 8.</span></div>
-    <div class="pilihan-opt" id="s7-c" onclick="pilihJawaban(7,'C')"><span class="pilihan-key">C</span><span>Mean tetap, modus berubah menjadi 8.</span></div>
+    <div class="pilihan-opt" id="s7-b" onclick="pilihJawaban(7,'B')"><span class="pilihan-key">B</span><span>Mean naik, modus berubah menjadi 9.</span></div>
+    <div class="pilihan-opt" id="s7-c" onclick="pilihJawaban(7,'C')"><span class="pilihan-key">C</span><span>Mean tetap, modus tetap sama.</span></div>
     <div class="pilihan-opt" id="s7-d" onclick="pilihJawaban(7,'D')"><span class="pilihan-key">D</span><span>Mean turun, modus tetap sama.</span></div>
     <div class="pembahasan-box" id="pembahasan-7">
       <div class="step-head"><span class="step-no-circle">✓</span>Pembahasan</div>
-      <p><strong>Data asli:</strong> Mean = (5+8+6+10+7+8+9+6+8+3)÷10 = 70÷10 = 7. Modus = 8 (muncul 3 kali).</p>
-      <p><strong>Setelah 3 → 8:</strong> Mean = (70−3+8)÷10 = 75÷10 = 7,5. <strong>Mean naik.</strong></p>
-      <p>Modus: nilai 8 kini muncul 4 kali, nilai lain kurang → <strong>modus tetap 8</strong>.</p>
+      <p><strong>Data asli (15 data):</strong> Jumlah = 5+8+6+10+7+8+9+6+8+3+7+9+5+8+6 = <strong>105</strong>. Mean = 105÷15 = <strong>7</strong>. Nilai 8 muncul <strong>4 kali</strong> (modus = 8).</p>
+      <p><strong>Setelah 3 → 8:</strong> Jumlah baru = 105−3+8 = <strong>110</strong>. Mean baru = 110÷15 ≈ <strong>7,33</strong>. <strong>Mean naik.</strong></p>
+      <p>Nilai 8 kini muncul <strong>5 kali</strong> (tetap yang terbanyak) → <strong>modus tetap 8</strong>.</p>
       <p style="color:var(--primary-dark);font-weight:600">Jawaban benar: <strong>A — Mean naik, modus tetap sama</strong></p>
-      <p style="font-size:13px;color:var(--text-3)"><em>Relasional:</em> memahami hubungan sebab-akibat antara perubahan data dengan perubahan ukuran statistik.</p>
+      <p style="font-size:13px;color:var(--text-3)"><em>Relasional:</em> memahami hubungan sebab-akibat antara perubahan satu data terhadap mean dan modus pada dataset yang lebih besar.</p>
     </div>
   </div>
 
@@ -804,6 +937,12 @@ input[type=radio]:checked ~ .rubrik-score-btn {background:var(--primary);color:#
     <p style="font-weight:600;color:var(--text-1);font-size:15px;margin:.6rem 0 .75rem">
       Survei terhadap 40 siswa: <strong style="color:var(--primary-dark)">25 siswa</strong> menggunakan HP &gt;4 jam/hari, <strong style="color:var(--primary-dark)">15 siswa</strong> menggunakan ≤4 jam/hari. Jika disajikan dalam diagram lingkaran, besar sudut sektor untuk kelompok yang menggunakan <em>lebih dari 4 jam</em> adalah…
     </p>
+<div class="scaffolding-box">
+      <div class="scaf-title">&#x1F9ED; Langkah Menjawab</div>
+      <div class="scaf-row"><div class="scaf-num">1</div><div class="scaf-content"><div class="scaf-label">Berapa frekuensi kelompok >4 jam dan total seluruh siswa?</div><input class="scaf-input" type="text" placeholder="Frekuensi = ... siswa, Total = ... siswa"></div></div>
+<div class="scaf-row"><div class="scaf-num">2</div><div class="scaf-content"><div class="scaf-label">Hitung persentase kelompok >4 jam dengan rumus (frekuensi ÷ total) × 100%:</div><input class="scaf-input" type="text" placeholder="Persentase = (... ÷ ...) × 100% = ...%"></div></div>
+<div class="scaf-row"><div class="scaf-num">3</div><div class="scaf-content"><div class="scaf-label">Lingkaran penuh = 360°. Hitung besar sudut dengan rumus (frekuensi ÷ total) × 360°:</div><input class="scaf-input" type="text" placeholder="Sudut = (... ÷ ...) × 360° = ...°"></div></div>
+    </div>
     <div class="pilihan-opt" id="s8-a" onclick="pilihJawaban(8,'A')"><span class="pilihan-key">A</span><span>180°</span></div>
     <div class="pilihan-opt" id="s8-b" onclick="pilihJawaban(8,'B')"><span class="pilihan-key">B</span><span>225°</span></div>
     <div class="pilihan-opt" id="s8-c" onclick="pilihJawaban(8,'C')"><span class="pilihan-key">C</span><span>135°</span></div>
@@ -825,6 +964,13 @@ input[type=radio]:checked ~ .rubrik-score-btn {background:var(--primary);color:#
       Rata-rata nilai ulangan kelas VIII-A (30 siswa) = <strong style="color:var(--primary-dark)">72</strong>, dan kelas VIII-B (20 siswa) = <strong style="color:var(--primary-dark)">78</strong>.<br>
       Berapakah rata-rata gabungan nilai seluruh siswa kedua kelas tersebut?
     </p>
+<div class="scaffolding-box">
+      <div class="scaf-title">&#x1F9ED; Langkah Menjawab</div>
+      <div class="scaf-row"><div class="scaf-num">1</div><div class="scaf-content"><div class="scaf-label">Mengapa tidak bisa langsung (72+78)÷2? Apa perbedaan kedua kelas ini?</div><input class="scaf-input" type="text" placeholder="Karena jumlah siswanya berbeda: Kelas A = ... siswa, Kelas B = ... siswa"></div></div>
+<div class="scaf-row"><div class="scaf-num">2</div><div class="scaf-content"><div class="scaf-label">Hitung total nilai Kelas A (jumlah siswa × rata-rata):</div><input class="scaf-input" type="text" placeholder="Total nilai Kelas A = 30 × 72 = ..."></div></div>
+<div class="scaf-row"><div class="scaf-num">3</div><div class="scaf-content"><div class="scaf-label">Hitung total nilai Kelas B (jumlah siswa × rata-rata):</div><input class="scaf-input" type="text" placeholder="Total nilai Kelas B = 20 × 78 = ..."></div></div>
+<div class="scaf-row"><div class="scaf-num">4</div><div class="scaf-content"><div class="scaf-label">Hitung mean gabungan = (total A + total B) ÷ (30 + 20):</div><input class="scaf-input" type="text" placeholder="Mean gabungan = (... + ...) ÷ 50 = ..."></div></div>
+    </div>
     <div class="pilihan-opt" id="s9-a" onclick="pilihJawaban(9,'A')"><span class="pilihan-key">A</span><span>75 (rata-rata biasa dari 72 dan 78)</span></div>
     <div class="pilihan-opt" id="s9-b" onclick="pilihJawaban(9,'B')"><span class="pilihan-key">B</span><span>74,4</span></div>
     <div class="pilihan-opt" id="s9-c" onclick="pilihJawaban(9,'C')"><span class="pilihan-key">C</span><span>73,8</span></div>
@@ -850,6 +996,12 @@ input[type=radio]:checked ~ .rubrik-score-btn {background:var(--primary);color:#
       <strong style="color:var(--primary-dark)">(2)</strong> Modus selalu merupakan ukuran pemusatan yang paling representatif.<br>
       Pernyataan yang <em>benar</em> adalah…
     </p>
+<div class="scaffolding-box">
+      <div class="scaf-title">&#x1F9ED; Langkah Menjawab</div>
+      <div class="scaf-row"><div class="scaf-num">1</div><div class="scaf-content"><div class="scaf-label">Evaluasi Pernyataan (1): Pada distribusi simetris, di mana letak mean dan median? Apakah pernyataan (1) BENAR atau SALAH?</div><input class="scaf-input" type="text" placeholder="Pada distribusi simetris, mean ... median. Pernyataan (1) = ..."></div></div>
+<div class="scaf-row"><div class="scaf-num">2</div><div class="scaf-content"><div class="scaf-label">Evaluasi Pernyataan (2): Apakah modus SELALU paling representatif? Berikan alasanmu:</div><input class="scaf-input" type="text" placeholder="Pernyataan (2) = ..., karena modus hanya cocok untuk ..."></div></div>
+<div class="scaf-row"><div class="scaf-num">3</div><div class="scaf-content"><div class="scaf-label">Berdasarkan evaluasi di atas, pernyataan mana yang benar?</div><input class="scaf-input" type="text" placeholder="Kesimpulan: yang benar hanya pernyataan ... / keduanya ... / keduanya ..."></div></div>
+    </div>
     <div class="pilihan-opt" id="s10-a" onclick="pilihJawaban(10,'A')"><span class="pilihan-key">A</span><span>Keduanya benar</span></div>
     <div class="pilihan-opt" id="s10-b" onclick="pilihJawaban(10,'B')"><span class="pilihan-key">B</span><span>Hanya pernyataan (1) yang benar</span></div>
     <div class="pilihan-opt" id="s10-c" onclick="pilihJawaban(10,'C')"><span class="pilihan-key">C</span><span>Hanya pernyataan (2) yang benar</span></div>
@@ -860,6 +1012,71 @@ input[type=radio]:checked ~ .rubrik-score-btn {background:var(--primary);color:#
       <p><strong>Pernyataan (2):</strong> <em>Salah.</em> Modus hanya cocok untuk data kategori atau data dengan nilai yang sangat dominan. Untuk data numerik yang tersebar merata, mean atau median lebih representatif.</p>
       <p style="color:var(--primary-dark);font-weight:600">Jawaban benar: <strong>B — Hanya pernyataan (1) yang benar</strong></p>
       <p style="font-size:13px;color:var(--text-3)"><em>Extended Abstract:</em> mengevaluasi kebenaran pernyataan konseptual dan menggeneralisasi kapan suatu ukuran statistik sesuai digunakan.</p>
+    </div>
+  </div>
+
+  <!-- Soal 11 — Relasional (Membaca Grafik Batang) -->
+  <div class="soal-card" id="soal-card-11">
+    <div class="soal-nomor-strip"><span class="nomor-circle">11</span></div>
+    <span class="solo-badge solo-relasional">SOLO: Relasional</span>
+    <p style="font-weight:600;color:var(--text-1);font-size:15px;margin:.6rem 0 .5rem">
+      Perhatikan grafik batang di bawah ini yang menunjukkan <strong>frekuensi durasi penggunaan HP</strong> (jam/hari) dari 30 siswa kelas VIII:
+    </p>
+    <div style="background:var(--surface-3);border:1px solid var(--border);border-radius:var(--radius);padding:.85rem;margin-bottom:.85rem">
+      <canvas id="chart-s11" style="width:100%;max-height:220px"></canvas>
+    </div>
+    <p style="font-weight:600;color:var(--text-1);font-size:15px;margin:.5rem 0 .75rem">
+      Berdasarkan grafik di atas, berapakah nilai <em>modus</em> durasi penggunaan HP siswa tersebut?
+    </p>
+<div class="scaffolding-box">
+      <div class="scaf-title">&#x1F9ED; Langkah Menjawab</div>
+      <div class="scaf-row"><div class="scaf-num">1</div><div class="scaf-content"><div class="scaf-label">Apa yang ditunjukkan sumbu X (mendatar) dan sumbu Y (tegak) pada grafik ini?</div><input class="scaf-input" type="text" placeholder="Sumbu X = ..., Sumbu Y = ..."></div></div>
+<div class="scaf-row"><div class="scaf-num">2</div><div class="scaf-content"><div class="scaf-label">Bacalah frekuensi setiap batang dari grafik di atas:</div><input class="scaf-input" type="text" placeholder="1 jam: ... siswa, 2 jam: ... siswa, 3 jam: ... siswa, 4 jam: ... siswa, 5 jam: ... siswa, 6 jam: ... siswa"></div></div>
+<div class="scaf-row"><div class="scaf-num">3</div><div class="scaf-content"><div class="scaf-label">Batang mana yang paling tinggi? Berapa frekuensinya?</div><input class="scaf-input" type="text" placeholder="Batang tertinggi = ... jam dengan frekuensi ... siswa"></div></div>
+<div class="scaf-row"><div class="scaf-num">4</div><div class="scaf-content"><div class="scaf-label">Modus adalah nilai dengan frekuensi terbesar. Jadi modusnya adalah:</div><input class="scaf-input" type="text" placeholder="Modus = ... jam/hari"></div></div>
+    </div>
+    <div class="pilihan-opt" id="s11-a" onclick="pilihJawaban(11,'A')"><span class="pilihan-key">A</span><span>2 jam/hari</span></div>
+    <div class="pilihan-opt" id="s11-b" onclick="pilihJawaban(11,'B')"><span class="pilihan-key">B</span><span>3 jam/hari</span></div>
+    <div class="pilihan-opt" id="s11-c" onclick="pilihJawaban(11,'C')"><span class="pilihan-key">C</span><span>4 jam/hari</span></div>
+    <div class="pilihan-opt" id="s11-d" onclick="pilihJawaban(11,'D')"><span class="pilihan-key">D</span><span>5 jam/hari</span></div>
+    <div class="pembahasan-box" id="pembahasan-11">
+      <div class="step-head"><span class="step-no-circle">&#x2713;</span>Pembahasan</div>
+      <p>Dari grafik, batang tertinggi (frekuensi terbanyak) berada pada durasi <strong>3 jam/hari</strong> dengan frekuensi <strong>10 siswa</strong>. Modus adalah nilai yang paling sering muncul, sehingga modus = 3 jam/hari.</p>
+      <p style="color:var(--primary-dark);font-weight:600">Jawaban benar: <strong>B &mdash; 3 jam/hari</strong></p>
+      <p style="font-size:13px;color:var(--text-3)"><em>Relasional:</em> membaca grafik batang dan menghubungkan tinggi batang dengan konsep modus (frekuensi terbesar).</p>
+    </div>
+  </div>
+
+  <!-- Soal 12 — Extended Abstract (Membaca Grafik Lingkaran) -->
+  <div class="soal-card" id="soal-card-12">
+    <div class="soal-nomor-strip"><span class="nomor-circle">12</span></div>
+    <span class="solo-badge solo-extended">SOLO: Extended Abstract</span>
+    <p style="font-weight:600;color:var(--text-1);font-size:15px;margin:.6rem 0 .5rem">
+      Perhatikan diagram lingkaran di bawah yang menunjukkan <strong>tujuan penggunaan HP</strong> dari 40 siswa kelas VIII:
+    </p>
+    <div style="background:var(--surface-3);border:1px solid var(--border);border-radius:var(--radius);padding:.85rem;margin-bottom:.85rem;display:flex;justify-content:center">
+      <canvas id="chart-s12" style="max-width:280px;max-height:280px"></canvas>
+    </div>
+    <p style="font-weight:600;color:var(--text-1);font-size:15px;margin:.5rem 0 .75rem">
+      Berapa siswa yang menggunakan HP untuk <em>Belajar/Sekolah</em>? Dan berapa persen gabungan siswa yang menggunakan HP untuk <em>Media Sosial</em> dan <em>Games</em>?
+    </p>
+<div class="scaffolding-box">
+      <div class="scaf-title">&#x1F9ED; Langkah Menjawab</div>
+      <div class="scaf-row"><div class="scaf-num">1</div><div class="scaf-content"><div class="scaf-label">Baca persentase setiap kategori dari diagram lingkaran di atas:</div><input class="scaf-input" type="text" placeholder="Media Sosial = ...%, Games = ...%, Belajar/Sekolah = ...%, Hiburan = ...%, Komunikasi = ...%"></div></div>
+<div class="scaf-row"><div class="scaf-num">2</div><div class="scaf-content"><div class="scaf-label">Hitung jumlah siswa Belajar/Sekolah dengan rumus: persentase × 40 siswa:</div><input class="scaf-input" type="text" placeholder="Jumlah Belajar/Sekolah = ...% × 40 = ... siswa"></div></div>
+<div class="scaf-row"><div class="scaf-num">3</div><div class="scaf-content"><div class="scaf-label">Gabungkan persentase Media Sosial dan Games:</div><input class="scaf-input" type="text" placeholder="Media Sosial + Games = ...% + ...% = ...%"></div></div>
+<div class="scaf-row"><div class="scaf-num">4</div><div class="scaf-content"><div class="scaf-label">Jawaban yang tepat (jumlah siswa Belajar/Sekolah ; % gabungan Medsos+Games):</div><input class="scaf-input" type="text" placeholder="... siswa ; ...%"></div></div>
+    </div>
+    <div class="pilihan-opt" id="s12-a" onclick="pilihJawaban(12,'A')"><span class="pilihan-key">A</span><span>8 siswa; 50%</span></div>
+    <div class="pilihan-opt" id="s12-b" onclick="pilihJawaban(12,'B')"><span class="pilihan-key">B</span><span>10 siswa; 45%</span></div>
+    <div class="pilihan-opt" id="s12-c" onclick="pilihJawaban(12,'C')"><span class="pilihan-key">C</span><span>8 siswa; 45%</span></div>
+    <div class="pilihan-opt" id="s12-d" onclick="pilihJawaban(12,'D')"><span class="pilihan-key">D</span><span>10 siswa; 50%</span></div>
+    <div class="pembahasan-box" id="pembahasan-12">
+      <div class="step-head"><span class="step-no-circle">&#x2713;</span>Pembahasan</div>
+      <p><strong>Belajar/Sekolah:</strong> Persentasenya 20%. Jumlah siswa = 20% &times; 40 = <strong>8 siswa</strong>.</p>
+      <p><strong>Media Sosial + Games:</strong> Media Sosial = 25%, Games = 20%. Gabungan = 25% + 20% = <strong>45%</strong>.</p>
+      <p style="color:var(--primary-dark);font-weight:600">Jawaban benar: <strong>C &mdash; 8 siswa; 45%</strong></p>
+      <p style="font-size:13px;color:var(--text-3)"><em>Extended Abstract:</em> membaca persentase dari diagram lingkaran, mengkonversi ke jumlah, dan menggabungkan dua kategori untuk menarik kesimpulan baru.</p>
     </div>
   </div>
 
@@ -881,7 +1098,7 @@ input[type=radio]:checked ~ .rubrik-score-btn {background:var(--primary);color:#
 
   <!-- Essay 1 — Relasional -->
   <div class="essay-card" id="soal-card-e1">
-    <div class="soal-nomor-strip"><span class="nomor-circle" style="background:var(--accent);color:#fff">E1</span><span class="sec-lbl" style="margin-bottom:0">Essay 1 dari 2</span></div>
+    <div class="soal-nomor-strip"><span class="nomor-circle" style="background:var(--accent);color:#fff">E1</span><span class="sec-lbl" style="margin-bottom:0">Essay 1 dari 3</span></div>
     <span class="solo-badge solo-relasional">SOLO: Relasional</span>
     <p style="font-weight:600;color:var(--text-1);font-size:15px;margin:.6rem 0 .75rem">
       Hasil survei penggunaan HP siswa kelas VIII menunjukkan data berikut (jam/hari):<br>
@@ -889,6 +1106,14 @@ input[type=radio]:checked ~ .rubrik-score-btn {background:var(--primary);color:#
     </p>
     <div class="card-accent" style="margin-bottom:.85rem">
       <p style="color:var(--text-1);font-weight:500">Hitunglah <strong>mean</strong>, <strong>median</strong>, dan <strong>modus</strong> dari data tersebut. Kemudian jelaskan: ukuran pemusatan manakah yang <em>paling tepat</em> digunakan untuk menggambarkan pola penggunaan HP siswa tersebut? Berikan alasanmu!</p>
+    </div>
+<div class="scaffolding-box" style="margin-bottom:.75rem">
+      <div class="scaf-title">&#x1F9ED; Langkah Menjawab</div>
+      <div class="scaf-row"><div class="scaf-num">1</div><div class="scaf-content"><div class="scaf-label">Hitung Mean dari data 1,2,2,3,3,3,4,5,5,12 — jumlahkan semua lalu bagi banyak data:</div><input class="scaf-input" type="text" placeholder="Jumlah = ..., Mean = ... ÷ 10 = ..."></div></div>
+<div class="scaf-row"><div class="scaf-num">2</div><div class="scaf-content"><div class="scaf-label">Tentukan Median (n=10, genap) — rata-rata data ke-5 dan ke-6:</div><input class="scaf-input" type="text" placeholder="Data ke-5 = ..., data ke-6 = ..., Median = (... + ...) ÷ 2 = ..."></div></div>
+<div class="scaf-row"><div class="scaf-num">3</div><div class="scaf-content"><div class="scaf-label">Tentukan Modus — nilai yang paling sering muncul:</div><input class="scaf-input" type="text" placeholder="Modus = ... (muncul ... kali)"></div></div>
+<div class="scaf-row"><div class="scaf-num">4</div><div class="scaf-content"><div class="scaf-label">Perhatikan nilai 12 — apakah termasuk outlier? Bagaimana pengaruhnya terhadap mean?</div><input class="scaf-input" type="text" placeholder="Nilai 12 adalah outlier karena ... sehingga mean menjadi ..."></div></div>
+<div class="scaf-row"><div class="scaf-num">5</div><div class="scaf-content"><div class="scaf-label">Ukuran pemusatan yang paling tepat untuk menggambarkan data ini adalah ... karena ...:</div><input class="scaf-input" type="text" placeholder="Yang paling tepat adalah ... karena ..."></div></div>
     </div>
     <textarea class="essay-area" id="essay-e1" placeholder="Tuliskan jawabanmu di sini:&#10;&#10;Mean = ...&#10;Median = ...&#10;Modus = ...&#10;&#10;Ukuran yang paling tepat adalah ... karena ..." oninput="saveTA('latihan_essay1',this.value)">${loadTA('latihan_essay1')||''}</textarea>
     <div class="btn-row" style="margin-top:.65rem">
@@ -911,7 +1136,7 @@ input[type=radio]:checked ~ .rubrik-score-btn {background:var(--primary);color:#
 
   <!-- Essay 2 — Extended Abstract -->
   <div class="essay-card" id="soal-card-e2">
-    <div class="soal-nomor-strip"><span class="nomor-circle" style="background:var(--danger);color:#fff">E2</span><span class="sec-lbl" style="margin-bottom:0">Essay 2 dari 2</span></div>
+    <div class="soal-nomor-strip"><span class="nomor-circle" style="background:var(--danger);color:#fff">E2</span><span class="sec-lbl" style="margin-bottom:0">Essay 2 dari 3</span></div>
     <span class="solo-badge solo-extended">SOLO: Extended Abstract</span>
     <p style="font-weight:600;color:var(--text-1);font-size:15px;margin:.6rem 0 .75rem">
       Seorang siswa bernama Dani berkata:<br>
@@ -919,6 +1144,14 @@ input[type=radio]:checked ~ .rubrik-score-btn {background:var(--primary);color:#
     </p>
     <div class="card-accent" style="margin-bottom:.85rem">
       <p style="color:var(--text-1);font-weight:500">Apakah pernyataan Dani <strong>benar</strong> atau <strong>salah</strong>? Jelaskan menggunakan konsep <em>mean</em>, <em>median</em>, dan <em>distribusi data</em>. Berikan sebuah contoh data (minimal 6 angka) yang mendukung jawabanmu!</p>
+    </div>
+<div class="scaffolding-box" style="margin-bottom:.75rem">
+      <div class="scaf-title">&#x1F9ED; Langkah Menjawab</div>
+      <div class="scaf-row"><div class="scaf-num">1</div><div class="scaf-content"><div class="scaf-label">Apa yang dimaksud Dani dengan "separuh temanku menggunakan HP lebih dari 4 jam"? Ukuran statistik apa yang menggambarkan "separuh di atas/bawah"?</div><input class="scaf-input" type="text" placeholder="Ukuran yang menggambarkan separuh di atas/bawah adalah ..."></div></div>
+<div class="scaf-row"><div class="scaf-num">2</div><div class="scaf-content"><div class="scaf-label">Apakah mean (rata-rata) = nilai yang memisahkan separuh data di atas dan separuh di bawah? Benar atau salah pernyataan Dani?</div><input class="scaf-input" type="text" placeholder="Pernyataan Dani ... karena mean ≠ median. Mean adalah ..., sedangkan median adalah ..."></div></div>
+<div class="scaf-row"><div class="scaf-num">3</div><div class="scaf-content"><div class="scaf-label">Buat contoh data ≥ 6 angka yang membuktikan: mean bisa jauh dari nilai tengah sebenarnya:</div><input class="scaf-input" type="text" placeholder="Contoh data: ..., ..., ..., ..., ..., ... → Mean = ..., Median = ..."></div></div>
+<div class="scaf-row"><div class="scaf-num">4</div><div class="scaf-content"><div class="scaf-label">Berdasarkan contohmu, berapa siswa yang berada DI ATAS mean? Apakah itu separuh?</div><input class="scaf-input" type="text" placeholder="Yang di atas mean = ... dari ... siswa = ...%, bukan 50%"></div></div>
+<div class="scaf-row"><div class="scaf-num">5</div><div class="scaf-content"><div class="scaf-label">Tulis kesimpulanmu dengan jelas:</div><input class="scaf-input" type="text" placeholder="Jadi pernyataan Dani salah karena ..."></div></div>
     </div>
     <textarea class="essay-area" id="essay-e2" placeholder="Tuliskan jawabanmu di sini:&#10;&#10;Pernyataan Dani adalah ... karena ...&#10;&#10;Penjelasan menggunakan konsep mean dan median:&#10;...&#10;&#10;Contoh data:&#10;..." oninput="saveTA('latihan_essay2',this.value)">${loadTA('latihan_essay2')||''}</textarea>
     <div class="btn-row" style="margin-top:.65rem">
@@ -936,6 +1169,57 @@ input[type=radio]:checked ~ .rubrik-score-btn {background:var(--primary);color:#
       <div class="rubrik-row"><span>Memberikan contoh data yang valid (≥6 angka)</span><span style="font-weight:600;color:var(--primary-dark)">5 poin</span></div>
       <div class="rubrik-row"><span>Menghitung mean & median dari contoh data</span><span style="font-weight:600;color:var(--primary-dark)">5 poin</span></div>
       <div class="rubrik-row"><span>Menarik kesimpulan dengan bahasa yang jelas</span><span style="font-weight:600;color:var(--primary-dark)">3 poin</span></div>
+    </div>
+  </div>
+
+  <!-- Essay 3 — Relasional (Membaca Grafik) -->
+  <div class="essay-card" id="soal-card-e3">
+    <div class="soal-nomor-strip"><span class="nomor-circle" style="background:#3B82F6;color:#fff">E3</span><span class="sec-lbl" style="margin-bottom:0">Essay 3 dari 3</span></div>
+    <span class="solo-badge solo-relasional">SOLO: Relasional</span>
+    <p style="font-weight:600;color:var(--text-1);font-size:15px;margin:.6rem 0 .5rem">
+      Perhatikan grafik batang berikut yang menampilkan data <strong>durasi belajar harian</strong> (jam/hari) dari dua kelas, Kelas A dan Kelas B:
+    </p>
+    <div style="background:var(--surface-3);border:1px solid var(--border);border-radius:var(--radius);padding:.85rem;margin-bottom:.85rem">
+      <canvas id="chart-e3" style="width:100%;max-height:240px"></canvas>
+    </div>
+    <div class="card-accent" style="margin-bottom:.85rem">
+      <p style="color:var(--text-1);font-weight:500">
+        Berdasarkan grafik di atas, jawablah pertanyaan-pertanyaan berikut:<br>
+        1. Berapa <strong>mean</strong> durasi belajar Kelas A? (Hitung berdasarkan data pada grafik!)<br>
+        2. Kelas mana yang memiliki <strong>jangkauan</strong> lebih besar? Apa artinya?<br>
+        3. Apakah menurut kamu data dua kelas ini bisa digabung untuk mencari mean bersama? Jelaskan cara menghitungnya!
+      </p>
+    </div>
+<div class="scaffolding-box" style="margin-bottom:.75rem">
+      <div class="scaf-title">&#x1F9ED; Langkah Menjawab</div>
+      <div class="scaf-row"><div class="scaf-num">1</div><div class="scaf-content"><div class="scaf-label">Baca data Kelas A dari grafik — buat tabel f dan x, lalu hitung f&times;x setiap baris:</div><input class="scaf-input" type="text" placeholder="1 jam: f=3, f×x=3 | 2 jam: f=5, f×x=10 | 3 jam: f=7, f×x=... | 4 jam: f=5, f×x=... | 5 jam: f=2, f×x=..."></div></div>
+<div class="scaf-row"><div class="scaf-num">2</div><div class="scaf-content"><div class="scaf-label">Hitung &Sigma;(f&times;x) dan &Sigma;f Kelas A, lalu hitung Mean Kelas A:</div><input class="scaf-input" type="text" placeholder="&Sigma;(f×x) = ..., &Sigma;f = ..., Mean A = ... ÷ ... = ... jam/hari"></div></div>
+<div class="scaf-row"><div class="scaf-num">3</div><div class="scaf-content"><div class="scaf-label">Hitung jangkauan Kelas A dan Kelas B (nilai maks − nilai min dari grafik):</div><input class="scaf-input" type="text" placeholder="Jangkauan A = ... − ... = ..., Jangkauan B = ... − ... = ..."></div></div>
+<div class="scaf-row"><div class="scaf-num">4</div><div class="scaf-content"><div class="scaf-label">Kelas mana yang jangkauannya lebih besar? Apa artinya bagi variasi data?</div><input class="scaf-input" type="text" placeholder="Kelas ... lebih besar. Artinya variasi durasi belajar Kelas ... lebih ..."></div></div>
+<div class="scaf-row"><div class="scaf-num">5</div><div class="scaf-content"><div class="scaf-label">Bagaimana cara menghitung mean gabungan kedua kelas? Tuliskan rumusnya:</div><input class="scaf-input" type="text" placeholder="Mean gabungan = (&Sigma;f×x A + &Sigma;f×x B) ÷ (n_A + n_B) = (... + ...) ÷ ... = ..."></div></div>
+    </div>
+    <textarea class="essay-area" id="essay-e3" placeholder="Tuliskan jawabanmu di sini:&#10;&#10;1. Mean Kelas A = ...&#10;   Perhitungan: ...&#10;&#10;2. Jangkauan Kelas A = ... Kelas B = ...&#10;   Kelas yang jangkauannya lebih besar adalah ...&#10;   Artinya: ...&#10;&#10;3. ..." oninput="saveTA('latihan_essay3',this.value)">${loadTA('latihan_essay3')||''}</textarea>
+    <div class="btn-row" style="margin-top:.65rem">
+      <button class="btn btn-primary btn-sm" onclick="lihatRubrik('e3')">&#x1F4CB; Lihat Kunci &amp; Rubrik</button>
+    </div>
+    <div class="rubrik-box" id="rubrik-e3">
+      <div class="step-head" style="margin-bottom:.5rem"><span class="step-no-circle">&#x2713;</span>Kunci Jawaban &amp; Rubrik</div>
+      <p><strong>1. Mean Kelas A:</strong></p>
+      <p>Data Kelas A dari grafik: 1 jam (3 siswa), 2 jam (5 siswa), 3 jam (7 siswa), 4 jam (5 siswa), 5 jam (2 siswa) &rarr; n = 22 siswa</p>
+      <p>Mean A = (1&times;3 + 2&times;5 + 3&times;7 + 4&times;5 + 5&times;2) &divide; 22 = (3+10+21+20+10) &divide; 22 = 64 &divide; 22 &asymp; <strong>2,91 jam/hari</strong></p>
+      <p style="margin-top:.5rem"><strong>2. Jangkauan:</strong></p>
+      <p>Kelas A: maks = 5, min = 1 &rarr; Jangkauan A = 5 &minus; 1 = <strong>4 jam</strong></p>
+      <p>Kelas B: maks = 5, min = 2 &rarr; Jangkauan B = 5 &minus; 2 = <strong>3 jam</strong></p>
+      <p>Kelas A memiliki jangkauan lebih besar, artinya variasi durasi belajar Kelas A <em>lebih beragam</em> &mdash; ada siswa yang belajar sangat sedikit (1 jam) hingga cukup banyak (5 jam).</p>
+      <p style="margin-top:.5rem"><strong>3. Mean Gabungan:</strong></p>
+      <p>Bisa, caranya menggunakan <em>rata-rata tertimbang</em>: Mean gabungan = (Total nilai semua siswa) &divide; (Total siswa kedua kelas)</p>
+      <p>Hitung mean Kelas B &rarr; gunakan data grafik, lalu gabungkan &Sigma;(f&times;x) kedua kelas dibagi total n gabungan.</p>
+      <div class="sec-lbl" style="margin-top:.75rem">Rubrik Penilaian (total 30 poin)</div>
+      <div class="rubrik-row"><span>Membaca data frekuensi dari grafik dengan benar</span><span style="font-weight:600;color:var(--primary-dark)">5 poin</span></div>
+      <div class="rubrik-row"><span>Menghitung mean Kelas A dengan langkah f&times;x yang benar</span><span style="font-weight:600;color:var(--primary-dark)">8 poin</span></div>
+      <div class="rubrik-row"><span>Menghitung dan membandingkan jangkauan kedua kelas</span><span style="font-weight:600;color:var(--primary-dark)">7 poin</span></div>
+      <div class="rubrik-row"><span>Memaknai jangkauan dengan tepat (variasi data)</span><span style="font-weight:600;color:var(--primary-dark)">5 poin</span></div>
+      <div class="rubrik-row"><span>Menjelaskan cara menghitung mean gabungan (rata-rata tertimbang)</span><span style="font-weight:600;color:var(--primary-dark)">5 poin</span></div>
     </div>
   </div>
 
@@ -1097,7 +1381,7 @@ function showPage(id, el) {
   const bns = document.querySelectorAll('.bn-item');
   if (bnMap[id] !== undefined && bns[bnMap[id]]) bns[bnMap[id]].classList.add('active');
   window.scrollTo(0, 0);
-  if (id === 'latihan') initProgressDots();
+  if (id === 'latihan') { initProgressDots(); setTimeout(initLatihanCharts, 80); }
 }
 
 // Show sidebar on desktop
@@ -1507,7 +1791,8 @@ function savePDF(nPtm) {
     1:'Unistruktural', 2:'Unistruktural',
     3:'Multistruktural', 4:'Multistruktural', 5:'Multistruktural',
     6:'Relasional', 7:'Relasional', 8:'Relasional',
-    9:'Extended Abstract', 10:'Extended Abstract'
+    9:'Extended Abstract', 10:'Extended Abstract',
+    11:'Relasional', 12:'Extended Abstract'
   };
   const soloCount = { Unistruktural:0, Multistruktural:0, Relasional:0, 'Extended Abstract':0 };
   const soloBenar = { Unistruktural:0, Multistruktural:0, Relasional:0, 'Extended Abstract':0 };
@@ -3152,6 +3437,13 @@ function kRenderCalc(){
   kRender();
   // Run layout check after DOM ready
   setTimeout(checkLayout, 50);
+  // Init charts on latihan page if it's already active
+  setTimeout(() => {
+    if (document.getElementById('page-latihan') && document.getElementById('page-latihan').classList.contains('active')) {
+      initProgressDots();
+      initLatihanCharts();
+    }
+  }, 200);
 })();
 </script>
 
@@ -3174,17 +3466,27 @@ function kRenderCalc(){
 
 <script>
 
+// ── SCAFFOLDING TOGGLE ──
+function toggleScaf(btn) {
+  const body = btn.nextElementSibling;
+  if (!body) return;
+  const isOpen = body.classList.contains('open');
+  body.classList.toggle('open', !isOpen);
+  btn.classList.toggle('open', !isOpen);
+}
+
 // ── LATIHAN SOAL ──
-const soalJawaban = { 1:'A', 2:'B', 3:'A', 4:'B', 5:'B', 6:'C', 7:'A', 8:'B', 9:'B', 10:'B' };
+const soalJawaban = { 1:'B', 2:'C', 3:'A', 4:'C', 5:'B', 6:'C', 7:'A', 8:'B', 9:'B', 10:'B', 11:'B', 12:'C' };
 let soalStatus = (() => { try { return JSON.parse(localStorage.getItem('datavista_soalStatus')||'{}'); } catch(e){ return {}; } })();
 
 function initProgressDots() {
   const wrap = document.getElementById('progress-dots');
   if (!wrap) return;
   let html = '';
-  for (let i=1; i<=10; i++) html += `<div class="prog-dot" id="dot-${i}" title="Soal ${i}">${i}</div>`;
+  for (let i=1; i<=12; i++) html += `<div class="prog-dot" id="dot-${i}" title="Soal ${i}">${i}</div>`;
   html += `<div class="prog-dot essay-dot" id="dot-e1" title="Essay 1">E1</div>`;
   html += `<div class="prog-dot essay-dot" id="dot-e2" title="Essay 2">E2</div>`;
+  html += `<div class="prog-dot essay-dot" id="dot-e3" title="Essay 3">E3</div>`;
   wrap.innerHTML = html;
 }
 
@@ -3193,6 +3495,146 @@ function updateDot(no, benar) {
   if (!dot) return;
   dot.classList.remove('done','wrong');
   dot.classList.add(benar ? 'done' : 'wrong');
+}
+
+// ── CHART SOAL LATIHAN ──
+let _latihanCharts = {};
+function initLatihanCharts() {
+  // Chart Soal 5: Diagram Batang — Tujuan Penggunaan HP
+  (function() {
+    const canvas = document.getElementById('chart-s5');
+    if (!canvas || canvas.dataset.init) return;
+    canvas.dataset.init = '1';
+    if (_latihanCharts['s5']) { _latihanCharts['s5'].destroy(); }
+    _latihanCharts['s5'] = new Chart(canvas, {
+      type: 'bar',
+      data: {
+        labels: ['Games', 'Belajar/Sekolah', 'Media Sosial', 'Hiburan'],
+        datasets: [{
+          label: 'Jumlah Siswa',
+          data: [12, 8, 15, 5],
+          backgroundColor: ['rgba(59,130,246,0.7)','rgba(11,175,122,0.7)','rgba(244,169,50,0.85)','rgba(139,92,246,0.7)'],
+          borderColor: ['#3B82F6','#0BAF7A','#F4A932','#8B5CF6'],
+          borderWidth: 1.5,
+          borderRadius: 5
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: { display: false },
+          title: { display: true, text: 'Tujuan Penggunaan HP Siswa Kelas VIII', font: { size: 12, family: "'Plus Jakarta Sans', sans-serif" }, color: '#3D5047' }
+        },
+        scales: {
+          y: { beginAtZero: true, ticks: { stepSize: 1, font: { size: 11 } }, title: { display: true, text: 'Jumlah Siswa', font: { size: 11 } } },
+          x: { ticks: { font: { size: 11 } }, title: { display: true, text: 'Tujuan Penggunaan HP', font: { size: 11 } } }
+        }
+      }
+    });
+  })();
+
+  // Chart Soal 11: Grafik Batang — Distribusi Durasi Penggunaan HP 30 siswa
+  (function() {
+    const canvas = document.getElementById('chart-s11');
+    if (!canvas || canvas.dataset.init) return;
+    canvas.dataset.init = '1';
+    if (_latihanCharts['s11']) { _latihanCharts['s11'].destroy(); }
+    _latihanCharts['s11'] = new Chart(canvas, {
+      type: 'bar',
+      data: {
+        labels: ['1 jam', '2 jam', '3 jam', '4 jam', '5 jam', '6 jam'],
+        datasets: [{
+          label: 'Jumlah Siswa',
+          data: [3, 7, 10, 6, 3, 1],
+          backgroundColor: ['rgba(11,175,122,0.55)','rgba(11,175,122,0.55)','rgba(11,175,122,0.92)','rgba(11,175,122,0.55)','rgba(11,175,122,0.55)','rgba(11,175,122,0.55)'],
+          borderColor: '#0BAF7A',
+          borderWidth: 1.5,
+          borderRadius: 5
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: { display: false },
+          title: { display: true, text: 'Distribusi Durasi Penggunaan HP (n = 30 siswa)', font: { size: 12, family: "'Plus Jakarta Sans', sans-serif" }, color: '#3D5047' }
+        },
+        scales: {
+          y: { beginAtZero: true, ticks: { stepSize: 1, font: { size: 11 } }, title: { display: true, text: 'Frekuensi (siswa)', font: { size: 11 } } },
+          x: { ticks: { font: { size: 11 } }, title: { display: true, text: 'Durasi (jam/hari)', font: { size: 11 } } }
+        }
+      }
+    });
+  })();
+
+  // Chart Soal 12: Diagram Lingkaran — Tujuan Penggunaan HP 40 siswa
+  (function() {
+    const canvas = document.getElementById('chart-s12');
+    if (!canvas || canvas.dataset.init) return;
+    canvas.dataset.init = '1';
+    if (_latihanCharts['s12']) { _latihanCharts['s12'].destroy(); }
+    _latihanCharts['s12'] = new Chart(canvas, {
+      type: 'pie',
+      data: {
+        labels: ['Media Sosial (25%)', 'Games (20%)', 'Belajar/Sekolah (20%)', 'Hiburan (20%)', 'Komunikasi (15%)'],
+        datasets: [{
+          data: [25, 20, 20, 20, 15],
+          backgroundColor: ['#3B82F6','#E8453C','#0BAF7A','#F4A932','#8B5CF6'],
+          borderWidth: 2,
+          borderColor: '#fff'
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: { position: 'bottom', labels: { font: { size: 11, family: "'Plus Jakarta Sans', sans-serif" }, padding: 10 } },
+          title: { display: true, text: 'Tujuan Penggunaan HP (n = 40 siswa)', font: { size: 12, family: "'Plus Jakarta Sans', sans-serif" }, color: '#3D5047' }
+        }
+      }
+    });
+  })();
+
+  // Chart Essay 3: Grafik Batang Ganda — Durasi Belajar Kelas A vs Kelas B
+  (function() {
+    const canvas = document.getElementById('chart-e3');
+    if (!canvas || canvas.dataset.init) return;
+    canvas.dataset.init = '1';
+    if (_latihanCharts['e3']) { _latihanCharts['e3'].destroy(); }
+    _latihanCharts['e3'] = new Chart(canvas, {
+      type: 'bar',
+      data: {
+        labels: ['1 jam', '2 jam', '3 jam', '4 jam', '5 jam'],
+        datasets: [
+          {
+            label: 'Kelas A',
+            data: [3, 5, 7, 5, 2],
+            backgroundColor: 'rgba(11,175,122,0.75)',
+            borderColor: '#0BAF7A',
+            borderWidth: 1.5,
+            borderRadius: 4
+          },
+          {
+            label: 'Kelas B',
+            data: [0, 4, 8, 6, 2],
+            backgroundColor: 'rgba(244,169,50,0.75)',
+            borderColor: '#F4A932',
+            borderWidth: 1.5,
+            borderRadius: 4
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: { position: 'top', labels: { font: { size: 11, family: "'Plus Jakarta Sans', sans-serif" } } },
+          title: { display: true, text: 'Durasi Belajar Harian — Kelas A vs Kelas B', font: { size: 12, family: "'Plus Jakarta Sans', sans-serif" }, color: '#3D5047' }
+        },
+        scales: {
+          y: { beginAtZero: true, ticks: { stepSize: 1, font: { size: 11 } }, title: { display: true, text: 'Frekuensi (siswa)', font: { size: 11 } } },
+          x: { ticks: { font: { size: 11 } }, title: { display: true, text: 'Durasi (jam/hari)', font: { size: 11 } } }
+        }
+      }
+    });
+  })();
 }
 
 function pilihJawaban(no, huruf) {
@@ -3244,15 +3686,14 @@ function lihatRubrik(id) {
   const isShow = el.classList.contains('show');
   el.className = isShow ? 'rubrik-box' : 'rubrik-box show';
   // tandai dot essay
-  const dotId = id === 'e1' ? 'dot-e1' : 'dot-e2';
-  const dot = document.getElementById(dotId);
+  const dot = document.getElementById('dot-'+id);
   if (dot) { dot.classList.remove('essay-dot'); dot.classList.add('essay-done'); }
 }
 
 function resetLatihan() {
   soalStatus = {};
   try { localStorage.removeItem('datavista_soalStatus'); } catch(e){}
-  for (let i=1; i<=10; i++) {
+  for (let i=1; i<=12; i++) {
     ['a','b','c','d'].forEach(h => {
       const el = document.getElementById('s'+i+'-'+h);
       if (el) el.className = 'pilihan-opt';
@@ -3264,7 +3705,7 @@ function resetLatihan() {
     const dot = document.getElementById('dot-'+i);
     if (dot) { dot.classList.remove('done','wrong'); }
   }
-  ['e1','e2'].forEach(id => {
+  ['e1','e2','e3'].forEach(id => {
     const rb = document.getElementById('rubrik-'+id);
     if (rb) rb.className = 'rubrik-box';
     const dot = document.getElementById('dot-'+id);
